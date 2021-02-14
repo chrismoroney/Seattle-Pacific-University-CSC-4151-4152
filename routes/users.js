@@ -22,63 +22,56 @@ function HandleError(response, reason, message, code){
 }
 
 router.post('/', (request, response, next) => {
-  response.header("Access-Control-Allow-Origin", "*");
-  response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    response.header("Access-Control-Allow-Origin", "*");
+    response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 
-  let obj = JSON.parse(JSON.stringify(request.body));
-  let newUser = obj;
-  // console.log(newBook);
+    let obj = JSON.parse(JSON.stringify(request.body));
+    let newUser = obj;
+    console.log(newUser);
 
-  // if (!newUser.Name || !newUser.Author || !newUser.ISBN || !newUser.Price){
-  //   HandleError(response, 'Missing Info', 'Form data missing', 500);
-  // }else{
-  //   var re = /^(?=(?:\D*\d){10}(?:(?:\D*\d){3})?$)[\d-]+$/;
-  //   var match = re.exec(newBook.ISBN);
-
-    // if(!match){
-    //   HandleError(response, 'Invalid ISBN', 'ISBN format is invalid', 500);
-    // }else{
-      let user = new UserSchema({
-        Name: newUser.Name,
-        Password: newUser.Password
-      });
-      user.save((error) => {
-        if (error){
-          response.send({"error": error});
-        }else{
-          response.send({"id": user.Name});
-        }
-      });
-    // }
-  // }
+    if (!newUser.Name || !newUser.Password) {
+        HandleError(response, 'Missing Info', 'Form data missing', 500);
+    } else {
+        let user = new UserSchema({
+            Name: newUser.Name,
+            Password: newUser.Password
+        });
+        user.save((error) => {
+            if (error) {
+                response.send({"error": error});
+            } else {
+                response.send({"id": user._id});
+            }
+        });
+    }
 });
 
 router.get('/', (request, response, next) => {
   response.header("Access-Control-Allow-Origin", "*");
   response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 
-  // let author = request.query['author'];
-  // if (author){
-  //   UserSchema
-  //       .find({"Author": author})
-  //       .exec( (error, books) => {
-  //         if (error){
-  //           response.send({"error": error});
-  //         }else{
-  //           response.send(books);
-  //         }
-  //       });
-  // }else{
-  //   UserSchema
-  //       .find()
-  //       .exec( (error, books) => {
-  //         if (error){
-  //           response.send({"error": error});
-  //         }else{
-  //           response.send(books);
-  //         }
-  //       });
-  // }
+  let name = request.query['name'];
+  if (name){
+    UserSchema
+        .find({"Name": name})
+        .exec( (error, User) => {
+          if (error){
+            response.send({"error": error});
+          }else{
+            response.send(User);
+          }
+        });
+  }else{
+    // UserSchema
+    //     .find()
+    //     .exec( (error, User) => {
+    //       if (error){
+    //         response.send({"error": error});
+    //       }else{
+    //         response.send(User);
+    //       }
+    //     });
+  }
 } );
 
 // router.get('/:isbn', (request, response, next) =>{
