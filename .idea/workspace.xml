@@ -10,7 +10,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5a2e6910-7d44-4adf-83f6-45df222f446d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/models/User.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database.js" beforeDir="false" afterPath="$PROJECT_DIR$/database.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/users.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +30,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -37,6 +44,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -58,7 +66,8 @@
       <option name="presentableId" value="Default" />
       <updated>1611263423299</updated>
       <workItem from="1611263426968" duration="1416000" />
-      <workItem from="1613205077360" duration="2975000" />
+      <workItem from="1613205077360" duration="3200000" />
+      <workItem from="1613266080867" duration="11816000" />
     </task>
     <servers />
   </component>
@@ -66,21 +75,25 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1237" height="163" key="GridCell.Tab.0.bottom" timestamp="1613209057226">
+    <state width="1237" height="163" key="GridCell.Tab.0.bottom" timestamp="1613210560352">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1613209057226" />
-    <state width="1237" height="163" key="GridCell.Tab.0.center" timestamp="1613209057225">
+    <state width="1237" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1613210560352" />
+    <state width="1237" height="163" key="GridCell.Tab.0.center" timestamp="1613210560352">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1613209057225" />
-    <state width="1237" height="163" key="GridCell.Tab.0.left" timestamp="1613209057225">
+    <state width="1237" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1613210560352" />
+    <state width="1237" height="163" key="GridCell.Tab.0.left" timestamp="1613210560352">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1613209057225" />
-    <state width="1237" height="163" key="GridCell.Tab.0.right" timestamp="1613209057226">
+    <state width="1237" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1613210560352" />
+    <state width="1237" height="163" key="GridCell.Tab.0.right" timestamp="1613210560352">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1613209057226" />
+    <state width="1237" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1613210560352" />
+    <state x="339" y="165" key="com.intellij.ide.util.TipDialog" timestamp="1613266327312">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="339" y="165" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1613266327312" />
   </component>
 </project>
