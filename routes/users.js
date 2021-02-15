@@ -13,7 +13,7 @@
 let express = require('express');
 let router = express.Router();
 // For the Data Model
-let UserSchema = require('../models/User.js');
+let User = require('../models/User.js');
 
 
 function HandleError(response, reason, message, code){
@@ -32,7 +32,7 @@ router.post('/', (request, response, next) => {
     if (!newUser.Name || !newUser.Password) {
         HandleError(response, 'Missing Info', 'Form data missing', 500);
     } else {
-        let user = new UserSchema({
+        let user = new User({
             Name: newUser.Name,
             Password: newUser.Password
         });
@@ -52,7 +52,7 @@ router.get('/', (request, response, next) => {
 
   let name = request.query['name'];
   if (name){
-    UserSchema
+    User
         .find({"Name": name})
         .exec( (error, User) => {
           if (error){
@@ -62,7 +62,7 @@ router.get('/', (request, response, next) => {
           }
         });
   }else{
-    // UserSchema
+    // User
     //     .find()
     //     .exec( (error, User) => {
     //       if (error){
@@ -84,7 +84,7 @@ router.get('/', (request, response, next) => {
 //   if(!match){
 //     HandleError(response, 'Invalid ISBN', 'ISBN format is invalid', 500);
 //   }else{
-//     UserSchema
+//     User
 //         .find({"ISBN": request.params.isbn}, (error, result) =>{
 //           if (error) {
 //             response.status(500).send(error);
@@ -109,7 +109,7 @@ router.get('/', (request, response, next) => {
 //   if(!match){
 //     HandleError(response, 'Invalid ISBN', 'ISBN format is invalid', 500);
 //   }else {
-//     UserSchema
+//     User
 //         .findOne({"ISBN": request.params.isbn}, (error, result) => {
 //           if (error) {
 //             response.status(500).send(error);
@@ -149,7 +149,7 @@ router.get('/', (request, response, next) => {
 //   if(!match){
 //     HandleError(response, 'Invalid ISBN', 'ISBN format is invalid', 500);
 //   }else {
-//     UserSchema
+//     User
 //         .findOne({"ISBN": request.params.isbn}, (error, result) => {
 //           if (error) {
 //             response.status(500).send(error);
