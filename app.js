@@ -6,7 +6,7 @@ var logger = require('morgan');
 var cors = require('cors');
 
 var bodyParser = require('body-parser');
-
+var app = express();
 
 //connect to db
 var db = require('./database');
@@ -14,8 +14,6 @@ var db = require('./database');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var messagesRouter = require('./routes/messages');
-
-var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -49,5 +47,6 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
 
 module.exports = app;
