@@ -33,10 +33,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5a2e6910-7d44-4adf-83f6-45df222f446d" name="Default Changelist" comment="">
+<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+=======
       <change afterPath="$PROJECT_DIR$/public/site/homepage.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/public/site/messenger.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/public/site/profile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+>>>>>>> 52f4f3f2625e46595f3e32d4419ad6d62ae2a4bf
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,8 +109,16 @@
       <workItem from="1613205077360" duration="3200000" />
       <workItem from="1613266080867" duration="13063000" />
       <workItem from="1613372045977" duration="3405000" />
+<<<<<<< HEAD
+      <workItem from="1613445155823" duration="5434000" />
+      <workItem from="1613517508515" duration="1690000" />
+      <workItem from="1613709944961" duration="3401000" />
+      <workItem from="1613714670598" duration="1244000" />
+      <workItem from="1613862016924" duration="107000" />
+=======
       <workItem from="1613445155823" duration="4293000" />
       <workItem from="1613719069688" duration="2343000" />
+>>>>>>> 52f4f3f2625e46595f3e32d4419ad6d62ae2a4bf
     </task>
     <servers />
   </component>
@@ -138,9 +153,9 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1237" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1613210560352" />
-    <state x="339" y="165" key="com.intellij.ide.util.TipDialog" timestamp="1613445163679">
+    <state x="339" y="165" key="com.intellij.ide.util.TipDialog" timestamp="1613862016820">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="339" y="165" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1613445163679" />
+    <state x="339" y="165" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1613862016820" />
   </component>
 </project>
