@@ -4,9 +4,34 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var cors = require('cors');
-
+var session = require('express-session'); //express session
 var bodyParser = require('body-parser');
+// var okta = require("@okta/okta-sdk-nodejs"); //okta library
+// var ExpressOIDC = require("@okta/oidc-middleware").ExpressOIDC; //oidc library
 var app = express();
+
+//add oktaclient and oidc
+// var oktaClient = new okta.Client({
+//   orgUrl: 'https://www.dev-28212450.okta.com',
+//   token: '00v7IQng5IFIumh852wH9NtnF8AptDvKdhJ80fMUHd'
+// });
+// const oidc = new ExpressOIDC({
+//   appBaseUrl: 'http://localhost:3000',
+//   issuer: "https://www.dev-28212450.okta.com/oauth2/default",
+//   client_id: '0oa7bw4xyfob58xG25d6',
+//   client_secret: '3d7lnNMQSoNCV6b29OIlrwCj_fp6z8g5Ho4X2JPi',
+//   redirect_uri: 'http://localhost:3000/home',
+//   scope: "openid profile",
+//   routes: {
+//     login: {
+//       path: "/"
+//     },
+//     callback: {
+//       path: "/users/callback",
+//       defaultRedirect: "/dashboard"
+//     }
+//   }
+// });
 
 //connect to db
 var db = require('./database');
@@ -27,6 +52,16 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
+
+//use express session
+// app.use(session({
+//   secret: "alskdjfa;ldskwoeirn1120931lkj",
+//   resave: true,
+//   saveUninitialized: false
+// }));
+
+//use oidc router
+// app.use(oidc.router);
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
