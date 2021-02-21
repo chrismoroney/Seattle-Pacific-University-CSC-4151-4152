@@ -69,19 +69,26 @@
         true);
     xhttp.send();
 
-    // form.addEventListener('submit', function(e) {
-    //     e.preventDefault();
-    //     if (input.value) {
-    //         // socket.emit('chat message', input.value);
-    //         // input.value = '';
-    //         let post = new Post(req.body);
-    //         post.save((err) =>{
-    //             if(err)
-    //                 sendStatus(500);
-    //                 res.sendStatus(200);
-    //         })
-    //     }
-    // });
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        if (input.value) {
+            var body = input.value;
+            var params = 'Name=name1'+'&Body='+body;
+            input.value = '';
+            // socket.emit('chat message', input.value);
+            // input.value = '';
+            // let post = new Post(req.body);
+            // post.save((err) =>{
+            //     if(err)
+            //         sendStatus(500);
+            //         res.sendStatus(200);
+            // })
+            xhttp.open("POST", url,
+                true);
+            xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            xhttp.send(params);
+        }
+    });
 
 </script>
 </body>
