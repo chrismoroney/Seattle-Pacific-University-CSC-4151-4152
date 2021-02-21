@@ -14,6 +14,9 @@ var db = require('./database');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var messagesRouter = require('./routes/messages');
+var postsRouter = require('./routes/posts');
+var homepageRouter = require('./routes/homepage');
+var myprofileRouter = require('./routes/myprofile');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -31,6 +34,9 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/messages', messagesRouter);
+app.use('/posts', postsRouter);
+app.use('/homepage', homepageRouter);
+app.use('/myprofile', myprofileRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
