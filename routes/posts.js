@@ -11,8 +11,8 @@ function HandleError(response, reason, message, code){
 
 router.get('/', (req, res) => {
     Post.find({},(err, posts)=> {
-        // res.sendFile('posts.html', {root: 'views'});
-        res.send(posts);
+        res.sendFile('posts.html', {root: 'views'});
+        // res.send(posts);
     })
 })
 
