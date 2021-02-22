@@ -16,9 +16,12 @@
         #input:focus { outline: none; }
         #form > button { background: #333; border: none; padding: 0 1rem; margin: 0.25rem; border-radius: 3px; outline: none; color: #fff; }
 
-        #messages { list-style-type: none; margin: 0; padding: 0; }
-        #messages > li { padding: 0.5rem 1rem; }
-        #messages > li:nth-child(odd) { background: #efefef; }
+        #messages { list-style-type: none; margin: auto; padding: 0; max-width: 700px;}
+        #messages > li { padding: 0.5rem 1rem; border: 1px solid rgb(235, 238, 240);}
+        /*#messages > li:nth-child(odd) { background: #efefef; }*/
+        #messages > li:hover {background: #efefef;}
+
+        nav{ position: fixed; top: 0; left: 0; right: 0;}
     </style>
 </head>
 <body>
@@ -47,7 +50,7 @@
     </div>
 </nav>
 
-<ul id="messages"></ul>
+    <ul id="messages"></ul>
 <form id="form" action="">
     <input id="input" autocomplete="off" /><button>Send</button>
 </form>
@@ -88,6 +91,9 @@
                 item.textContent = response[i].Body;
                 // messages.appendChild(item);
                 messages.prepend(item);
+                var user = document.createElement('div');
+                user.textContent = response[i].Name;
+                item.prepend(user);
             }
             // item.textContent = JSON.parse(this.responseText)[0].Body;
             // messages.appendChild(item);
