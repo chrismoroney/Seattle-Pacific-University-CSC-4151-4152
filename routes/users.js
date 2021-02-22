@@ -62,15 +62,15 @@ router.get('/', (request, response, next) => {
           }
         });
   }else{
-    // User
-    //     .find()
-    //     .exec( (error, User) => {
-    //       if (error){
-    //         response.send({"error": error});
-    //       }else{
-    //         response.send(User);
-    //       }
-    //     });
+      User
+         .find()
+         .exec( (error, User) => {
+           if (error){
+             response.send({"error": error});
+           }else{
+             response.send(User);
+           }
+         });
   }
 } );
 
