@@ -29,12 +29,17 @@ router.post('/', (request, response, next) => {
     let newUser = obj;
     console.log(newUser);
 
-    if (!newUser.Name || !newUser.Password) {
+    if (!newUser.firstname || !newUser.lastname || !newUser.username || !newUser.password || !newUser.confirmpassword) {
         HandleError(response, 'Missing Info', 'Form data missing', 500);
+    } else if (newUser.password != newUser.confirmpassword){
+        HandleError(response, 'Passwords not matching', 'Passwords do not match', 500);
     } else {
         let user = new User({
-            Name: newUser.Name,
-            Password: newUser.Password
+            firstname: newUser.firstname,
+            lastname: newUser.lastname,
+            username: newUser.username,
+            password: newUser.password,
+            confirmpassword: newUser.confirmpassword,
         });
         user.save((error) => {
             if (error) {
