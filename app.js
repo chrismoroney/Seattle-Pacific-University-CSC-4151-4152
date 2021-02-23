@@ -11,7 +11,8 @@ var app = express();
 //connect to db
 var db = require('./database');
 
-var indexRouter = require('./routes/index');
+var loginRouter = require('./routes/login');
+var socketRouter = require('./routes/socket');
 var usersRouter = require('./routes/users');
 var messagesRouter = require('./routes/messages');
 var postsRouter = require('./routes/posts');
@@ -33,7 +34,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
-app.use('/', indexRouter);
+app.use('/', loginRouter);
+app.use('/socket', socketRouter);
 app.use('/users', usersRouter);
 app.use('/messages', messagesRouter);
 app.use('/posts', postsRouter);

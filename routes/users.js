@@ -55,10 +55,13 @@ router.get('/', (request, response, next) => {
   response.header("Access-Control-Allow-Origin", "*");
   response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 
-  let name = request.query['name'];
-  if (name){
+  // firstname and lastname if found produces [this.response] instead of just this.response
+  let firstname = request.query['firstname'];
+  let lastname = request.query['lastname'];
+  if (firstname){
     User
-        .find({"Name": name})
+        // need to adjust for case sensitivity
+        .find({"firstname": firstname})
         .exec( (error, User) => {
           if (error){
             response.send({"error": error});
@@ -66,7 +69,18 @@ router.get('/', (request, response, next) => {
             response.send(User);
           }
         });
-  }else{
+  } else if (lastname){
+      User
+          // need to adjust for case sensitivity
+          .find({"lastname": lastname})
+          .exec( (error, User) => {
+              if (error){
+                  response.send({"error": error});
+              }else{
+                  response.send(User);
+              }
+          });
+  } else {
       User
          .find()
          .exec( (error, User) => {
@@ -79,29 +93,20 @@ router.get('/', (request, response, next) => {
   }
 } );
 
-// router.get('/:isbn', (request, response, next) =>{
-//   response.header("Access-Control-Allow-Origin", "*");
-//   response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-//
-//   var re = /^(?=(?:\D*\d){10}(?:(?:\D*\d){3})?$)[\d-]+$/;
-//   var match = re.exec(request.params.isbn);
-//
-//   if(!match){
-//     HandleError(response, 'Invalid ISBN', 'ISBN format is invalid', 500);
-//   }else{
-//     User
-//         .find({"ISBN": request.params.isbn}, (error, result) =>{
-//           if (error) {
-//             response.status(500).send(error);
-//           }
-//           if (result && result.length > 0){
-//             response.send(result);
-//           }else{
-//             response.status(404).send({"isbn": request.params.isbn, "error":  "Not Found"});
-//           }
-//         });
-//   }
-// });
+router.get('/:username', (request, response, next) =>{
+    User
+        .findOne({"username": request.params.username}, (error, result) =>{
+            if (error) {
+                response.status(500).send(error);
+            }
+            if (result) {
+                response.send(result);
+            } else {
+                response.status(404).send({"id": request.params.id, "error":  "Not Found"});
+            }
+
+        });
+});
 //
 //
 // router.patch('/:isbn', (request, response, next) =>{
