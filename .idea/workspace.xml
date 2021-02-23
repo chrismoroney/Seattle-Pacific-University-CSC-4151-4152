@@ -23,10 +23,11 @@
   </component>
   <component name="CMakeSettings">
     <configurations>
-      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" ENABLED="true" />
     </configurations>
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="57a38c9a-2813-461c-8199-1f4329cbf7b2" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/routes/login.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/views/login.html" afterDir="false" />
@@ -42,6 +43,11 @@
       <change beforePath="$PROJECT_DIR$/views/myprofile.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/myprofile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/posts.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/posts.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/users.html" afterDir="false" />
+=======
+    <list default="true" id="ade90bce-f931-4f17-bc0c-ea3885417031" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/posts.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/posts.html" afterDir="false" />
+>>>>>>> 823466c9dbe2fb8e7eba8ba88a796f035138f112
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +76,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="12.18.3" />
@@ -77,23 +84,44 @@
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+  <component name="RunManager" selected="JavaScript Debug.posts.html">
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="createprofile.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/posts.html/views/createprofile.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="posts.html" type="JavascriptDebugType" nameIsGenerated="true" uri="http://localhost:63342/posts.html/views/posts.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="JavaScript Debug.posts.html" />
+      <item itemvalue="JavaScript Debug.createprofile.html" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.createprofile.html" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="57a38c9a-2813-461c-8199-1f4329cbf7b2" name="Default Changelist" comment="" />
+      <changelist id="ade90bce-f931-4f17-bc0c-ea3885417031" name="Default Changelist" comment="" />
       <created>1614020981381</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1614020981381</updated>
       <workItem from="1614020982450" duration="2329000" />
+<<<<<<< HEAD
       <workItem from="1614029323910" duration="7252000" />
+=======
+      <workItem from="1614029323910" duration="1522000" />
+      <workItem from="1614033332479" duration="2336000" />
+      <workItem from="1614048728836" duration="1825000" />
+>>>>>>> 823466c9dbe2fb8e7eba8ba88a796f035138f112
     </task>
     <servers />
   </component>
@@ -112,6 +140,7 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+<<<<<<< HEAD
   <component name="WindowStateProjectService">
     <state width="1638" height="307" key="GridCell.Tab.0.bottom" timestamp="1614066930597">
       <screen x="0" y="23" width="1680" height="979" />
@@ -190,4 +219,6 @@
       </breakpoints>
     </breakpoint-manager>
   </component>
+=======
+>>>>>>> 823466c9dbe2fb8e7eba8ba88a796f035138f112
 </project>

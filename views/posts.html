@@ -27,23 +27,27 @@
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand" href="homepage">Lingojive<span class="sr-only">(current)</span></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="homepage">Home<span class="sr-only">(current)</span></a>
-            </li>
+            <li ><a class="nav-link" href="/messages">Messenger</a></li>
+            <li ><a class="nav-link" href="/posts">Posts</a></li>
+
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Actions
-                </a>
+                Profile</a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+<<<<<<< HEAD
                     <a class="dropdown-item" href="/createprofile">Create a Profile</a>
                     <a class="dropdown-item" href="/messages">Messenger</a>
                     <a class="dropdown-item" href="/posts">Posts</a>
+=======
+                    <a class="dropdown-item" href="/createprofile">Create Profile</a>
+                    <a class="dropdown-item" href="/myprofile"> My Profile</a>
+>>>>>>> 823466c9dbe2fb8e7eba8ba88a796f035138f112
                 </div>
             </li>
         </ul>
@@ -54,9 +58,10 @@
         </ul>
     </div>
 </nav>
-
+<h1 style="text-align: center">Create Post</h1>
     <ul id="messages"></ul>
 <form id="form" action="">
+    <label for="input"> Comment: </label>
     <input id="input" autocomplete="off" /><button>Send</button>
 </form>
 <script src="/socket.io/socket.io.js"></script>
