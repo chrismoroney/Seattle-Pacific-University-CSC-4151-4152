@@ -6,12 +6,14 @@ document.getElementById("btnLogin").addEventListener("click", (event) =>{
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function(){
         let response = JSON.parse(this.responseText);
+        console.log(this.responseText);
         if (this.readyState == 4 && this.status == 200){
             if (typedPassword == response.password){
+
                 document.getElementById("output").innerHTML = "<pre>" + "Successfully Logged In! (redirect to homepage.html)" + "</pre>";
             }
         } else {
-            document.getElementById("output").innerHTML = "<pre>" + "The information entered is incorrect. Please try again." + "</pre>";
+            document.getElementById("output").innerHTML = "<pre>" + "Your username or password is incorrect. Please try again." + "</pre>";
         }
     };
     xhttp.open("GET", url, true);

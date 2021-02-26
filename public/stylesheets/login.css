@@ -1,0 +1,16 @@
+body{
+    max-width: 500px;
+    margin: auto;
+}
+
+btn-primary{
+    background-color:rgb(190,207,103);
+}
+
+#output pre{
+    color: red;
+    text-align: center;
+}
+h1{
+    margin-top: 20px;
+}
