@@ -1,6 +1,6 @@
 // Works, but need to send to homepage now.
 document.getElementById("btnLogin").addEventListener("click", (event) =>{
-    document.getElementById("output").innerHTML = "";
+    document.getElementById("output").innerHTML = "Checking servers...";
     let url = "http://lingojiveapi.herokuapp.com/users/" + document.getElementById("username").value;
     let typedPassword = document.getElementById("password").value;
     let xhttp = new XMLHttpRequest();
@@ -9,7 +9,7 @@ document.getElementById("btnLogin").addEventListener("click", (event) =>{
         console.log(this.responseText);
         if (this.readyState == 4 && this.status == 200){
             if (typedPassword == response.password){
-
+                window.location.pathname = "homepage";
                 document.getElementById("output").innerHTML = "<pre>" + "Successfully Logged In! (redirect to homepage.html)" + "</pre>";
             }
         } else {
