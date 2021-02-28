@@ -1,3 +1,4 @@
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -19,6 +20,49 @@ var postsRouter = require('./routes/posts');
 var homepageRouter = require('./routes/homepage');
 var myprofileRouter = require('./routes/myprofile');
 var createprofileRouter = require('./routes/createprofile');
+
+require('dotenv').config();
+const { ExpressOIDC } = require('@okta/oidc-middleware');
+
+
+
+const { OKTA_DOMAIN, CLIENT_ID, CLIENT_SECRET, APP_BASE_URL, APP_SECRET } = process.env;
+
+// session support is required to use ExpressOIDC
+app.use(session({
+  secret: 'this should be secure',
+  resave: true,
+  saveUninitialized: false
+}));
+
+const oidc = new ExpressOIDC({
+  issuer: 'https://dev-83573246.okta.com/oauth2/default',
+  client_id: '"0oa9wcmtxQ8EGmkBS5d6"',
+  client_secret: 'BW-h_Rnp4KRYNsmVTIGFKHsZZt23J8fyC-Gg1Ext',
+
+  appBaseUrl: 'http://localhost:3000',
+  loginRedirectUri: 'http://localhost:3000/authorization-code/callback',
+  logoutRedirectUri: 'http://localhost:3000/authorization-code/callback'
+});
+
+// ExpressOIDC attaches handlers for the /login and /authorization-code/callback routes
+app.use(oidc.router);
+
+app.use(session({
+  secret: APP_SECRET,
+  resave: true,
+  saveUninitialized: false,
+}));
+
+app.use(bodyParser.json());
+
+// Or attach endpoints like this to use your custom-made JWT middleware instead
+// app.get('/messages', isAuthenticatedMiddleware, messagesController.getAll);
+// app.post('/messages', isAuthenticatedMiddleware, messagesController.post);
+
+app.get('/logout', oidc.forceLogoutAndRevoke(), (req, res) => {
+  // This is never called because forceLogoutAndRevoke always redirects.
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -59,5 +103,6 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+app.all('*', oidc.ensureAuthenticated());
 
 module.exports = app;
