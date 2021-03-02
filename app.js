@@ -38,7 +38,7 @@ app.use(session({
 const oidc = new ExpressOIDC({
   issuer: 'https://dev-83573246.okta.com/oauth2/default',
   client_id: '"0oa9wcmtxQ8EGmkBS5d6"',
-  client_secret: 'BW-h_Rnp4KRYNsmVTIGFKHsZZt23J8fyC-Gg1Ext',
+  client_secret: process.env.CLIENT_SECRET,
   redirect_uri: 'http://localhost:3000/authorization-code/callback',
   scope: 'openid profile',
   appBaseUrl: 'http://localhost:3000'
