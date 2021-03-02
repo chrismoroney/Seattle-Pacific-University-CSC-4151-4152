@@ -8,45 +8,30 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-    <style>
-        body { margin: 0; padding-bottom: 3rem; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
-
-        #form { background: rgba(0, 0, 0, 0.15); padding: 0.25rem; position: fixed; bottom: 0; left: 0; right: 0; display: flex; height: 3rem; box-sizing: border-box; backdrop-filter: blur(10px); }
-        #input { border: none; padding: 0 1rem; flex-grow: 1; border-radius: 2rem; margin: 0.25rem; }
-        #input:focus { outline: none; }
-        #form > button { background: #333; border: none; padding: 0 1rem; margin: 0.25rem; border-radius: 3px; outline: none; color: #fff; }
-
-        #messages { list-style-type: none; margin: auto; padding: 0; max-width: 700px;}
-        #messages > li { padding: 0.5rem 1rem; border: 1px solid rgb(235, 238, 240);}
-        /*#messages > li:nth-child(odd) { background: #efefef; }*/
-        #messages > li:hover {background: #efefef;}
-
-        nav{ position: fixed; top: 0; left: 0; right: 0;}
-    </style>
+    <link rel="stylesheet" href="stylesheets/posts.css"></link>
 </head>
 <body>
-
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="homepage">LingoJive<span class="sr-only">(current)</span></a>
+    <a class="navbar-brand" href="#">LingoJive</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="createprofile">Create Profile</a>
+                <a class="nav-link" href="homepage">Home<span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="socket">Socket</a>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Actions
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/createprofile">Create a Profile</a>
+                    <a class="dropdown-item" href="/socket">Socket</a>
+                    <a class="dropdown-item" href="/messages">All Messages</a>
+                    <a class="dropdown-item" href="/posts">Posts</a>
+                </div>
             </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="posts">Posts</a>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="messages">All Messages</a>
-            </li>
-
-
         </ul>
         <ul class="navbar-nav ml-auto">
             <li class="nav-item active">

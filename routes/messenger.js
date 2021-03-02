@@ -1,7 +1,7 @@
 let express = require('express');
 let router = express.Router();
 // For the Data Model
-let Message = require('../models/Message.js');
+// let Message = require('../models/Message.js');
 
 
 function HandleError(response, reason, message, code){
@@ -10,19 +10,19 @@ function HandleError(response, reason, message, code){
 }
 
 router.get('/', (req, res) => {
-    Message.find({},(err, messages)=> {
+    // Message.find({},(err, messages)=> {
         // res.send(messages);
         res.sendFile('messenger.html', {root: 'views'});
-    })
+    // })
 })
 
-router.post('/', (req, res) => {
-    let message = new Message(req.body);
-    message.save((err) =>{
-        if(err)
-            sendStatus(500);
-        res.sendStatus(200);
-    })
-})
+// router.post('/', (req, res) => {
+//     let message = new Message(req.body);
+//     message.save((err) =>{
+//         if(err)
+//             sendStatus(500);
+//         res.sendStatus(200);
+//     })
+// })
 
 module.exports = router;
