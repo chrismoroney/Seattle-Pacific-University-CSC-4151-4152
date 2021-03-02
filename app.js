@@ -39,10 +39,9 @@ const oidc = new ExpressOIDC({
   issuer: 'https://dev-83573246.okta.com/oauth2/default',
   client_id: '"0oa9wcmtxQ8EGmkBS5d6"',
   client_secret: 'BW-h_Rnp4KRYNsmVTIGFKHsZZt23J8fyC-Gg1Ext',
-
-  appBaseUrl: 'http://localhost:3000',
-  loginRedirectUri: 'http://localhost:3000/authorization-code/callback',
-  logoutRedirectUri: 'http://localhost:3000/authorization-code/callback'
+  redirect_uri: 'http://localhost:3000/authorization-code/callback',
+  scope: 'openid profile',
+  appBaseUrl: 'http://localhost:3000'
 });
 
 // ExpressOIDC attaches handlers for the /login and /authorization-code/callback routes
@@ -54,6 +53,7 @@ app.use(session({
   saveUninitialized: false,
 }));
 
+app.use(oidc.router);
 app.use(bodyParser.json());
 
 // Or attach endpoints like this to use your custom-made JWT middleware instead
