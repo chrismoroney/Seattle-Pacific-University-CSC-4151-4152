@@ -7,6 +7,23 @@ var cors = require('cors');
 var session = require('express-session'); //express session
 var bodyParser = require('body-parser');
 var app = express();
+require('dotenv').config();
+
+//Auth0
+const { auth } = require('express-openid-connect');
+
+app.use(
+    auth({
+      authRequired: true,
+      auth0Logout: true,
+      issuerBaseURL: process.env.ISSUER_BASE_URL,
+      baseURL: process.env.BASE_URL,
+      clientID: process.env.CLIENT_ID,
+      secret: process.env.SECRET,
+      idpLogout: true,
+    })
+);
+//Auth0
 
 //connect to db
 var db = require('./database');
