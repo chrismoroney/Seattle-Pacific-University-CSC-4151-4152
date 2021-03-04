@@ -65,7 +65,7 @@ router.get('/', (request, response, next) => {
         .exec( (error, User) => {
           if (error){
             response.send({"error": error});
-          }else{
+          } else {
             response.send(User);
           }
         });
@@ -76,7 +76,7 @@ router.get('/', (request, response, next) => {
           .exec( (error, User) => {
               if (error){
                   response.send({"error": error});
-              }else{
+              } else {
                   response.send(User);
               }
           });
@@ -86,7 +86,7 @@ router.get('/', (request, response, next) => {
          .exec( (error, User) => {
            if (error){
              response.send({"error": error});
-           }else{
+           } else {
              response.send(User);
            }
          });
@@ -107,47 +107,31 @@ router.get('/:username', (request, response, next) =>{
 
         });
 });
-//
-//
-// router.patch('/:isbn', (request, response, next) =>{
-//   response.header("Access-Control-Allow-Origin", "*");
-//   response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-//
-//   var re = /^(?=(?:\D*\d){10}(?:(?:\D*\d){3})?$)[\d-]+$/;
-//   var match = re.exec(request.params.isbn);
-//
-//   if(!match){
-//     HandleError(response, 'Invalid ISBN', 'ISBN format is invalid', 500);
-//   }else {
-//     User
-//         .findOne({"ISBN": request.params.isbn}, (error, result) => {
-//           if (error) {
-//             response.status(500).send(error);
-//             // console.log("test error");
-//           } else if (result) {
-//             if (request.body.isbn) {
-//               delete request.body.isbn;
-//             }
-//             for (let field in request.body) {
-//               if(!request.body[field] || request.body[field].length == 0){
-//                 HandleError(response, 'Missing field', 'One or more fields is missing', 500);
-//               }else{
-//                 result[field] = request.body[field];
-//               }
-//             }
-//             result.save((error, friend) => {
-//               if (error) {
-//                 response.status(500).send(error);
-//               }
-//               response.send(friend);
-//             });
-//           } else {
-//             response.status(404).send({"ISBN": request.params.isbn, "error": "Not Found"});
-//           }
-//
-//         });
-//   }
-// });
+
+router.patch('/:username', (request, response, next) =>{
+    User
+        .findOne({"username": request.params.username}, (error, result)=>{
+            if (error) {
+                response.status(500).send(error);
+            } else if (result){
+                if (request.body.username) {
+                    delete request.body.username;
+                }
+                for (let field in request.body){
+                    result[field] = request.body[field];
+                }
+                result.save((error, user)=>{
+                    if (error){
+                        response.status(500).send(error);
+                    }
+                    response.send(user);
+                });
+            } else {
+                response.status(404).send({"username": request.params.username, "error":  "Not Found"});
+            }
+
+        });
+});
 
 // router.delete('/:isbn', (request, response, next) =>{
 //   response.header("Access-Control-Allow-Origin", "*");
