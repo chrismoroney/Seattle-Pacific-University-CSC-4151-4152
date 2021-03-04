@@ -24,10 +24,11 @@ xhttp.onreadystatechange = function() {
         // document.getElementById("ecShowTable").innerHTML = CreateTable(JSON.parse(this.responseText));
         // var item = document.createElement('li');
         console.log(this.responseText);
-        while (messages.hasChildNodes()) {
-            messages.removeChild(messages.firstChild);
-        }
-        var response = JSON.parse(this.responseText)
+        // while (messages.hasChildNodes()) {
+        //     messages.removeChild(messages.firstChild);
+        // }
+        messages.innerHTML = '';
+        var response = JSON.parse(this.responseText);
         for(let i = 0; i < response.length; ++i){
             var item = document.createElement('li');
             item.textContent = response[i].Body;
@@ -47,11 +48,17 @@ xhttp.open("GET", url,
     true);
 xhttp.send();
 
-socket.on('chat message', function(msg) {
-    // var item = document.createElement('li');
-    // item.textContent = msg;
-    // messages.appendChild(item);
-    // window.scrollTo(0, document.body.scrollHeight);
+// socket.on('chat message', function(msg) {
+//     // var item = document.createElement('li');
+//     // item.textContent = msg;
+//     // messages.appendChild(item);
+//     // window.scrollTo(0, document.body.scrollHeight);
+//     xhttp.open("GET", url,
+//         true);
+//     xhttp.send();
+// });
+
+socket.on('post', function(postContent) {
     xhttp.open("GET", url,
         true);
     xhttp.send();
@@ -61,7 +68,8 @@ form.addEventListener('submit', function(e) {
     e.preventDefault();
     if (input.value) {
         var body = input.value;
-        var params = 'Name=name1'+'&Body='+body;
+        var name = document.getElementById('label1').innerText;
+        var params = 'Name='+name+'&Body='+body;
         input.value = '';
         // socket.emit('chat message', input.value);
         // input.value = '';
@@ -71,7 +79,8 @@ form.addEventListener('submit', function(e) {
         //         sendStatus(500);
         //         res.sendStatus(200);
         // })
-        socket.emit('chat message', input.value);
+        // socket.emit('chat message', input.value);
+        socket.emit('post', input.value);
 
         xhttp.open("POST", url,
             true);
