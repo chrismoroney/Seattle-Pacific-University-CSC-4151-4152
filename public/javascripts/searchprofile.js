@@ -46,8 +46,18 @@ document.getElementById("btnLoadUsersByUsername").addEventListener("click", (eve
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function(){
         if (this.readyState == 4 && this.status == 200){
+            if (document.getElementById("Username").value == "") {
+                document.getElementById("output").innerHTML =
+                    CreateTable(JSON.parse(this.responseText));
+            } else {
+                let apiResponse = '[' + this.responseText + ']';
+                document.getElementById("output").innerHTML =
+                    CreateTable(JSON.parse(apiResponse));
+            }
+        } else if (this.status == 404) {
             document.getElementById("output").innerHTML =
-                CreateTable(JSON.parse(this.responseText));
+                "<pre>" + this.responseText + "</pre>" + "<p></p>" +"<pre>" +
+                "Please enter in a valid Username" + "</pre>";
         }
     };
     xhttp.open("GET", url, true);

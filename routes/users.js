@@ -82,8 +82,9 @@ router.get('/', (request, response, next) => {
 } );
 
 router.get('/:username', (request, response, next) =>{
+    let username = request.query['username'];
     User
-        .find({"username": request.params.username}, (error, result) =>{
+        .find({"username": username}, (error, result) =>{
             if (error) {
                 response.status(500).send(error);
             }
@@ -95,7 +96,7 @@ router.get('/:username', (request, response, next) =>{
 
         });
 });
-
+/*
 router.patch('/:username', (request, response, next) =>{
     User
         .findOne({"username": request.params.username}, (error, result)=>{
@@ -120,7 +121,7 @@ router.patch('/:username', (request, response, next) =>{
 
         });
 });
-
+*/
 // router.delete('/:isbn', (request, response, next) =>{
 //   response.header("Access-Control-Allow-Origin", "*");
 //   response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
