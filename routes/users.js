@@ -29,13 +29,14 @@ router.post('/', (request, response, next) => {
     let newUser = obj;
     console.log(newUser);
 
-    if (!newUser.name|| !newUser.username || !newUser.password || !newUser.confirmpassword) {
+    if (!newUser.firstname || !newUser.lastname || !newUser.username || !newUser.password || !newUser.confirmpassword) {
         HandleError(response, 'Missing Info', 'Form data missing', 500);
     } else if (newUser.password != newUser.confirmpassword){
         HandleError(response, 'Passwords not matching', 'Passwords do not match', 500);
     } else {
         let user = new User({
-            name: newUser.name,
+            firstname: newUser.firstname,
+            lastname: newUser.lastname,
             username: newUser.username,
             password: newUser.password,
             confirmpassword: newUser.confirmpassword,
@@ -55,11 +56,11 @@ router.get('/', (request, response, next) => {
   response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 
   // firstname and lastname if found produces [this.response] instead of just this.response
-  let name = request.query['name'];
+  let name = request.query['firstname'];
   if (name){
     User
         // need to adjust for case sensitivity
-        .find({"name": name})
+        .find({"firstname": firstname})
         .exec( (error, User) => {
           if (error){
             response.send({"error": error});
@@ -82,7 +83,7 @@ router.get('/', (request, response, next) => {
 
 router.get('/:username', (request, response, next) =>{
     User
-        .findOne({"username": request.params.username}, (error, result) =>{
+        .find({"username": request.params.username}, (error, result) =>{
             if (error) {
                 response.status(500).send(error);
             }

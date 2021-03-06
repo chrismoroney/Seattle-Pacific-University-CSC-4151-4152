@@ -25,6 +25,7 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="/createprofile">Create a Profile</a>
+                    <a class="dropdown-item" href="/searchprofile">Search Profile</a>
                     <a class="dropdown-item" href="/socket">Socket</a>
                     <a class="dropdown-item" href="/messages">All Messages</a>
                     <a class="dropdown-item" href="/posts">Posts</a>
@@ -42,9 +43,14 @@
 <div class="container">
     <h4>Please fill in all fields below</h4>
     <div class="form-group">
-        <label for="name">Full Name:</label>
-        <input type="text" name="name" id="name" class="form-control"
-               placeholder="John Smith" required="true">
+        <label for="firstname">First Name:</label>
+        <input type="text" name="firstname" id="firstname" class="form-control"
+               placeholder="John" required="true">
+    </div>
+    <div class="form-group">
+        <label for="lastname">Last Name:</label>
+        <input type="text" name="lastname" id="lastname" class="form-control"
+               placeholder="Smith" required="true">
     </div>
     <div class="form-group">
         <label for="username">Username:</label>
