@@ -7,7 +7,7 @@ var cors = require('cors');
 var session = require('express-session'); //express session
 var bodyParser = require('body-parser');
 var app = express();
-require('dotenv').config();
+require('dotenv').config({path:'./env'});
 
 //Auth0
 const { auth } = require('express-openid-connect');
