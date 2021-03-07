@@ -8,6 +8,23 @@ var cors = require('cors');
 var session = require('express-session'); //express session
 var bodyParser = require('body-parser');
 var app = express();
+require('dotenv').config({path:'./env'});
+
+//Auth0
+const { auth } = require('express-openid-connect');
+
+app.use(
+    auth({
+      authRequired: true,
+      auth0Logout: true,
+      issuerBaseURL: process.env.ISSUER_BASE_URL,
+      baseURL: process.env.BASE_URL,
+      clientID: process.env.CLIENT_ID,
+      secret: process.env.SECRET,
+      idpLogout: true,
+    })
+);
+//Auth0
 
 //connect to db
 var db = require('./database');
@@ -20,6 +37,8 @@ var postsRouter = require('./routes/posts');
 var homepageRouter = require('./routes/homepage');
 var myprofileRouter = require('./routes/myprofile');
 var createprofileRouter = require('./routes/createprofile');
+var editprofileRouter = require('./routes/editprofile');
+var searchprofileRouter = require('./routes/searchprofile');
 
 require('dotenv').config();
 const { ExpressOIDC } = require('@okta/oidc-middleware');
@@ -65,8 +84,15 @@ app.get('/logout', oidc.forceLogoutAndRevoke(), (req, res) => {
 });
 
 // view engine setup
+
+app.use(bodyParser.urlencoded({extended: false}));
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'html');
+
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'pug');
+// app.set('view engine', 'pug');
+
+
 
 app.use(cors());
 app.use(logger('dev'));
@@ -76,7 +102,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}));
+// app.use(bodyParser.urlencoded({extended: false}));
 
 app.use('/', loginRouter);
 app.use('/socket', socketRouter);
@@ -86,6 +112,8 @@ app.use('/posts', postsRouter);
 app.use('/homepage', homepageRouter);
 app.use('/myprofile', myprofileRouter);
 app.use('/createprofile', createprofileRouter);
+app.use('/editprofile', editprofileRouter);
+app.use('/searchprofile', searchprofileRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

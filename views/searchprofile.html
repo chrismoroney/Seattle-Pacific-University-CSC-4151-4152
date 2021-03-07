@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Create Profile</title>
+    <title>Search</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -25,7 +25,6 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="/createprofile">Create a Profile</a>
-                    <a class="dropdown-item" href="/searchprofile">Search Profile</a>
                     <a class="dropdown-item" href="/socket">Socket</a>
                     <a class="dropdown-item" href="/messages">All Messages</a>
                     <a class="dropdown-item" href="/posts">Posts</a>
@@ -34,46 +33,34 @@
         </ul>
         <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="myprofile">Profile<span class="sr-only"(current)></span></a>
+                <a class="nav-link" href="/">Log-In<span class="sr-only"(current)></span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/myprofile">Profile<span class="sr-only"(current)></span></a>
             </li>
         </ul>
     </div>
 </nav>
-<h1 style="text-align: center">Create Profile</h1>
 <div class="container">
-    <h4>Please fill in all fields below</h4>
-    <div class="form-group">
-        <label for="firstname">First Name:</label>
+    <h4>Search Profile</h4>
+    <label style="padding-top: 10px" for="firstname">Search by Name:</label>
+    <div class="input-group">
         <input type="text" name="firstname" id="firstname" class="form-control"
-               placeholder="John" required="true">
+               placeholder="Name">
+        <button class="btn btn-success" id="btnLoadUsersByName">Search</button>
     </div>
-    <div class="form-group">
-        <label for="lastname">Last Name:</label>
-        <input type="text" name="lastname" id="lastname" class="form-control"
-               placeholder="Smith" required="true">
+    <label style="padding-top: 10px" for="Username">Search by Username:</label>
+    <div class="input-group">
+        <input type="text" name="Username" id="Username" class="form-control"
+               placeholder="Username">
+        <button class="btn btn-success" id="btnLoadUsersByUsername">Search</button>
     </div>
-    <div class="form-group">
-        <label for="username">Username:</label>
-        <input type="text" name="username" id="username" class="form-control"
-               placeholder="Username" required="true">
-    </div>
-    <div class="form-group">
-        <label for="password">Password:</label>
-        <input type="password" name="password" id="password" class="form-control"
-               placeholder="Password" required="true">
-    </div>
-    <div class="form-group">
-        <label for="confirmpassword">Confirm Password:</label>
-        <input type="password" name="confirmpassword" id="confirmpassword" class="form-control"
-               placeholder="Password" required="true">
-    </div>
+</div>
+<div style="padding-top: 10px" class="container">
     <div class="jumbotron" id="output">
 
     </div>
-    <div class="text-center">
-        <button class="btn btn-primary btn-lg" id="btnAddProfile">Create Profile</button>
-    </div>
 </div>
-<script src="javascripts/createprofile.js"></script>
+<script src="javascripts/searchprofile.js"></script>
 </body>
 </html>

@@ -3,8 +3,7 @@ document.getElementById("btnAddProfile").addEventListener("click", (event) => {
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("output").innerHTML = "<pre>" + this.responseText + "</pre>" +
-                "<pre>" + "Successfully created Profile!" + "</pre>";
+            document.getElementById("output").innerHTML = "<pre>" + this.responseText + "</pre>" + "<pre>" + "Successfully created Profile!" + "</pre>";
         } else {
             document.getElementById("output").innerHTML = "<pre>" + "Error: Please fill in all fields and make sure passwords match." + "</pre>";
         }
