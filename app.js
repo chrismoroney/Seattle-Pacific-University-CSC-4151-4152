@@ -5,7 +5,6 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var cors = require('cors');
-var session = require('express-session'); //express session
 var bodyParser = require('body-parser');
 var app = express();
 require('dotenv').config({path:'./env'});
