@@ -25,6 +25,7 @@ function CreateTable(users){
         '</table>\n'
     return table;
 }
+// Need to figure something out for username or name CONTAINING input
 document.getElementById("btnLoadUsersByName").addEventListener("click", (event) =>{
     document.getElementById("output").innerHTML = "";
     let url = "http://lingojiveapi.herokuapp.com/users/?firstname=" + document.getElementById("firstname").value;
@@ -46,14 +47,8 @@ document.getElementById("btnLoadUsersByUsername").addEventListener("click", (eve
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function(){
         if (this.readyState == 4 && this.status == 200){
-            if (document.getElementById("Username").value == "") {
-                document.getElementById("output").innerHTML =
-                    CreateTable(JSON.parse(this.responseText));
-            } else {
-                let apiResponse = '[' + this.responseText + ']';
-                document.getElementById("output").innerHTML =
-                    CreateTable(JSON.parse(apiResponse));
-            }
+            document.getElementById("output").innerHTML =
+                CreateTable(JSON.parse(this.responseText));
         } else if (this.status == 404) {
             document.getElementById("output").innerHTML =
                 "<pre>" + this.responseText + "</pre>" + "<p></p>" +"<pre>" +
