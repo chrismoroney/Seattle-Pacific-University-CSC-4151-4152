@@ -41,47 +41,6 @@ var editprofileRouter = require('./routes/editprofile');
 var searchprofileRouter = require('./routes/searchprofile');
 
 require('dotenv').config();
-const { ExpressOIDC } = require('@okta/oidc-middleware');
-
-
-
-const { OKTA_DOMAIN, CLIENT_ID, CLIENT_SECRET, APP_BASE_URL, APP_SECRET } = process.env;
-
-// session support is required to use ExpressOIDC
-app.use(session({
-  secret: 'this should be secure',
-  resave: true,
-  saveUninitialized: false
-}));
-
-const oidc = new ExpressOIDC({
-  issuer: 'https://dev-83573246.okta.com/oauth2/default',
-  client_id: '"0oa9wcmtxQ8EGmkBS5d6"',
-  client_secret: process.env.CLIENT_SECRET,
-  redirect_uri: 'http://localhost:3000/authorization-code/callback',
-  scope: 'openid profile',
-  appBaseUrl: 'http://localhost:3000'
-});
-
-// ExpressOIDC attaches handlers for the /login and /authorization-code/callback routes
-app.use(oidc.router);
-
-app.use(session({
-  secret: APP_SECRET,
-  resave: true,
-  saveUninitialized: false,
-}));
-
-app.use(oidc.router);
-app.use(bodyParser.json());
-
-// Or attach endpoints like this to use your custom-made JWT middleware instead
-// app.get('/messages', isAuthenticatedMiddleware, messagesController.getAll);
-// app.post('/messages', isAuthenticatedMiddleware, messagesController.post);
-
-app.get('/logout', oidc.forceLogoutAndRevoke(), (req, res) => {
-  // This is never called because forceLogoutAndRevoke always redirects.
-});
 
 // view engine setup
 
@@ -102,7 +61,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({extended: false}));
 
 app.use('/', loginRouter);
 app.use('/socket', socketRouter);
@@ -130,7 +88,5 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
-app.all('*', oidc.ensureAuthenticated());
 
 module.exports = app;
