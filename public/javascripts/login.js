@@ -9,6 +9,8 @@ document.getElementById("btnLogin").addEventListener("click", (event) =>{
         console.log(this.responseText);
         if (this.readyState == 4 && this.status == 200){
             if (typedPassword == response.password){
+                session.loggedin = true;
+                session.name = response.name;
                 window.location.pathname = "homepage";
                 document.getElementById("output").innerHTML = "<pre>" + "Successfully Logged In! (redirect to homepage.html)" + "</pre>";
             }

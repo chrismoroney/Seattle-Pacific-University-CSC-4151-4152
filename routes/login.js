@@ -2,9 +2,15 @@ var express = require('express');
 var router = express.Router();
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/',function(req, res, next) {
     // res.render('index', { title: 'Express' });
-    res.sendFile('login.html', {root: 'views'})
+    //res.sendFile('login.html', {root: 'views'})
+    console.log(req.userContext)
+    if (req.userContext) {
+        res.sendFile('homepage.html', {root: 'views'});
+    } else {
+        res.sendFile('pre-login.html', {root: 'views'});
+    }
 });
 
 module.exports = router;
