@@ -132,4 +132,25 @@ io.on('connection', (socket) => {
   socket.on('post', postContent => {
     io.emit('post', postContent);
   });
+
+  socket.on("typing", data => {
+    socket.broadcast.emit("notifyTyping", {
+      // user: data.user,
+      // message: data.message
+      username: data.username,
+      message: data.message
+    });
+  });
+
+  socket.on("stopTyping", () => {
+    socket.broadcast.emit("notifyStopTyping");
+  });
+
+  socket.on("chat message", function(data) {
+    console.log("message: " + /* msg */ data.msg);
+
+    //broadcast message to everyone in port:3000 except yourself.
+    // socket.broadcast.emit("received", { message: msg });
+    socket.broadcast.emit("received", { message: data.msg, username: data.username });
+  });
 });
