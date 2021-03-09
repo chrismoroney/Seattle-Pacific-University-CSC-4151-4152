@@ -1,4 +1,4 @@
 ISSUER_BASE_URL=https://dev-xgmcammy.us.auth0.com
 CLIENT_ID=c0rkGlk9dMWggMHEBcRtnpk0SWqU0ytU
-BASE_URL=http://localhost:3000
+BASE_URL=https://lingojive.herokuapp.com/
 SECRET=asldfkja;ldsfkja;odfisja;weoifj92230292309mmm
