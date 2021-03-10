@@ -152,5 +152,14 @@ io.on('connection', (socket) => {
     //broadcast message to everyone in port:3000 except yourself.
     // socket.broadcast.emit("received", { message: msg });
     socket.broadcast.emit("received", { message: data.msg, username: data.username });
+
+
+    // connect.then(db => {
+    //   console.log("connected correctly to the server");
+    //   let chatMessage = new Chat({ message: msg, sender: "Anonymous" });
+    //
+    //   chatMessage.save();
+    // });
+
   });
 });
