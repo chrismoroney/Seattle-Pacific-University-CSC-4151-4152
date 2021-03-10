@@ -29,7 +29,6 @@ var db = require('./database');
 
 var loginRouter = require('./routes/login');
 var socketRouter = require('./routes/socket');
-var usersRouter = require('./routes/users');
 var messengerRouter = require('./routes/messenger');
 var postsRouter = require('./routes/posts');
 var homepageRouter = require('./routes/homepage');
@@ -62,7 +61,6 @@ app.use(bodyParser.json());
 
 app.use('/', loginRouter);
 app.use('/socket', socketRouter);
-app.use('/users', usersRouter);
 app.use('/messenger', messengerRouter);
 app.use('/posts', postsRouter);
 app.use('/homepage', homepageRouter);
