@@ -41,19 +41,20 @@
         </ul>
     </div>
 </nav>
-<h1 style="text-align: center">Messenger site</h1>
-<h3 style="text-align: center">(going to put conversation page in here eventually)</h3>
+<!--<h1 style="text-align: center">Messenger site</h1>-->
+<!--<h3 style="text-align: center">(going to put conversation page in here eventually)</h3>-->
 
-<span id="username"><%= username %></span>
-<div class="chat_window">
-    <div class="top_menu">
-        <div class="buttons">
-            <div class="button close"></div>
-            <div class="button minimize"></div>
-            <div class="button maximize"></div>
-        </div>
-        <div class="title">Chat</div>
-    </div>
+<!--<span id="username"><%= username %></span>-->
+
+<!--<div class="chat_window">-->
+<!--    <div class="top_menu">-->
+<!--        <div class="buttons">-->
+<!--            <div class="button close"></div>-->
+<!--            <div class="button minimize"></div>-->
+<!--            <div class="button maximize"></div>-->
+<!--        </div>-->
+<!--        <div class="title">Chat</div>-->
+<!--    </div>-->
     <ul id ="messages" class="messages">
 
     </ul>
@@ -67,9 +68,10 @@
             <button class="send_message">
                 Send
             </button>
+            <span id="username" style = "color: white"><%= username %></span>
         </form>
     </div>
-</div>
+<!--</div>-->
 
 <script src="/socket.io/socket.io.js"></script>
 <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
