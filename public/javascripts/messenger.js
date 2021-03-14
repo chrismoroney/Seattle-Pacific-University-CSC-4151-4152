@@ -27,6 +27,7 @@ xhttp.onreadystatechange = function() {
             // user.textContent = response[i].Name;
             // item.prepend(user);
         }
+        window.scrollTo(0, document.body.scrollHeight);
     }
 };
 

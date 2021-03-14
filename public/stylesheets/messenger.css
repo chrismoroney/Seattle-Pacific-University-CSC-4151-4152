@@ -148,7 +148,7 @@ body {
     width: 100%;
     background-color: #fff;
     padding: 10px 10px;
-    position: absolute;
+    /*position: absolute;*/
     bottom: 0;
 }
 .bottom_wrapper .message_input_wrapper {
@@ -174,8 +174,9 @@ body {
     height: 50px;
     display: inline-block;
     border-radius: 50px;
-    background-color: #a3d063;
-    border: 2px solid #a3d063;
+    /*background-color: #a3d063;*/
+    background-color: #007AFF;
+    border: 2px solid #343a40;
     color: #fff;
     cursor: pointer;
     transition: all 0.2s linear;
@@ -199,10 +200,13 @@ body {
 
 .messages > li {
     font-size: 15px;
-    color: rgb(13, 223, 153);
-    background: #f7a30675;
+    /*color: rgb(13, 223, 153);*/
+    color: white;
+    /*background: #f7a30675;*/
+    background: #007AFF;
     border-radius: 5px;
     width: fit-content;
+    padding: 3px;
 }
 
 .messages > span {
