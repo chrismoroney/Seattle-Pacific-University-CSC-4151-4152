@@ -5,11 +5,12 @@ var router = express.Router();
 router.get('/',function(req, res, next) {
     // res.render('index', { title: 'Express' });
     //res.sendFile('login.html', {root: 'views'})
-    console.log(req.userContext)
-    if (req.userContext) {
+    // console.log(req.userContext);
+    // if (req.userContext) {
+    if(req.session.loggedIn){
         res.sendFile('homepage.html', {root: 'views'});
     } else {
-        res.sendFile('pre-login.html', {root: 'views'});
+        res.sendFile('login.html', {root: 'views'});
     }
 });
 
