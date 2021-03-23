@@ -5,23 +5,31 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var cors = require('cors');
 var bodyParser = require('body-parser');
+var session = require('express-session')
 var app = express();
 require('dotenv').config({path:'./env'});
+app.use(session({
+  secret: 'keyboard cat',
+  name: 'uniqueSessionId',
+  resave: false,
+  saveUninitialized: false,
+  cookie: { secure: false }
+}))
 
 //Auth0
-const { auth } = require('express-openid-connect');
+// const { auth } = require('express-openid-connect');
 
-app.use(
-    auth({
-      authRequired: true,
-      auth0Logout: true,
-      issuerBaseURL: process.env.ISSUER_BASE_URL,
-      baseURL: process.env.BASE_URL,
-      clientID: process.env.CLIENT_ID,
-      secret: process.env.SECRET,
-      idpLogout: true,
-    })
-);
+// app.use(
+//     auth({
+//       authRequired: true,
+//       auth0Logout: true,
+//       issuerBaseURL: process.env.ISSUER_BASE_URL,
+//       baseURL: process.env.BASE_URL,
+//       clientID: process.env.CLIENT_ID,
+//       secret: process.env.SECRET,
+//       idpLogout: true,
+//     })
+// );
 //Auth0
 
 //connect to db
@@ -36,6 +44,7 @@ var myprofileRouter = require('./routes/myprofile');
 var createprofileRouter = require('./routes/createprofile');
 var editprofileRouter = require('./routes/editprofile');
 var searchprofileRouter = require('./routes/searchprofile');
+var authenticationRouter = require('./routes/authenticate');
 
 require('dotenv').config();
 
@@ -68,7 +77,7 @@ app.use('/myprofile', myprofileRouter);
 app.use('/createprofile', createprofileRouter);
 app.use('/editprofile', editprofileRouter);
 app.use('/searchprofile', searchprofileRouter);
-
+app.use('/authenticate', authenticationRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
