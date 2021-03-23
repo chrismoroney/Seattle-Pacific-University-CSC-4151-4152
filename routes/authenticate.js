@@ -4,23 +4,40 @@ const bodyParser = require('body-parser')
 const path = require('path')
 var router = express.Router();
 let User = require('../models/User.js');
+var username;
+var password;
+var userObj;
 
 router.post('/'
     ,bodyParser.urlencoded({ extended: true })
     ,(req,res,next)=>
     {
-        var username = req.body.username;
-        var password = req.body.password;
-        var userObj;
+        username = req.body.username;
+        console.log(username);
+        password = req.body.password;
         if (username){
             User
                 // need to adjust for case sensitivity
                 .find({"username": username})
                 .exec( (error, User) => {
                     if (error){
-                        res.send({"error": error});
+                        // res.send({"error": error});
+                        res.redirect("/login");
                     } else {
-                        userObj = User;
+                        userObj = User[0];
+                        // console.log(userObj);
+                        // console.log("hi");
+                        console.log("hello" + userObj);
+                    if(userObj.username == username && userObj.password == password){
+                        res.locals.username = username;
+                        req.session.username = username;
+                        // console.log(username);
+                        req.session.loggedIn = true
+                        console.log(req.session)
+                        res.redirect('/homepage')
+                        }else{
+                            res.redirect('/');
+                        }
                     }
                 });
         } else {
@@ -43,22 +60,23 @@ router.post('/'
         //  }
         //  else
         //      res.sendStatus(401)
-        next();
+        // next();
     }
-    ,(req,res)=>
-    {
-        // if(userObj.username == username && userObj.password == password){
-        //     res.locals.username = username;
-        //     req.session.username = res.locals.username;
-            req.session.loggedIn = true
-            // req.session.username = res.locals.username
-            console.log(req.session)
-            res.redirect('/homepage')
-
-        // }else{
-        //     res.redirect('/login');
-        // }
-    }
+    // ,(req,res)=>
+    // {
+    //     console.log("hello" + userObj);
+    // // if(userObj[0].username == username && userObj[0].password == password){
+    //     res.locals.username = username;
+    //     req.session.username = username;
+    //     // console.log(username);
+    //     req.session.loggedIn = true
+    //     console.log(req.session)
+    //     res.redirect('/homepage')
+    //
+    //     // }else{
+    //     //     res.redirect('/login');
+    //     // }
+    // }
     );
 
 module.exports = router;
