@@ -8,7 +8,8 @@ router.get('/',function(req, res, next) {
     // console.log(req.userContext);
     // if (req.userContext) {
     if(req.session.loggedIn){
-        res.sendFile('homepage.html', {root: 'views'});
+        // res.sendFile('homepage.html', {root: 'views'});
+        res.render('homepage.html', {root: 'views', username: req.session.username});
     } else {
         res.sendFile('login.html', {root: 'views'});
     }

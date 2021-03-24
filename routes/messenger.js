@@ -12,8 +12,9 @@ function HandleError(response, reason, message, code){
 router.get('/', (req, res) => {
     // Message.find({},(err, messages)=> {
         // res.send(messages);
-        res.sendFile('messenger.html', {root: 'views'});
+        // res.sendFile('messenger.html', {root: 'views'});
         // res.render('messenger.html', {root: 'views' /* , username: req.oidc.user.name */});
+    res.render('messenger.html', {root: 'views' , username: req.session.username});
     // })
 })
 
