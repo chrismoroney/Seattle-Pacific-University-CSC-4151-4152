@@ -96,7 +96,6 @@ router.get('/:username', (request, response, next) =>{
 
         });
 });
-/*
 router.patch('/:username', (request, response, next) =>{
     User
         .findOne({"username": request.params.username}, (error, result)=>{
@@ -109,11 +108,11 @@ router.patch('/:username', (request, response, next) =>{
                 for (let field in request.body){
                     result[field] = request.body[field];
                 }
-                result.save((error, user)=>{
+                result.save((error, book)=>{
                     if (error){
                         response.status(500).send(error);
                     }
-                    response.send(user);
+                    response.send(book);
                 });
             } else {
                 response.status(404).send({"username": request.params.username, "error":  "Not Found"});
@@ -121,7 +120,7 @@ router.patch('/:username', (request, response, next) =>{
 
         });
 });
-*/
+
 // router.delete('/:isbn', (request, response, next) =>{
 //   response.header("Access-Control-Allow-Origin", "*");
 //   response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");

@@ -40,5 +40,48 @@
     </div>
 </nav>
 <h1 style="text-align: center">Edit Profile</h1>
+<div class="container">
+    <h5>Enter the username.</h5>
+    <label for="username">Username</label>
+    <div class="form-group input-group">
+        <input type="text" name="username" id="username" class="form-control"
+               placeholder="username">
+        <button class="btn btn-success" id="btnFindUser">Search</button>
+    </div>
+    <div class="jumbotron" id="output1">
+
+    </div>
+</div>
+<div class="container">
+    <h5>Fill in new info:</h5>
+    <div class="form-group">
+        <label for="firstname">First Name:</label>
+        <input type="text" name="firstname" id="firstname" class="form-control"
+               placeholder="firstname">
+    </div>
+    <div class="form-group">
+        <label for="lastname">Last Name:</label>
+        <input type="text" name="lastname" id="lastname" class="form-control"
+               placeholder="lastname">
+    </div>
+    <div class="form-group">
+        <label for="password">New Password:</label>
+        <input type="password" name="password" id="password" class="form-control"
+               placeholder="password">
+    </div>
+    <div class="form-group">
+        <label for="confirm_password">Confirm New Password:</label>
+        <input type="password" name="confirm_password" id="confirm_password" class="form-control"
+               placeholder="confirm password">
+    </div>
+    <div class="jumbotron" id="output2">
+
+    </div>
+    <div class="text-center">
+        <button class="btn-danger btn-lg" id="btnDiscardChanges">Discard Changes</button>
+        <button class="btn-warning btn-lg" id="btnUpdateUser">Confirm Changes</button>
+    </div>
+</div>
+<script src="javascripts/editprofile.js"></script>
 </body>
 </html>
