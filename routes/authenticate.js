@@ -15,14 +15,14 @@ router.post('/'
         username = req.body.username;
         console.log(username);
         password = req.body.password;
-        if (username){
+        if (username && password){
             User
                 // need to adjust for case sensitivity
                 .find({"username": username})
                 .exec( (error, User) => {
-                    if (error){
+                    if (error || User.length == 0){
                         // res.send({"error": error});
-                        res.redirect("/login");
+                        res.redirect("/");
                     } else {
                         userObj = User[0];
                         // console.log(userObj);
@@ -34,14 +34,15 @@ router.post('/'
                         // console.log(username);
                         req.session.loggedIn = true
                         console.log(req.session)
-                        res.redirect('/homepage')
-                        }else{
+                        // res.redirect('/homepage')
+                        res.render('homepage.html', {root: 'views' , username: username});
+                    }else{
                             res.redirect('/');
                         }
                     }
                 });
         } else {
-            res.redirect("/login");
+            res.redirect("/");
         }
 
         // var response = [];
