@@ -62,11 +62,10 @@ document.getElementById("btnUpdateUser").addEventListener("click", (event) =>{
             if (firstname === "" && lastname === "" && password === "" && confirmpassword === ""){
                 document.getElementById("output2").innerHTML =
                     "<pre>" + "Please fill in at least one field above" + "</pre>";
-            } else if (username === "" || this.responseText === "[]"){
+            } else if (username === ""){
                 document.getElementById("output2").innerHTML =
                     "<pre>" + "Input a valid username above first (use the search button to find a valid username)" + "</pre>";
-            }
-            else {
+            } else {
                 let apiResponse = "[" + this.responseText + "]";
                 document.getElementById("output2").innerHTML =
                     CreateTable(JSON.parse(apiResponse)) + "<p></p>" +
@@ -74,6 +73,7 @@ document.getElementById("btnUpdateUser").addEventListener("click", (event) =>{
             }
         }
     };
+    var userData;
     if (password === confirmpassword){
         if (firstname !== ""){
             if (lastname !== "" || password !== "" || confirmpassword !== "") {
@@ -99,15 +99,15 @@ document.getElementById("btnUpdateUser").addEventListener("click", (event) =>{
         if (confirmpassword !== ""){
             confirmpassword = "confirmpassword=" + document.getElementById("confirm_password").value;
         }
+        userData = firstname + lastname + password + confirmpassword;
+        xhttp.open('PATCH', url, true);
+        // Just needed to place this line AFTER opening the object
+        xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhttp.send(userData);
     } else {
         document.getElementById("output2").innerHTML =
             "<pre>" + "Your passwords do not match. Please try again. " + "</pre>";
     }
-    let userData = firstname + lastname + password + confirmpassword;
-    xhttp.open('PATCH', url, true);
-    // Just needed to place this line AFTER opening the object
-    xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    xhttp.send(userData);
 });
 
 document.getElementById("btnDiscardChanges").addEventListener("click", (event) =>{
