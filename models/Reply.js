@@ -8,4 +8,4 @@ let ReplySchema = new Schema({
     Parent: {type: Post, required: true}
 });
 
-module.exports = mongoose.model('Post', ReplySchema);
+module.exports = mongoose.model('Reply', ReplySchema);
