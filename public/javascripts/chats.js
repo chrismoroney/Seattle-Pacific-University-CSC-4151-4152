@@ -33,6 +33,5 @@ xhttp.onreadystatechange = function() {
     }
 };
 
-xhttp.open("GET", url,
-    true);
+xhttp.open("GET", url, true);
 xhttp.send();
