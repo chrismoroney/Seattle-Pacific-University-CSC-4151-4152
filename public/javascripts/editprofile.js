@@ -27,30 +27,9 @@ function CreateTable(data){
         '</table>\n'
     return table;
 }
-document.getElementById("btnFindUser").addEventListener("click", (event) =>{
-    let url = "https://lingojiveapi.herokuapp.com/users/" + document.getElementById("username").value;
-    let xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function(){
-        if (this.readyState == 4 && this.status == 200){
-            if (this.responseText == "[]"){
-                document.getElementById("output1").innerHTML =
-                    "<pre>" + "Please enter in a valid username" + "</pre>";
-            } else {
-                document.getElementById("output1").innerHTML =
-                    CreateTable(JSON.parse(this.responseText));
-            }
-        } else if (this.status == 404) {
-            document.getElementById("output1").innerHTML =
-                "<pre>" + this.responseText + "</pre>" + "<p></p>" +"<pre>" +
-                "Please enter in a valid username" + "</pre>";
-        }
-    };
-    xhttp.open("GET", url, true);
-    xhttp.send();
-    this.responseText = "";
-});
+
 document.getElementById("btnUpdateUser").addEventListener("click", (event) =>{
-    let username = document.getElementById("username").value;
+    let username = document.getElementById("username").innerText;
     let firstname = document.getElementById("firstname").value;
     let lastname = document.getElementById("lastname").value;
     let password = document.getElementById("password").value;
