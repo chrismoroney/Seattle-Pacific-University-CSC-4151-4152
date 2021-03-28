@@ -1,8 +1,10 @@
-var chats = document.getElementById('chatList');
+var messages = document.getElementById('messages');
+var chatID = document.getElementById('chatID').innerText;
 var username = document.getElementById('username').innerText;
-var url = 'https://lingojiveapi.herokuapp.com/chats';
+//var url = 'https://lingojiveapi.herokuapp.com/directmessages';
+var url = 'https://localhost:5000/directmessages';
 
-url += "/" + username;
+url += "/" + chatID;
 console.log("Username: " + username);
 console.log("URL: " + url);
 var xhttp = new XMLHttpRequest();
@@ -15,13 +17,9 @@ xhttp.onreadystatechange = function() {
         var response = JSON.parse(this.responseText);
         for(let i = 0; i < response.length; ++i){
             let li = document.createElement("li");
-            let link = document.createElement("a");
-            link.href = "/chats/" + response[i]._id;
             let span = document.createElement("span");
-            chats.appendChild(li);
-            let text = document.createTextNode(response[i].Name);
-            link.appendChild(text);
-            li.appendChild(link);
+            messages.appendChild(li).append(response[i].Message);
+            messages.appendChild(span).append(response[i].Sender);
 
             // var item = document.createElement('li');
             // item.textContent = response[i].Body;

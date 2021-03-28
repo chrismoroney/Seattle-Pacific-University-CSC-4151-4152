@@ -1,6 +1,6 @@
 var socket = io();
 var messages = document.getElementById("messages");
-var username = document.getElementById('username').innerText;
+
 
 
 var url = 'https://lingojiveapi.herokuapp.com/messages';
