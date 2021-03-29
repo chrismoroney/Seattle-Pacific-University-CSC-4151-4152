@@ -16,7 +16,7 @@ xhttp.onreadystatechange = function() {
         for(let i = 0; i < response.length; ++i){
             let li = document.createElement("li");
             let link = document.createElement("a");
-            link.href = "/chats/" + response[i]._id;
+            link.href = "/chats?chat=" + response[i]._id;
             let span = document.createElement("span");
             chats.appendChild(li);
             let text = document.createTextNode(response[i].Name);

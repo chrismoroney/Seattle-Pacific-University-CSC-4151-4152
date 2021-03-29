@@ -48,7 +48,7 @@ var authenticationRouter = require('./routes/authenticate');
 var chatListRouter = require('./routes/chats');
 
 require('dotenv').config();
-
+  
 // view engine setup
 
 app.use(bodyParser.urlencoded({extended: false}));

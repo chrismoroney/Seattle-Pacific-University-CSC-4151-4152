@@ -9,7 +9,14 @@ function HandleError(response, reason, message, code){
 /* GET home page. */
 router.get('/', function(req, res, next) {
     // res.render('index', { title: 'Express' });
-    res.render('chats.html', {root: 'views', username: req.session.username})
+    console.log('called');
+    let chat = req.query['chat'];
+    if(chat){
+        res.render('directmessage.html', {root: 'views', username: req.session.username, chatID: req.params.ChatID})
+    }
+    else {
+        res.render('chats.html', {root: 'views', username: req.session.username})
+    }
 });
 
 router.get('/:ChatID', function(req, res, next) {
