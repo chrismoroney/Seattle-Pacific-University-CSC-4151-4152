@@ -46,6 +46,7 @@ var editprofileRouter = require('./routes/editprofile');
 var searchprofileRouter = require('./routes/searchprofile');
 var authenticationRouter = require('./routes/authenticate');
 var chatListRouter = require('./routes/chats');
+var logoutRouter = require('./routes/logout');
 
 require('dotenv').config();
   
@@ -82,6 +83,7 @@ app.use('/editprofile', editprofileRouter);
 app.use('/searchprofile', searchprofileRouter);
 app.use('/authenticate', authenticationRouter);
 app.use('/chats', chatListRouter);
+app.use('/logout', logoutRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
