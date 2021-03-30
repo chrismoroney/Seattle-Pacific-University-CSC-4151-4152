@@ -25,8 +25,7 @@ router.get('/:ChatID', function(req, res, next) {
     console.log(chatID);
     if(req.params.ChatID){
         console.log(req.params.ChatID);
-        res.render('directmessage.html', {root: 'views', username: req.session.username, chatID: req.params.ChatID})
+        res.render('directmessage.html', {root: 'views', username: req.session.username, ChatID: req.params.ChatID})
     }
-
 });
 module.exports = router;
