@@ -1,11 +1,11 @@
 var messages = document.getElementById('messages');
 var chatID = document.getElementById('chatID').innerText;
-var username = document.getElementById('username').innerText;
-//var url = 'https://lingojiveapi.herokuapp.com/directmessages';
-var url = 'https://localhost:5000/directmessages';
+// var username = document.getElementById('username').innerText;
+var url = 'https://lingojiveapi.herokuapp.com/directmessages';
+// var url = 'https://localhost:5000/directmessages';
 
 url += "/" + chatID;
-console.log("Username: " + username);
+// console.log("Username: " + username);
 console.log("URL: " + url);
 var xhttp = new XMLHttpRequest();
 
