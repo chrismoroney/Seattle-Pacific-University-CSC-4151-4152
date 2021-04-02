@@ -10,16 +10,12 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="homepage">LingoJive</a>
+    <a class="navbar-brand" href="#">LingoJive</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-
-            <li class="nav-item active">
-                <a class="nav-link" href="homepage">Home<span class="sr-only">(current)</span></a>
-            </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Actions
@@ -35,13 +31,36 @@
             </li>
         </ul>
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="editprofile">Edit Profile<span class="sr-only"(current)></span></a>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Account
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/myprofile">View Profile</a>
+                    <a class="dropdown-item" href="/editprofile">Edit Profile</a>
+                    <a class="dropdown-item" href="#">Settings & Privacy</a>
+                    <a class="dropdown-item" href="#">Support</a>
+                    <a class="dropdown-item" href="logout">Sign out</a>
+
+                </div>
             </li>
         </ul>
     </div>
 </nav>
-<h1 style="text-align: center">Profile Page</h1>
+
+<div style = "text-align: center">
+    <img src = "../Picture/profilephoto.png" height = "200px" width = "200px" alt = "Profile Photo">
+</div>
+<h4 style="text-align: center; text-size: 31px; border-color: Blue"><%= username %></h4>
 <script src="javascripts/myprofile.js"></script>
+<div style="text-align: center;">
+<button onclick="window.location.href='/editprofile';"> Edit Profile </button></div>
+
+<div style="...; border:10px solid green; align: 'center'; height: 150px;margin: 0 100px;">
+        <div class = "bio">
+            <h3>Biography</h3>
+        </div>
+</div>
+
 </body>
 </html>
