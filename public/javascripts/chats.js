@@ -3,10 +3,8 @@ var socket = io();
 var chats = document.getElementById('chatList');
 var messages = document.getElementById('messages');
 var username = document.getElementById('username').innerText;
-// var username = sessionStorage.username;
 var url = 'https://lingojiveapi.herokuapp.com/chats';
-// var url2 = 'https://lingojiveapi.herokuapp.com/directmessages/';
-var chatID;
+var chatID = 0;
 
 var form = document.getElementById('form');
 var input = document.getElementById('chatMsg');
@@ -37,9 +35,7 @@ function showMessages(id){
         }
     };
 
-    // alert("show messages for " + id);
     url2 += id;
-    // alert(url2);
     chatID = id;
     xhttp2.open("GET", url2, true);
     xhttp2.send();
@@ -53,18 +49,6 @@ xhttp.onreadystatechange = function() {
         var response = JSON.parse(this.responseText);
         for(let i = 0; i < response.length; ++i){
             let li = document.createElement("li");
-            // let link = document.createElement("a");
-
-            // link.href = "/chats?chat=" + response[i]._id;
-            // link.href = "/chats/" + response[i]._id;
-
-            // let span = document.createElement("span");
-            // link.className = "linkClass";
-            // link.id = response[i]._id;
-            // chats.appendChild(li);
-            // let text = document.createTextNode(response[i].Name);
-            // link.appendChild(text);
-            // li.appendChild(link);
 
             li.className = "linkClass";
             li.id = response[i]._id;
@@ -75,19 +59,7 @@ xhttp.onreadystatechange = function() {
                 showMessages(li.id);
             });
 
-            // var item = document.createElement('li');
-            // item.textContent = response[i].Body;
-            // // messages.appendChild(item);
-            // messages.prepend(item);
-            // var user = document.createElement('div');
-            // user.textContent = response[i].Name;
-            // item.prepend(user);
         }
-        // var element = document.getElementsByClassName("linkClass");
-        // for(var i = 0; i < element.length; ++i){
-        //     // element[i].onclick = showMessages();
-        //     element[i].addEventListener("click", showMessages(), false);
-        // }
         window.scrollTo(0, document.body.scrollHeight);
     }
 };
@@ -111,10 +83,20 @@ form.addEventListener('submit', function(e) {
         xhttp3.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
         xhttp3.send(params);
 
+        let li = document.createElement("li");
+        let span = document.createElement("span");
+        messages.appendChild(li).append(message);
+        messages.appendChild(span).append(sender);
+
         socket.emit("direct message", {Sender: sender, Message: message, ChatID: chatID});
     }
 });
 
 socket.on("direct message sent", data => {
-    alert("message!");
+    if(data.ChatID == chatID){
+        let li = document.createElement("li");
+        let span = document.createElement("span");
+        messages.appendChild(li).append(data.Message);
+        messages.appendChild(span).append(data.Sender);
+    }
 });
