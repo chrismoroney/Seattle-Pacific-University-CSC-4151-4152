@@ -3,11 +3,15 @@ var socket = io();
 var chats = document.getElementById('chatList');
 var messages = document.getElementById('messages');
 var username = document.getElementById('username').innerText;
-var url = 'https://lingojiveapi.herokuapp.com/chats';
+// var url = 'https://lingojiveapi.herokuapp.com/chats';
+var url = 'http://localhost:5000/chats';
 var chatID = 0;
 
 var form = document.getElementById('form');
+var form2 = document.getElementById('form2');
 var input = document.getElementById('chatMsg');
+var input2 = document.getElementById('composeMsg');
+var recipient = document.getElementById('recipient');
 
 url += "/" + username;
 console.log("Username: " + username);
@@ -17,7 +21,8 @@ var xhttp = new XMLHttpRequest();
 
 function showMessages(id){
     var xhttp2 = new XMLHttpRequest();
-    var url2 = 'https://lingojiveapi.herokuapp.com/directmessages/';
+    // var url2 = 'https://lingojiveapi.herokuapp.com/directmessages/';
+    var url2 = 'http://localhost:5000/directmessages/';
 
     xhttp2.onreadystatechange = function() {
         console.log("Called");
@@ -69,7 +74,9 @@ xhttp.send();
 
 form.addEventListener('submit', function(e) {
     var xhttp3 = new XMLHttpRequest();
-    var url3 = 'https://lingojiveapi.herokuapp.com/directmessages/';
+    // var url3 = 'https://lingojiveapi.herokuapp.com/directmessages/';
+    var url3 = 'http://localhost:5000/directmessages/';
+
 
     e.preventDefault();
     if (input.value) {
@@ -89,6 +96,30 @@ form.addEventListener('submit', function(e) {
         messages.appendChild(span).append(sender);
 
         socket.emit("direct message", {Sender: sender, Message: message, ChatID: chatID});
+    }
+});
+
+form2.addEventListener('submit', function(e) {
+    var xhttp4 = new XMLHttpRequest();
+    // var url4 = 'https://lingojiveapi.herokuapp.com/chats/';
+    var url4 = 'http://localhost:5000/chats/';
+
+    e.preventDefault();
+    if (recipient.value && input2.value) {
+        var members = [];
+        var member2 = recipient.value;
+        var member1 = document.getElementById('username').innerText;
+        members.push(member1);
+        members.push(member2);
+        var name = input2.value;
+        var params = 'Name='+name+'&Members='+members;
+        input2.value = '';
+        recipient.value = '';
+
+        xhttp4.open("POST", url4,
+            true);
+        xhttp4.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        xhttp4.send(params);
     }
 });
 
