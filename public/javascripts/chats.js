@@ -3,6 +3,10 @@ var messages = document.getElementById('messages');
 var username = document.getElementById('username').innerText;
 var url = 'https://lingojiveapi.herokuapp.com/chats';
 // var url2 = 'https://lingojiveapi.herokuapp.com/directmessages/';
+var chatID;
+
+var form = document.getElementById('form');
+var input = document.getElementById('chatMsg');
 
 url += "/" + username;
 console.log("Username: " + username);
@@ -32,7 +36,8 @@ function showMessages(id){
 
     // alert("show messages for " + id);
     url2 += id;
-    alert(url2);
+    // alert(url2);
+    chatID = id;
     xhttp2.open("GET", url2, true);
     xhttp2.send();
 }
@@ -87,3 +92,20 @@ xhttp.onreadystatechange = function() {
 xhttp.open("GET", url, true);
 xhttp.send();
 
+form.addEventListener('submit', function(e) {
+    var xhttp3 = new XMLHttpRequest();
+    var url3 = 'https://lingojiveapi.herokuapp.com/directmessages/';
+
+    e.preventDefault();
+    if (input.value) {
+        var message = input.value;
+        var sender = document.getElementById('username').innerText;
+        var params = 'Sender='+sender+'&Message='+message+'&ChatID='+chatID;
+        input.value = '';
+
+        xhttp3.open("POST", url3,
+            true);
+        xhttp3.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        xhttp3.send(params);
+    }
+});
