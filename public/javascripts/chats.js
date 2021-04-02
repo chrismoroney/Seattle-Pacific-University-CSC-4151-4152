@@ -1,6 +1,9 @@
+var socket = io();
+
 var chats = document.getElementById('chatList');
 var messages = document.getElementById('messages');
 var username = document.getElementById('username').innerText;
+// var username = sessionStorage.username;
 var url = 'https://lingojiveapi.herokuapp.com/chats';
 // var url2 = 'https://lingojiveapi.herokuapp.com/directmessages/';
 var chatID;
@@ -107,5 +110,11 @@ form.addEventListener('submit', function(e) {
             true);
         xhttp3.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
         xhttp3.send(params);
+
+        socket.emit("direct message", {Sender: sender, Message: message, ChatID: chatID});
     }
+});
+
+socket.on("direct message sent", data => {
+    alert("message!");
 });
