@@ -40,8 +40,13 @@
         </ul>
     </div>
 </nav>
-<span id="username"><%= username %></span>
+<!--<span id="username"><%= username %></span>-->
 <ul id="chatList"></ul>
 <ul id="messages"></ul>
+<form method="post" id="form">
+    <label for="chatMsg" id="username"><%= username %></label>
+    <input type="text" id="chatMsg">
+    <input type="submit" value="Submit">
+</form>
 <script src="javascripts/chats.js"></script>
 </body>
