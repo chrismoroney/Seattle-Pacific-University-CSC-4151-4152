@@ -3,8 +3,8 @@ var socket = io();
 var chats = document.getElementById('chatList');
 var messages = document.getElementById('messages');
 var username = document.getElementById('username').innerText;
-// var url = 'https://lingojiveapi.herokuapp.com/chats';
-var url = 'http://localhost:5000/chats';
+var url = 'https://lingojiveapi.herokuapp.com/chats';
+// var url = 'http://localhost:5000/chats';
 var chatID = 0;
 
 var form = document.getElementById('form');
@@ -21,8 +21,8 @@ var xhttp = new XMLHttpRequest();
 
 function showMessages(id){
     var xhttp2 = new XMLHttpRequest();
-    // var url2 = 'https://lingojiveapi.herokuapp.com/directmessages/';
-    var url2 = 'http://localhost:5000/directmessages/';
+    var url2 = 'https://lingojiveapi.herokuapp.com/directmessages/';
+    // var url2 = 'http://localhost:5000/directmessages/';
 
     xhttp2.onreadystatechange = function() {
         console.log("Called");
@@ -74,8 +74,8 @@ xhttp.send();
 
 form.addEventListener('submit', function(e) {
     var xhttp3 = new XMLHttpRequest();
-    // var url3 = 'https://lingojiveapi.herokuapp.com/directmessages/';
-    var url3 = 'http://localhost:5000/directmessages/';
+    var url3 = 'https://lingojiveapi.herokuapp.com/directmessages/';
+    // var url3 = 'http://localhost:5000/directmessages/';
 
 
     e.preventDefault();
@@ -101,8 +101,8 @@ form.addEventListener('submit', function(e) {
 
 form2.addEventListener('submit', function(e) {
     var xhttp4 = new XMLHttpRequest();
-    // var url4 = 'https://lingojiveapi.herokuapp.com/chats/';
-    var url4 = 'http://localhost:5000/chats/';
+    var url4 = 'https://lingojiveapi.herokuapp.com/chats/';
+    // var url4 = 'http://localhost:5000/chats/';
 
     e.preventDefault();
     if (recipient.value && input2.value) {
