@@ -7,6 +7,8 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="stylesheets/chats.css">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -41,17 +43,26 @@
     </div>
 </nav>
 <!--<span id="username"><%= username %></span>-->
-<ul id="chatList"></ul>
-<ul id="messages"></ul>
-<form method="post" id="form">
-    <label for="chatMsg" id="username"><%= username %></label>
-    <input type="text" id="chatMsg">
-    <input type="submit" value="Submit">
-</form>
+<div class="container chatscontainer">
+    <div class="row chatrow">
+        <div class="col-6 chatcol">
+            <ul id="chatList" class="listgroup"></ul>
+        </div>
+        <div class="col-6 chatcol">
+            <ul id="messages" class="listgroup"></ul>
+            <form method="post" id="form">
+                <label for="chatMsg" id="username"><%= username %></label>
+                <input type="text" id="chatMsg">
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+</div>
+
 <form method="post" id="form2">
     <label for="recipient" id="chatName">Compose: </label>
     <input type="text" id="recipient" placeholder="recipient">
-    <input type="text" id="composeMsg" placeholder="chat name">
+<!--    <input type="text" id="composeMsg" placeholder="chat name">-->
     <input type="submit" value="Submit">
 </form>
 <script src="/socket.io/socket.io.js"></script>

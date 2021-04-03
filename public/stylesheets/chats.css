@@ -1,0 +1,19 @@
+.chatscontainer{
+    /*border: 2px solid black;*/
+    height: 80vh;
+}
+
+.chatrow{
+    border: 2px solid black;
+}
+
+.chatcol{
+    border: 2px solid black;
+    height: 80vh;
+    overflow: auto;
+}
+
+#form{
+    position: absolute;
+    bottom: 0;
+}

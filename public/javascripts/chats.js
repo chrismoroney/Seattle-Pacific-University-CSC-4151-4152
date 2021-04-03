@@ -33,8 +33,8 @@ function showMessages(id){
             for(let i = 0; i < response.length; ++i){
                 let li = document.createElement("li");
                 let span = document.createElement("span");
-                messages.appendChild(li).append(response[i].Message);
-                messages.appendChild(span).append(response[i].Sender);
+                messages.appendChild(li).append(response[i].Sender);
+                messages.appendChild(span).append(response[i].Message);
             }
             window.scrollTo(0, document.body.scrollHeight);
         }
@@ -55,7 +55,7 @@ xhttp.onreadystatechange = function() {
         for(let i = 0; i < response.length; ++i){
             let li = document.createElement("li");
 
-            li.className = "linkClass";
+            li.className = "linkClass list-group-item";
             li.id = response[i]._id;
             chats.appendChild(li);
             let text = document.createTextNode(response[i].Name);
@@ -92,8 +92,8 @@ form.addEventListener('submit', function(e) {
 
         let li = document.createElement("li");
         let span = document.createElement("span");
-        messages.appendChild(li).append(message);
-        messages.appendChild(span).append(sender);
+        messages.appendChild(li).append(sender);
+        messages.appendChild(span).append(message);
 
         socket.emit("direct message", {Sender: sender, Message: message, ChatID: chatID});
     }
@@ -106,13 +106,17 @@ form2.addEventListener('submit', function(e) {
 
     e.preventDefault();
     if (recipient.value && input2.value) {
-        var members = [];
-        var member2 = recipient.value;
+        // var members = [];
         var member1 = document.getElementById('username').innerText;
-        members.push(member1);
-        members.push(member2);
-        var name = input2.value;
-        var params = 'Name='+name+'&Members='+members;
+        var member2 = recipient.value;
+        // members.push(member1);
+        // members.push(member2);
+
+        // var name = input2.value;
+        var firstMessage = input2.value;
+        var name = "uniformchatname";
+        // var params = 'Name='+name+'&Members='+members;
+        var params = 'Name='+name+'&Member1='+member1+'&Member2='+member2;
         input2.value = '';
         recipient.value = '';
 
