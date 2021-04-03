@@ -13,6 +13,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/javascripts/chats.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/chats.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/stylesheets/chats.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/chats.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/chats.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/chats.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +81,7 @@
       <workItem from="1617156876066" duration="1822000" />
       <workItem from="1617256243813" duration="1320000" />
       <workItem from="1617324476434" duration="4708000" />
-      <workItem from="1617420986349" duration="8538000" />
+      <workItem from="1617420986349" duration="11888000" />
     </task>
     <servers />
   </component>

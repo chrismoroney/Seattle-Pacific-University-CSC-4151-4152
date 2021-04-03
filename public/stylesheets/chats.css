@@ -8,8 +8,25 @@
 }
 
 .chatcol{
+    /*position: absolute;*/
+    /*border: 2px solid black;*/
+    height: 80vh;
+    /*height: 90%;*/
+    overflow: auto;
+}
+
+.chatcol2{
+    /*position: absolute;*/
     border: 2px solid black;
     height: 80vh;
+    /*height: 90%;*/
+}
+
+.chatcol3{
+    /*position: absolute;*/
+    /*border: 2px solid black;*/
+    height: 70vh;
+    /*height: 90%;*/
     overflow: auto;
 }
 
