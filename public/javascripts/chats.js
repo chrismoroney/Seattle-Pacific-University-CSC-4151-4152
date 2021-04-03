@@ -33,8 +33,8 @@ function showMessages(id){
             for(let i = 0; i < response.length; ++i){
                 let li = document.createElement("li");
                 let span = document.createElement("span");
-                messages.appendChild(li).append(response[i].Message);
-                messages.appendChild(span).append(response[i].Sender);
+                messages.appendChild(li).append(response[i].Sender);
+                messages.appendChild(span).append(response[i].Message);
             }
             window.scrollTo(0, document.body.scrollHeight);
         }
@@ -92,8 +92,8 @@ form.addEventListener('submit', function(e) {
 
         let li = document.createElement("li");
         let span = document.createElement("span");
-        messages.appendChild(li).append(message);
-        messages.appendChild(span).append(sender);
+        messages.appendChild(li).append(sender);
+        messages.appendChild(span).append(message);
 
         socket.emit("direct message", {Sender: sender, Message: message, ChatID: chatID});
     }
