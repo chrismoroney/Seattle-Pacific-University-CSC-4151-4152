@@ -19,6 +19,7 @@ function CreateTable(data){
             '           <td>' + data[user]["firstname"]+  '</td>\n' +
             '           <td>' + data[user]["lastname"]+  '</td>\n' +
             '           <td>' + data[user]["password"]+  '</td>\n' +
+            '           <td>' + data[user]["bio"]+  '</td>\n' +
             '       </tr>\n';
     }
 
@@ -34,11 +35,12 @@ document.getElementById("btnUpdateUser").addEventListener("click", (event) =>{
     let lastname = document.getElementById("lastname").value;
     let password = document.getElementById("password").value;
     let confirmpassword = document.getElementById("confirm_password").value;
+    let bio = document.getElementById("bio").value;
     let url = "https://lingojiveapi.herokuapp.com/users/" + username + "/";
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function (){
         if (this.readyState == 4 && this.status == 200){
-            if (firstname === "" && lastname === "" && password === "" && confirmpassword === ""){
+            if (firstname === "" && lastname === "" && password === "" && confirmpassword === "" && bio === ""){
                 document.getElementById("output2").innerHTML =
                     "<pre>" + "Please fill in at least one field above" + "</pre>";
             } else if (username === ""){
@@ -47,7 +49,7 @@ document.getElementById("btnUpdateUser").addEventListener("click", (event) =>{
             } else {
                 let apiResponse = "[" + this.responseText + "]";
                 document.getElementById("output2").innerHTML =
-                    CreateTable(JSON.parse(apiResponse)) + "<p></p>" +
+                    //CreateTable(JSON.parse(apiResponse)) + "<p></p>" +
                     "<pre>" + "Successfully saved new user info. " + "</pre>";
             }
         }
@@ -55,30 +57,37 @@ document.getElementById("btnUpdateUser").addEventListener("click", (event) =>{
     var userData;
     if (password === confirmpassword){
         if (firstname !== ""){
-            if (lastname !== "" || password !== "" || confirmpassword !== "") {
+            if (lastname !== "" || password !== "" || confirmpassword !== "" || bio !== "") {
                 firstname = "firstname=" + document.getElementById("firstname").value + "&";
             } else {
                 firstname = "firstname=" + document.getElementById("firstname").value;
             }
         }
         if (lastname !== ""){
-            if (password !== "" || confirmpassword !== "") {
+            if (password !== "" || confirmpassword !== "" || bio !== "") {
                 lastname = "lastname=" + document.getElementById("lastname").value + "&";
             } else {
                 lastname = "lastname=" + document.getElementById("lastname").value;
             }
         }
         if (password !== ""){
-            if (confirmpassword !== "") {
+            if (confirmpassword !== "" || bio !== "") {
                 password = "password=" + document.getElementById("password").value + "&";
             } else {
                 password = "password=" + document.getElementById("password").value;
             }
         }
         if (confirmpassword !== ""){
-            confirmpassword = "confirmpassword=" + document.getElementById("confirm_password").value;
+            if (bio !== ""){
+                confirmpassword = "confirmpassword=" + document.getElementById("confirm_password").value + "&";
+            } else {
+                confirmpassword = "confirmpassword=" + document.getElementById("confirm_password").value;
+            }
         }
-        userData = firstname + lastname + password + confirmpassword;
+        if(bio !== ""){
+            bio = "bio=" + document.getElementById("bio").value;
+        }
+        userData = firstname + lastname + password + confirmpassword + bio;
         xhttp.open('PATCH', url, true);
         // Just needed to place this line AFTER opening the object
         xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
