@@ -6,6 +6,7 @@ var username = document.getElementById('username').innerText;
 var url = 'https://lingojiveapi.herokuapp.com/chats';
 // var url = 'http://localhost:5000/chats';
 var chatID = 0;
+var messageScroll = document.getElementById('messageScroll');
 
 var form = document.getElementById('form');
 var form2 = document.getElementById('form2');
@@ -36,10 +37,12 @@ function showMessages(id){
                 messages.appendChild(li).append(response[i].Sender);
                 messages.appendChild(span).append(response[i].Message);
             }
-            window.scrollTo(0, document.body.scrollHeight);
+            messageScroll.scrollTop = messageScroll.scrollHeight;
         }
     };
 
+    $('.activeChat').removeClass('activeChat');
+    document.getElementById(id).classList.add("activeChat");
     url2 += id;
     chatID = id;
     xhttp2.open("GET", url2, true);
@@ -58,14 +61,18 @@ xhttp.onreadystatechange = function() {
             li.className = "linkClass list-group-item";
             li.id = response[i]._id;
             chats.appendChild(li);
-            let text = document.createTextNode(response[i].Name);
+            let text = document.createTextNode(response[i].Members[0] );
+            if(response[i].Members[0] === username){
+                text.nodeValue = response[i].Members[1];
+            }
+            //let text = document.createTextNode(response[i].Name);
             li.appendChild(text);
             li.addEventListener("click", function(){
                 showMessages(li.id);
             });
 
         }
-        window.scrollTo(0, document.body.scrollHeight);
+        window.scrollTo(0,document.querySelector(".chatcol3").scrollHeight);
     }
 };
 
@@ -95,6 +102,8 @@ form.addEventListener('submit', function(e) {
         messages.appendChild(li).append(sender);
         messages.appendChild(span).append(message);
 
+        messageScroll.scrollTop = messageScroll.scrollHeight;
+
         socket.emit("direct message", {Sender: sender, Message: message, ChatID: chatID});
     }
 });
@@ -104,8 +113,10 @@ form2.addEventListener('submit', function(e) {
     var url4 = 'https://lingojiveapi.herokuapp.com/chats/';
     // var url4 = 'http://localhost:5000/chats/';
 
+
     e.preventDefault();
-    if (recipient.value && input2.value) {
+    //if (recipient.value && input2.value) {
+    if (recipient.value) {
         // var members = [];
         var member1 = document.getElementById('username').innerText;
         var member2 = recipient.value;
@@ -113,11 +124,11 @@ form2.addEventListener('submit', function(e) {
         // members.push(member2);
 
         // var name = input2.value;
-        var firstMessage = input2.value;
+        //var firstMessage = input2.value;
         var name = "uniformchatname";
         // var params = 'Name='+name+'&Members='+members;
         var params = 'Name='+name+'&Member1='+member1+'&Member2='+member2;
-        input2.value = '';
+        //input2.value = '';
         recipient.value = '';
 
         xhttp4.open("POST", url4,
@@ -133,5 +144,6 @@ socket.on("direct message sent", data => {
         let span = document.createElement("span");
         messages.appendChild(li).append(data.Message);
         messages.appendChild(span).append(data.Sender);
+        messageScroll.scrollTop = messageScroll.scrollHeight;
     }
 });

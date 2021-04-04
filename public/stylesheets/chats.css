@@ -34,3 +34,9 @@
     position: absolute;
     bottom: 0;
 }
+
+.activeChat{
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
