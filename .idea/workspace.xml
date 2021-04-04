@@ -29,16 +29,9 @@
   <component name="ChangeListManager">
     <list default="true" id="9192ada3-c883-4128-9689-585ec6d745c2" name="Default Changelist" comment="minor fixes to chats.js">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/chats.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/chats.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/createprofile.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/createprofile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/directmessage.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/directmessage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/editprofile.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/editprofile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/messenger.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/messenger.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/myprofile.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/myprofile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/posts.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/posts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/searchprofile.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/searchprofile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/socket.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/socket.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/editprofile.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/editprofile.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,6 +60,9 @@
   <component name="MacroExpansionManager">
     <option name="directoryName" value="5a4jr1jl" />
   </component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/package.json" />
+  </component>
   <component name="ProjectId" id="1qUevC3h5bkDPiCIjkMKnECFFKO" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -91,6 +87,13 @@
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
+  <component name="RunManager">
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
@@ -109,6 +112,7 @@
       <workItem from="1617420986349" duration="11888000" />
       <workItem from="1617472811026" duration="5616000" />
       <workItem from="1617493469447" duration="5672000" />
+      <workItem from="1617561282919" duration="4812000" />
     </task>
     <task id="LOCAL-00001" summary="minor fixes to chats.js">
       <created>1617501873889</created>
@@ -133,32 +137,33 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="minor fixes to chats.js" />
     <option name="LAST_COMMIT_MESSAGE" value="minor fixes to chats.js" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1237" height="176" key="GridCell.Tab.0.bottom" timestamp="1617506156421">
-      <screen x="0" y="0" width="1280" height="720" />
+    <state width="871" height="279" key="GridCell.Tab.0.bottom" timestamp="1617565259620">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1237" height="176" key="GridCell.Tab.0.bottom/0.0.1280.720@0.0.1280.720" timestamp="1617506156421" />
-    <state width="1877" height="285" key="GridCell.Tab.0.bottom/1920.-87.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1617477418816" />
-    <state width="1237" height="176" key="GridCell.Tab.0.center" timestamp="1617506156421">
-      <screen x="0" y="0" width="1280" height="720" />
+    <state width="871" height="279" key="GridCell.Tab.0.bottom/1920.-87.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1617565259620" />
+    <state width="871" height="279" key="GridCell.Tab.0.center" timestamp="1617565259619">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1237" height="176" key="GridCell.Tab.0.center/0.0.1280.720@0.0.1280.720" timestamp="1617506156421" />
-    <state width="1877" height="285" key="GridCell.Tab.0.center/1920.-87.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1617477418816" />
-    <state width="1237" height="176" key="GridCell.Tab.0.left" timestamp="1617506156421">
-      <screen x="0" y="0" width="1280" height="720" />
+    <state width="871" height="279" key="GridCell.Tab.0.center/1920.-87.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1617565259619" />
+    <state width="871" height="279" key="GridCell.Tab.0.left" timestamp="1617565259619">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1237" height="176" key="GridCell.Tab.0.left/0.0.1280.720@0.0.1280.720" timestamp="1617506156421" />
-    <state width="1877" height="285" key="GridCell.Tab.0.left/1920.-87.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1617477418815" />
-    <state width="1237" height="176" key="GridCell.Tab.0.right" timestamp="1617506156421">
-      <screen x="0" y="0" width="1280" height="720" />
+    <state width="871" height="279" key="GridCell.Tab.0.left/1920.-87.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1617565259619" />
+    <state width="871" height="279" key="GridCell.Tab.0.right" timestamp="1617565259620">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1237" height="176" key="GridCell.Tab.0.right/0.0.1280.720@0.0.1280.720" timestamp="1617506156421" />
-    <state width="1877" height="285" key="GridCell.Tab.0.right/1920.-87.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1617477418816" />
+    <state width="871" height="279" key="GridCell.Tab.0.right/1920.-87.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1617565259620" />
     <state x="297" y="161" key="run.anything.popup" timestamp="1617501662183">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
