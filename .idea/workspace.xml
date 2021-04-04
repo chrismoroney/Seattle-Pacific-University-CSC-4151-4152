@@ -11,8 +11,20 @@
   <component name="ChangeListManager">
     <list default="true" id="9192ada3-c883-4128-9689-585ec6d745c2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/routes/posts.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/posts.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/posts.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/posts.html" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/views/chats.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/chats.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/createprofile.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/createprofile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/directmessage.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/directmessage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/editprofile.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/editprofile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/messenger.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/messenger.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/myprofile.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/myprofile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/posts.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/posts.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/searchprofile.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/searchprofile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/socket.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/socket.html" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,6 +79,12 @@
       <workItem from="1617138826103" duration="97000" />
       <workItem from="1617156876066" duration="1822000" />
       <workItem from="1617256243813" duration="1320000" />
+<<<<<<< Updated upstream
+=======
+      <workItem from="1617324476434" duration="5000000" />
+      <workItem from="1617479383158" duration="1995000" />
+      <workItem from="1617547355757" duration="2194000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>
