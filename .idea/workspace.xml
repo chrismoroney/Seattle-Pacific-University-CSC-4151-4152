@@ -87,13 +87,6 @@
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
@@ -112,7 +105,7 @@
       <workItem from="1617420986349" duration="11888000" />
       <workItem from="1617472811026" duration="5616000" />
       <workItem from="1617493469447" duration="5672000" />
-      <workItem from="1617561282919" duration="4812000" />
+      <workItem from="1617561282919" duration="5276000" />
     </task>
     <task id="LOCAL-00001" summary="minor fixes to chats.js">
       <created>1617501873889</created>
@@ -144,26 +137,26 @@
     <option name="LAST_COMMIT_MESSAGE" value="minor fixes to chats.js" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="871" height="279" key="GridCell.Tab.0.bottom" timestamp="1617565259620">
+    <state width="871" height="279" key="GridCell.Tab.0.bottom" timestamp="1617567014721">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1237" height="176" key="GridCell.Tab.0.bottom/0.0.1280.720@0.0.1280.720" timestamp="1617506156421" />
-    <state width="871" height="279" key="GridCell.Tab.0.bottom/1920.-87.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1617565259620" />
-    <state width="871" height="279" key="GridCell.Tab.0.center" timestamp="1617565259619">
+    <state width="871" height="279" key="GridCell.Tab.0.bottom/1920.-87.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1617567014721" />
+    <state width="871" height="279" key="GridCell.Tab.0.center" timestamp="1617567014721">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1237" height="176" key="GridCell.Tab.0.center/0.0.1280.720@0.0.1280.720" timestamp="1617506156421" />
-    <state width="871" height="279" key="GridCell.Tab.0.center/1920.-87.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1617565259619" />
-    <state width="871" height="279" key="GridCell.Tab.0.left" timestamp="1617565259619">
+    <state width="871" height="279" key="GridCell.Tab.0.center/1920.-87.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1617567014721" />
+    <state width="871" height="279" key="GridCell.Tab.0.left" timestamp="1617567014721">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1237" height="176" key="GridCell.Tab.0.left/0.0.1280.720@0.0.1280.720" timestamp="1617506156421" />
-    <state width="871" height="279" key="GridCell.Tab.0.left/1920.-87.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1617565259619" />
-    <state width="871" height="279" key="GridCell.Tab.0.right" timestamp="1617565259620">
+    <state width="871" height="279" key="GridCell.Tab.0.left/1920.-87.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1617567014721" />
+    <state width="871" height="279" key="GridCell.Tab.0.right" timestamp="1617567014721">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1237" height="176" key="GridCell.Tab.0.right/0.0.1280.720@0.0.1280.720" timestamp="1617506156421" />
-    <state width="871" height="279" key="GridCell.Tab.0.right/1920.-87.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1617565259620" />
+    <state width="871" height="279" key="GridCell.Tab.0.right/1920.-87.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1617567014721" />
     <state x="297" y="161" key="run.anything.popup" timestamp="1617501662183">
       <screen x="0" y="0" width="1280" height="720" />
     </state>

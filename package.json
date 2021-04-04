@@ -9,7 +9,6 @@
     "@okta/oidc-middleware": "^4.0.3",
     "body-parser": "^1.18.3",
     "bootstrap": "^4.6.0",
-    "bootstrap-select": "file:bootstrap-select",
     "cookie-parser": "~1.4.4",
     "cors": "^2.8.5",
     "debug": "~2.6.9",
