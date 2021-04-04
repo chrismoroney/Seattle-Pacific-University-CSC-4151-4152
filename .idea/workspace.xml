@@ -29,6 +29,15 @@
   <component name="ChangeListManager">
     <list default="true" id="9192ada3-c883-4128-9689-585ec6d745c2" name="Default Changelist" comment="minor fixes to chats.js">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/chats.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/chats.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/createprofile.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/createprofile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/directmessage.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/directmessage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/editprofile.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/editprofile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/messenger.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/messenger.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/myprofile.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/myprofile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/posts.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/posts.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/searchprofile.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/searchprofile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/socket.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/socket.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
