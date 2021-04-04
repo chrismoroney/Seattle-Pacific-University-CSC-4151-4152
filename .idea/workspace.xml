@@ -9,7 +9,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9192ada3-c883-4128-9689-585ec6d745c2" name="Default Changelist" comment="" />
+    <list default="true" id="9192ada3-c883-4128-9689-585ec6d745c2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -80,11 +82,12 @@
       <workItem from="1617472811026" duration="5616000" />
       <workItem from="1617493469447" duration="4914000" />
       <workItem from="1617504806846" duration="630000" />
+      <workItem from="1617505990795" duration="245000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
+    <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
     <state width="1743" height="279" key="GridCell.Tab.0.bottom" timestamp="1617505432395">
