@@ -7,7 +7,11 @@ let UserSchema = new Schema({
     lastname: String,
     username: String,
     password: String,
-    confirmpassword: String
+    confirmpassword: String,
+    bio: String,
+    langExp: [String],
+    langLearn: [String],
+    onlineStatus: Boolean
 });
 
 module.exports = mongoose.model('User', UserSchema);

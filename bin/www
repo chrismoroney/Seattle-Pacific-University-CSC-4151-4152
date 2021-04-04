@@ -162,4 +162,9 @@ io.on('connection', (socket) => {
     // });
 
   });
+
+  socket.on("direct message", function(data){
+      socket.broadcast.emit("direct message sent", {Sender: data.Sender, Message: data.Message, ChatID: data.ChatID});
+      console.log("direct message sent to server");
+  });
 });

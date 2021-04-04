@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated />
   </component>
@@ -9,12 +27,8 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9192ada3-c883-4128-9689-585ec6d745c2" name="Default Changelist" comment="">
+    <list default="true" id="9192ada3-c883-4128-9689-585ec6d745c2" name="Default Changelist" comment="minor fixes to chats.js">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-<<<<<<< Updated upstream
-      <change beforePath="$PROJECT_DIR$/routes/posts.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/posts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/posts.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/posts.html" afterDir="false" />
-=======
       <change beforePath="$PROJECT_DIR$/views/chats.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/chats.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/createprofile.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/createprofile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/directmessage.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/directmessage.html" afterDir="false" />
@@ -24,7 +38,7 @@
       <change beforePath="$PROJECT_DIR$/views/posts.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/posts.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/searchprofile.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/searchprofile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/socket.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/socket.html" afterDir="false" />
->>>>>>> Stashed changes
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +47,13 @@
   </component>
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -58,6 +79,7 @@
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="12.18.3" />
     <property name="javascript.nodejs.core.library.typings.version" value="12.20.7" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -66,9 +88,13 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="9192ada3-c883-4128-9689-585ec6d745c2" name="Default Changelist" comment="" />
@@ -79,34 +105,63 @@
       <workItem from="1617138826103" duration="97000" />
       <workItem from="1617156876066" duration="1822000" />
       <workItem from="1617256243813" duration="1320000" />
-<<<<<<< Updated upstream
-=======
-      <workItem from="1617324476434" duration="5000000" />
-      <workItem from="1617479383158" duration="1995000" />
-      <workItem from="1617547355757" duration="2194000" />
->>>>>>> Stashed changes
+      <workItem from="1617324476434" duration="4708000" />
+      <workItem from="1617420986349" duration="11888000" />
+      <workItem from="1617472811026" duration="5616000" />
+      <workItem from="1617493469447" duration="5672000" />
     </task>
+    <task id="LOCAL-00001" summary="minor fixes to chats.js">
+      <created>1617501873889</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1617501873889</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="minor fixes to chats.js" />
+    <option name="LAST_COMMIT_MESSAGE" value="minor fixes to chats.js" />
+  </component>
   <component name="WindowStateProjectService">
-    <state width="1877" height="285" key="GridCell.Tab.0.bottom" timestamp="1617257178217">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state width="1237" height="176" key="GridCell.Tab.0.bottom" timestamp="1617506156421">
+      <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="1877" height="285" key="GridCell.Tab.0.bottom/1920.-87.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1617257178217" />
-    <state width="1877" height="285" key="GridCell.Tab.0.center" timestamp="1617257178217">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state width="1237" height="176" key="GridCell.Tab.0.bottom/0.0.1280.720@0.0.1280.720" timestamp="1617506156421" />
+    <state width="1877" height="285" key="GridCell.Tab.0.bottom/1920.-87.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1617477418816" />
+    <state width="1237" height="176" key="GridCell.Tab.0.center" timestamp="1617506156421">
+      <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="1877" height="285" key="GridCell.Tab.0.center/1920.-87.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1617257178217" />
-    <state width="1877" height="285" key="GridCell.Tab.0.left" timestamp="1617257178217">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state width="1237" height="176" key="GridCell.Tab.0.center/0.0.1280.720@0.0.1280.720" timestamp="1617506156421" />
+    <state width="1877" height="285" key="GridCell.Tab.0.center/1920.-87.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1617477418816" />
+    <state width="1237" height="176" key="GridCell.Tab.0.left" timestamp="1617506156421">
+      <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="1877" height="285" key="GridCell.Tab.0.left/1920.-87.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1617257178217" />
-    <state width="1877" height="285" key="GridCell.Tab.0.right" timestamp="1617257178217">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state width="1237" height="176" key="GridCell.Tab.0.left/0.0.1280.720@0.0.1280.720" timestamp="1617506156421" />
+    <state width="1877" height="285" key="GridCell.Tab.0.left/1920.-87.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1617477418815" />
+    <state width="1237" height="176" key="GridCell.Tab.0.right" timestamp="1617506156421">
+      <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="1877" height="285" key="GridCell.Tab.0.right/1920.-87.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1617257178217" />
+    <state width="1237" height="176" key="GridCell.Tab.0.right/0.0.1280.720@0.0.1280.720" timestamp="1617506156421" />
+    <state width="1877" height="285" key="GridCell.Tab.0.right/1920.-87.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1617477418816" />
+    <state x="297" y="161" key="run.anything.popup" timestamp="1617501662183">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="297" y="161" key="run.anything.popup/0.0.1280.720@0.0.1280.720" timestamp="1617501662183" />
   </component>
 </project>

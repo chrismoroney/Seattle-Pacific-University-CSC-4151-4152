@@ -7,6 +7,7 @@ var cors = require('cors');
 var bodyParser = require('body-parser');
 var session = require('express-session')
 var app = express();
+var $ = require('jquery');
 require('dotenv').config({path:'./env'});
 app.use(session({
   secret: 'keyboard cat',

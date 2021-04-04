@@ -1,0 +1,42 @@
+.chatscontainer{
+    /*border: 2px solid black;*/
+    height: 80vh;
+}
+
+.chatrow{
+    border: 2px solid black;
+}
+
+.chatcol{
+    /*position: absolute;*/
+    /*border: 2px solid black;*/
+    height: 80vh;
+    /*height: 90%;*/
+    overflow: auto;
+}
+
+.chatcol2{
+    /*position: absolute;*/
+    border: 2px solid black;
+    height: 80vh;
+    /*height: 90%;*/
+}
+
+.chatcol3{
+    /*position: absolute;*/
+    /*border: 2px solid black;*/
+    height: 70vh;
+    /*height: 90%;*/
+    overflow: auto;
+}
+
+#form{
+    position: absolute;
+    bottom: 0;
+}
+
+.activeChat{
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
