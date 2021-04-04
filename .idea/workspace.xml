@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated />
   </component>
@@ -9,14 +27,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9192ada3-c883-4128-9689-585ec6d745c2" name="Default Changelist" comment="">
+    <list default="true" id="9192ada3-c883-4128-9689-585ec6d745c2" name="Default Changelist" comment="minor fixes to chats.js">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/chats.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/chats.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/stylesheets/chats.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/chats.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/chats.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/chats.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,33 +99,56 @@
       <workItem from="1617324476434" duration="4708000" />
       <workItem from="1617420986349" duration="11888000" />
       <workItem from="1617472811026" duration="5616000" />
-      <workItem from="1617493469447" duration="4914000" />
+      <workItem from="1617493469447" duration="5672000" />
     </task>
+    <task id="LOCAL-00001" summary="minor fixes to chats.js">
+      <created>1617501873889</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1617501873889</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="minor fixes to chats.js" />
+    <option name="LAST_COMMIT_MESSAGE" value="minor fixes to chats.js" />
+  </component>
   <component name="WindowStateProjectService">
-    <state width="1237" height="176" key="GridCell.Tab.0.bottom" timestamp="1617501744866">
+    <state width="1237" height="176" key="GridCell.Tab.0.bottom" timestamp="1617506156421">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="1237" height="176" key="GridCell.Tab.0.bottom/0.0.1280.720@0.0.1280.720" timestamp="1617501744866" />
+    <state width="1237" height="176" key="GridCell.Tab.0.bottom/0.0.1280.720@0.0.1280.720" timestamp="1617506156421" />
     <state width="1877" height="285" key="GridCell.Tab.0.bottom/1920.-87.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1617477418816" />
-    <state width="1237" height="176" key="GridCell.Tab.0.center" timestamp="1617501744865">
+    <state width="1237" height="176" key="GridCell.Tab.0.center" timestamp="1617506156421">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="1237" height="176" key="GridCell.Tab.0.center/0.0.1280.720@0.0.1280.720" timestamp="1617501744865" />
+    <state width="1237" height="176" key="GridCell.Tab.0.center/0.0.1280.720@0.0.1280.720" timestamp="1617506156421" />
     <state width="1877" height="285" key="GridCell.Tab.0.center/1920.-87.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1617477418816" />
-    <state width="1237" height="176" key="GridCell.Tab.0.left" timestamp="1617501744865">
+    <state width="1237" height="176" key="GridCell.Tab.0.left" timestamp="1617506156421">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="1237" height="176" key="GridCell.Tab.0.left/0.0.1280.720@0.0.1280.720" timestamp="1617501744865" />
+    <state width="1237" height="176" key="GridCell.Tab.0.left/0.0.1280.720@0.0.1280.720" timestamp="1617506156421" />
     <state width="1877" height="285" key="GridCell.Tab.0.left/1920.-87.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1617477418815" />
-    <state width="1237" height="176" key="GridCell.Tab.0.right" timestamp="1617501744865">
+    <state width="1237" height="176" key="GridCell.Tab.0.right" timestamp="1617506156421">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="1237" height="176" key="GridCell.Tab.0.right/0.0.1280.720@0.0.1280.720" timestamp="1617501744865" />
+    <state width="1237" height="176" key="GridCell.Tab.0.right/0.0.1280.720@0.0.1280.720" timestamp="1617506156421" />
     <state width="1877" height="285" key="GridCell.Tab.0.right/1920.-87.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1617477418816" />
     <state x="297" y="161" key="run.anything.popup" timestamp="1617501662183">
       <screen x="0" y="0" width="1280" height="720" />
