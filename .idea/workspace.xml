@@ -27,16 +27,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9192ada3-c883-4128-9689-585ec6d745c2" name="Default Changelist" comment="this should fix the jquery issue">
-      <change afterPath="$PROJECT_DIR$/public/javascripts/peer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/javascripts/room.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/room.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/room.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/www" beforeDir="false" afterPath="$PROJECT_DIR$/bin/www" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/chats.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/chats.html" afterDir="false" />
-    </list>
+    <list default="true" id="9192ada3-c883-4128-9689-585ec6d745c2" name="Default Changelist" comment="this should fix the jquery issue" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
