@@ -48,18 +48,25 @@ var searchprofileRouter = require('./routes/searchprofile');
 var authenticationRouter = require('./routes/authenticate');
 var chatListRouter = require('./routes/chats');
 var logoutRouter = require('./routes/logout');
+var videoChatRouter = require('./routes/room');
 
 require('dotenv').config();
   
 // view engine setup
 
 app.use(bodyParser.urlencoded({extended: false}));
+
+//commented out for video chat
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
+
+/* uncommented for video chat */
 // app.set('view engine', 'ejs');
+// app.use(express.static('public'))
 
-
+//commented out for video chat
 app.set('views', path.join(__dirname, 'views'));
+
 // app.set('view engine', 'pug');
 
 
@@ -85,6 +92,7 @@ app.use('/searchprofile', searchprofileRouter);
 app.use('/authenticate', authenticationRouter);
 app.use('/chats', chatListRouter);
 app.use('/logout', logoutRouter);
+app.use('/videochat', videoChatRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
