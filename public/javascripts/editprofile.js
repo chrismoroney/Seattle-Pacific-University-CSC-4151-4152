@@ -35,22 +35,22 @@ var langLearn = [];
 $('#langExp').on('changed.bs.select', function (e, clickedIndex, isSelected, previousValue) {
     if(isSelected) {
         langExp.push(e.target.options[clickedIndex].value);
-        //console.log(langExp);
+        console.log("langexp: " + langExp);
     } else {
         let index = langExp.indexOf(e.target.options[clickedIndex].value);
         langExp.splice(index, 1);
-        //console.log(langExp);
+        console.log("langexp: " + langExp);
     }
 });
 
 $('#langLearn').on('changed.bs.select', function (e, clickedIndex, isSelected, previousValue) {
     if(isSelected) {
         langLearn.push(e.target.options[clickedIndex].value);
-        //console.log(langLearn);
+        console.log("langlearn: " + langLearn);
     } else {
         let index = langLearn.indexOf(e.target.options[clickedIndex].value);
         langLearn.splice(index, 1);
-        //console.log(langLearn);
+        console.log("langlearn: " + langLearn);
     }
 });
 
@@ -61,16 +61,16 @@ document.getElementById("btnUpdateUser").addEventListener("click", (event) =>{
     let password = document.getElementById("password").value;
     let confirmpassword = document.getElementById("confirm_password").value;
     let bio = document.getElementById("bio").value;
+    let langExpSend = "";
+    let langLearnSend = "";
     let url = "https://lingojiveapi.herokuapp.com/users/" + username + "/";
+
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function (){
         if (this.readyState == 4 && this.status == 200){
-            if (firstname === "" && lastname === "" && password === "" && confirmpassword === "" && bio === ""){
+            if (firstname === "" && lastname === "" && password === "" && confirmpassword === "" && bio === "" && langExp.length == 0 && langLearn.length == 0){
                 document.getElementById("output2").innerHTML =
                     "<pre>" + "Please fill in at least one field above" + "</pre>";
-            } else if (username === ""){
-                document.getElementById("output2").innerHTML =
-                    "<pre>" + "Input a valid username above first (use the search button to find a valid username)" + "</pre>";
             } else {
                 let apiResponse = "[" + this.responseText + "]";
                 document.getElementById("output2").innerHTML =
@@ -79,40 +79,65 @@ document.getElementById("btnUpdateUser").addEventListener("click", (event) =>{
             }
         }
     };
+
     var userData;
     if (password === confirmpassword){
         if (firstname !== ""){
-            if (lastname !== "" || password !== "" || confirmpassword !== "" || bio !== "") {
+            if (lastname !== "" || password !== "" || confirmpassword !== "" || bio !== "" || langExp.length !== 0 || langLearn.length !== 0) {
                 firstname = "firstname=" + document.getElementById("firstname").value + "&";
             } else {
                 firstname = "firstname=" + document.getElementById("firstname").value;
             }
         }
         if (lastname !== ""){
-            if (password !== "" || confirmpassword !== "" || bio !== "") {
+            if (password !== "" || confirmpassword !== "" || bio !== "" || langExp.length !== 0 || langLearn.length !== 0) {
                 lastname = "lastname=" + document.getElementById("lastname").value + "&";
             } else {
                 lastname = "lastname=" + document.getElementById("lastname").value;
             }
         }
         if (password !== ""){
-            if (confirmpassword !== "" || bio !== "") {
+            if (confirmpassword !== "" || bio !== "" || langExp.length !== 0 || langLearn.length !== 0) {
                 password = "password=" + document.getElementById("password").value + "&";
             } else {
                 password = "password=" + document.getElementById("password").value;
             }
         }
         if (confirmpassword !== ""){
-            if (bio !== ""){
+            if (bio !== "" || langExp.length !== 0 || langLearn.length !== 0){
                 confirmpassword = "confirmpassword=" + document.getElementById("confirm_password").value + "&";
             } else {
                 confirmpassword = "confirmpassword=" + document.getElementById("confirm_password").value;
             }
         }
         if(bio !== ""){
-            bio = "bio=" + document.getElementById("bio").value;
+            if(langExp.length !== 0 || langLearn.length !== 0){
+                bio = "bio=" + document.getElementById("bio").value + "&";
+            } else {
+                bio = "bio=" + document.getElementById("bio").value;
+            }
+
         }
-        userData = firstname + lastname + password + confirmpassword + bio;
+        for (var i = 0; i < langExp.length; i++){
+            if(langLearn.length == 0){
+                if(i !== langExp.length - 1){
+                    langExpSend += "langExp=" + langExp[i] + "&";
+                } else {
+                    langExpSend += "langExp=" + langExp[i];
+                }
+            } else {
+                langExpSend += "langExp=" + langExp[i] + "&";
+            }
+
+        }
+        for (i = 0; i < langLearn.length; i++){
+            if(i !== langLearn.length - 1){
+                langLearnSend += "langLearn=" + langLearn[i] + "&";
+            } else {
+                langLearnSend += "langLearn=" + langLearn[i];
+            }
+        }
+        userData = firstname + lastname + password + confirmpassword + bio + langExpSend + langLearnSend;
         xhttp.open('PATCH', url, true);
         // Just needed to place this line AFTER opening the object
         xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
