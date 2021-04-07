@@ -29,6 +29,31 @@ function CreateTable(data){
     return table;
 }
 
+var langExp = [];
+var langLearn = [];
+
+$('#langExp').on('changed.bs.select', function (e, clickedIndex, isSelected, previousValue) {
+    if(isSelected) {
+        langExp.push(e.target.options[clickedIndex].value);
+        //console.log(langExp);
+    } else {
+        let index = langExp.indexOf(e.target.options[clickedIndex].value);
+        langExp.splice(index, 1);
+        //console.log(langExp);
+    }
+});
+
+$('#langLearn').on('changed.bs.select', function (e, clickedIndex, isSelected, previousValue) {
+    if(isSelected) {
+        langLearn.push(e.target.options[clickedIndex].value);
+        //console.log(langLearn);
+    } else {
+        let index = langLearn.indexOf(e.target.options[clickedIndex].value);
+        langLearn.splice(index, 1);
+        //console.log(langLearn);
+    }
+});
+
 document.getElementById("btnUpdateUser").addEventListener("click", (event) =>{
     let username = document.getElementById("username").innerText;
     let firstname = document.getElementById("firstname").value;
