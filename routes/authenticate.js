@@ -31,9 +31,22 @@ router.post('/'
                     if(userObj.username == username && userObj.password == password){
                         res.locals.username = username;
                         req.session.username = username;
+                        res.locals.bio = userObj.bio;
+                        req.session.bio = userObj.bio;
+                        // req.locals.firstname = userObj.firstname;
+                        // req.session.firstname = userObj.firstname;
+                        // req.locals.lastname = userObj.lastname;
+                        // req.session.lastname = userObj.lastname;
+                        // req.locals.password = userObj.password;
+                        // req.session.password = userObj.password;
+                        // req.locals.langExp = userObj.langExp;
+                        // req.session.langExp = userObj.langExp;
+                        // req.locals.langLearn = userObj.langLearn;
+                        // req.session.langLearn = userObj.langLearn;
+                        console.log(req.session.bio);
                         // console.log(username);
-                        req.session.loggedIn = true
-                        console.log(req.session)
+                        req.session.loggedIn = true;
+                        console.log(req.session);
                         // res.redirect('/homepage')
                         res.render('homepage.html', {root: 'views' , username: username});
                     }else{
