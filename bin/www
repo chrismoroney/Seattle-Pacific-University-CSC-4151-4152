@@ -167,4 +167,23 @@ io.on('connection', (socket) => {
       socket.broadcast.emit("direct message sent", {Sender: data.Sender, Message: data.Message, ChatID: data.ChatID});
       console.log("direct message sent to server");
   });
+
+  socket.on('join-room', (roomId, userId) => {
+    //test start
+    console.log(roomId, userId + "!!!!!");
+    //test end
+
+    socket.join(roomId)
+    // socket.to(roomId).broadcast.emit('user-connected', userId)
+    socket.broadcast.to(roomId).emit('user-connected', userId)
+
+    //test start
+    console.log("sent!");
+    //test end
+
+    socket.on('disconnect', () => {
+      socket.to(roomId).broadcast.emit('user-disconnected', userId)
+    })
+  })
+
 });

@@ -25,6 +25,7 @@ function showMessages(id){
     var url2 = 'https://lingojiveapi.herokuapp.com/directmessages/';
     // var url2 = 'http://localhost:3000/directmessages/';
 
+    var lastSender = "";
     xhttp2.onreadystatechange = function() {
         console.log("Called");
         if (this.readyState == 4 && this.status == 200) {
@@ -34,8 +35,19 @@ function showMessages(id){
             for(let i = 0; i < response.length; ++i){
                 let li = document.createElement("li");
                 let span = document.createElement("span");
-                messages.appendChild(li).append(response[i].Sender);
-                messages.appendChild(span).append(response[i].Message);
+                messages.appendChild(li).append(response[i].Message);
+                if(response[i].Sender == username){
+                    li.classList.add("thisUser");
+                }
+                else{
+                    li.classList.add("otherUser");
+                }
+                if(lastSender != response[i].Sender){
+                    li.classList.add("newSender");
+                }
+                lastSender = response[i].Sender;
+                //messages.appendChild(li).append(response[i].Sender);
+                //messages.appendChild(span).append(response[i].Message);
             }
             messageScroll.scrollTop = messageScroll.scrollHeight;
         }

@@ -40,3 +40,24 @@
     background-color: #007bff;
     border-color: #007bff;
 }
+ul{
+    padding-inline-start: 0px;
+}
+#messages li{
+    list-style-type: none;
+    border: 1px gray solid;
+    border-radius: .25rem;
+    margin-bottom: 1px;
+}
+.thisUser{
+    margin-left: 40%;
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+.otherUser{
+    margin-right: 40%;
+}
+.newSender{
+    margin-top: 2px;
+}
