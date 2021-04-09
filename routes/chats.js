@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+const { v4: uuidV4 } = require('uuid');
 
 function HandleError(response, reason, message, code){
     console.log('ERROR: ' + reason);
@@ -14,7 +15,8 @@ router.get('/', function(req, res, next) {
     //     res.render('directmessage.html', {root: 'views', username: req.session.username, chatID: req.params.ChatID})
     // }
     // else {
-        res.render('chats.html', {root: 'views', username: req.session.username})
+    let roomId = uuidV4();
+        res.render('chats.html', {root: 'views', username: req.session.username, roomId: roomId})
     // }
 });
 
