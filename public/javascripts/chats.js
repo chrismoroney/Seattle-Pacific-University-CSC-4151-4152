@@ -73,12 +73,19 @@ xhttp.onreadystatechange = function() {
             li.className = "linkClass list-group-item";
             li.id = response[i]._id;
             chats.appendChild(li);
-            let text = document.createTextNode(response[i].Members[0] );
+            let text = document.createTextNode(response[i].Members[0]);
             if(response[i].Members[0] === username){
                 text.nodeValue = response[i].Members[1];
             }
             //let text = document.createTextNode(response[i].Name);
             li.appendChild(text);
+            let videoCall = document.createElement("button");
+            videoCall.innerText = "call";
+            videoCall.addEventListener("click", function(){
+                socket.emit("send-call-invite", {invitee: text.nodeValue, inviter: text.nodeValue});
+                alert("hello");
+            })
+            li.appendChild(videoCall);
             li.addEventListener("click", function(){
                 showMessages(li.id);
             });
@@ -169,3 +176,11 @@ socket.on("direct message sent", data => {
         messageScroll.scrollTop = messageScroll.scrollHeight;
     }
 });
+
+socket.on('call-invite', (data) => {
+    if(data.invitee == username){
+        console.log(data.invitee)
+        alert(data.invitee);
+    }
+})
+

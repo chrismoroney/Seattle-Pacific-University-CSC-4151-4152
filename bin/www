@@ -186,4 +186,9 @@ io.on('connection', (socket) => {
     })
   })
 
+  socket.on("send-call-invite", (data) => {
+    socket.broadcast.emit("call-invite", {invitee: data.invitee});
+    console.log(data.invitee);
+  })
+
 });
