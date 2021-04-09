@@ -6,7 +6,6 @@ function HandleError(response, reason, message, code){
     response.status(code || 500).json({"error:": message});
 }
 
-/* GET home page. */
 router.get('/', function(req, res, next) {
     // res.render('index', { title: 'Express' });
     console.log('called');
