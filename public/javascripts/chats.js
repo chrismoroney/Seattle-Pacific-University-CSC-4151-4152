@@ -73,12 +73,21 @@ xhttp.onreadystatechange = function() {
             li.className = "linkClass list-group-item";
             li.id = response[i]._id;
             chats.appendChild(li);
-            let text = document.createTextNode(response[i].Members[0] );
+            let text = document.createTextNode(response[i].Members[0]);
             if(response[i].Members[0] === username){
                 text.nodeValue = response[i].Members[1];
             }
             //let text = document.createTextNode(response[i].Name);
             li.appendChild(text);
+            let videoCall = document.createElement("button");
+            videoCall.innerText = "call";
+            videoCall.addEventListener("click", function(){
+                socket.emit("send-call-invite", {invitee: text.nodeValue, inviter: username, roomId: roomId});
+                // alert("hello");
+                let url = "http://lingojive.herokuapp.com/videochat/" + roomId;
+                alert("inviting " + text.nodeValue + " to room " + url)
+            })
+            li.appendChild(videoCall);
             li.addEventListener("click", function(){
                 showMessages(li.id);
             });
@@ -169,3 +178,13 @@ socket.on("direct message sent", data => {
         messageScroll.scrollTop = messageScroll.scrollHeight;
     }
 });
+
+socket.on('call-invite', (data) => {
+    if(data.invitee == username){
+        console.log(data.invitee, data.inviter, data.roomId)
+        let url = "http://lingojive.herokuapp.com/videochat/" + data.roomId;
+        alert(data.inviter + " is inviting you to chat in room " + url)
+        // alert(data.invitee + " " + data.inviter + " " + data.roomId);
+    }
+})
+
