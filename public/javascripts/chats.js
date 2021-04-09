@@ -111,9 +111,10 @@ form.addEventListener('submit', function(e) {
 
         let li = document.createElement("li");
         let span = document.createElement("span");
-        messages.appendChild(li).append(sender);
-        messages.appendChild(span).append(message);
-
+        // messages.appendChild(li).append(sender);
+        // messages.appendChild(span).append(message);
+        messages.appendChild(li).append(message);
+        li.classList.add("thisUser");
         messageScroll.scrollTop = messageScroll.scrollHeight;
 
         socket.emit("direct message", {Sender: sender, Message: message, ChatID: chatID});
@@ -155,7 +156,16 @@ socket.on("direct message sent", data => {
         let li = document.createElement("li");
         let span = document.createElement("span");
         messages.appendChild(li).append(data.Message);
-        messages.appendChild(span).append(data.Sender);
+        // if(messages.childNodes[messages.childNodes.length -1].classList.contains("thisUser")){
+        //     li.classList.add("newSender");
+        // }
+        // alert("messages: " + messages + "\n");
+        // alert("child nodes: " + messages.childNodes + "\n");
+        // alert("child nodes length: " + messages.childNodes.length);
+        // alert("last node: " + messages.childNodes[messages.childNodes.length - 1].innerText);
+        // alert("class list: " + messages.childNodes[messages.childNodes.length -1].classList[0]);
+        li.classList.add("otherUser");
+        // messages.appendChild(span).append(data.Sender);
         messageScroll.scrollTop = messageScroll.scrollHeight;
     }
 });
