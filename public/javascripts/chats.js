@@ -85,7 +85,12 @@ xhttp.onreadystatechange = function() {
                 socket.emit("send-call-invite", {invitee: text.nodeValue, inviter: username, roomId: roomId});
                 // alert("hello");
                 let url = "http://lingojive.herokuapp.com/videochat/" + roomId;
-                alert("inviting " + text.nodeValue + " to room " + url)
+                let alertBox = document.getElementsByClassName("alertBox")[0];
+                alertBox.style.display = "block";
+                alertBox.innerHTML = 'Calling ' + text.nodeValue +
+                '<a href="' + url + '">' + ' Join Room ' + '<\a>';
+                ;
+                // alert("inviting " + text.nodeValue + " to room " + url)
             })
             li.appendChild(videoCall);
             li.addEventListener("click", function(){
@@ -183,7 +188,11 @@ socket.on('call-invite', (data) => {
     if(data.invitee == username){
         console.log(data.invitee, data.inviter, data.roomId)
         let url = "http://lingojive.herokuapp.com/videochat/" + data.roomId;
-        alert(data.inviter + " is inviting you to chat in room " + url)
+        let alertBox = document.getElementsByClassName("alertBox")[0];
+        alertBox.style.display = "block";
+        alertBox.innerHTML = data.inviter + ' wants to chat with you: ' +
+                             '<a href="' + url + '">' + 'Accept' + '<\a>';
+        // alert(data.inviter + " is inviting you to chat in room " + url)
         // alert(data.invitee + " " + data.inviter + " " + data.roomId);
     }
 })
