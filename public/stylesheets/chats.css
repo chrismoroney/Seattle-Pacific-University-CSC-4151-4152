@@ -64,6 +64,7 @@ ul{
 }
 
 .alertBox{
+    display: none;
     z-index: 1;
     position: fixed;
     top: 50%;
@@ -74,4 +75,5 @@ ul{
     margin-top: -100px;
     margin-left: -200px;
     align-content: center;
+    background: white;
 }
