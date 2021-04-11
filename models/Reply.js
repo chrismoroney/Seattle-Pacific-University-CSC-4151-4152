@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+let Post = require('../models/Post.js');
 let Schema = mongoose.Schema;
 
 let ReplySchema = new Schema({

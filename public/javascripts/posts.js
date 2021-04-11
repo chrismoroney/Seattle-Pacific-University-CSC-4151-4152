@@ -37,6 +37,7 @@ xhttp.onreadystatechange = function() {
             var user = document.createElement('div');
             user.textContent = response[i].Name;
             item.prepend(user);
+            //response[i].innerHTML = document.createElement('button');
         }
         // item.textContent = JSON.parse(this.responseText)[0].Body;
         // messages.appendChild(item);
