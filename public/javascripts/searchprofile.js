@@ -22,7 +22,7 @@ function CreateTable(users){
             '           <td>' + users[user]["lastname"]+  '</td>\n' +
             '           <td>' + users[user]["langExp"]+  '</td>\n' +
             '           <td>' + users[user]["langLearn"]+  '</td>\n' +
-            '           <td>  <button class="btn-primary" id="viewprofile">View Profile</button>  </td>\n' +
+            '           <td><button onclick="window.location.href=\'/otherprofile\';">View Profile</button></td> \n'+
             '       </tr>\n';
     }
 
