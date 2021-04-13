@@ -9,6 +9,7 @@ function CreateTable(users){
         '           <th scope="col">Last Name</th> \n'+
         '           <th scope="col">Native Language(s)</th> \n'+
         '           <th scope="col">Learning Language(s)</th> \n'+
+        '           <th scope="col">Profile</th> \n'+
         '       </tr>\n' +
         '   </thead>\n' +
         '   <tbody>\n';
@@ -21,6 +22,7 @@ function CreateTable(users){
             '           <td>' + users[user]["lastname"]+  '</td>\n' +
             '           <td>' + users[user]["langExp"]+  '</td>\n' +
             '           <td>' + users[user]["langLearn"]+  '</td>\n' +
+            '           <td>  <button class="btn-primary" id="viewprofile">View Profile</button>  </td>\n' +
             '       </tr>\n';
     }
 

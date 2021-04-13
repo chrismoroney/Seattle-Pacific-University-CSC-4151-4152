@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+let User = require('../models/User.js');
 let Schema = mongoose.Schema;
 
 let UserSchema = new Schema({
@@ -11,7 +11,9 @@ let UserSchema = new Schema({
     bio: String,
     langExp: [String],
     langLearn: [String],
-    onlineStatus: Boolean
+    onlineStatus: Boolean,
+    friends: [User],
+    blocked: [User]
 });
 
 module.exports = mongoose.model('User', UserSchema);

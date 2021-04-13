@@ -49,6 +49,7 @@ var authenticationRouter = require('./routes/authenticate');
 var chatListRouter = require('./routes/chats');
 var logoutRouter = require('./routes/logout');
 var videoChatRouter = require('./routes/room');
+var otherprofileRouter = require('./routes/otherprofile');
 
 require('dotenv').config();
   
@@ -93,6 +94,7 @@ app.use('/authenticate', authenticationRouter);
 app.use('/chats', chatListRouter);
 app.use('/logout', logoutRouter);
 app.use('/videochat', videoChatRouter);
+app.use('/otherprofile', otherprofileRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
