@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Profile</title>
+    <title>View Friends</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -16,19 +16,19 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-<!--            <li class="nav-item dropdown">-->
-<!--                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
-<!--                    Actions-->
-<!--                </a>-->
-<!--                <div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
-<!--                    <a class="dropdown-item" href="/createprofile">Create a Profile</a>-->
-<!--                    <a class="dropdown-item" href="/searchprofile">Search Profile</a>-->
-<!--                    <a class="dropdown-item" href="/socket">Socket</a>-->
-<!--                    <a class="dropdown-item" href="/messenger">Messenger (Demo)</a>-->
-<!--                    <a class="dropdown-item" href="/chats">DM Chats</a>-->
-<!--                    <a class="dropdown-item" href="/posts">Posts</a>-->
-<!--                </div>-->
-<!--            </li>-->
+            <!--            <li class="nav-item dropdown">-->
+            <!--                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+            <!--                    Actions-->
+            <!--                </a>-->
+            <!--                <div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
+            <!--                    <a class="dropdown-item" href="/createprofile">Create a Profile</a>-->
+            <!--                    <a class="dropdown-item" href="/searchprofile">Search Profile</a>-->
+            <!--                    <a class="dropdown-item" href="/socket">Socket</a>-->
+            <!--                    <a class="dropdown-item" href="/messenger">Messenger (Demo)</a>-->
+            <!--                    <a class="dropdown-item" href="/chats">DM Chats</a>-->
+            <!--                    <a class="dropdown-item" href="/posts">Posts</a>-->
+            <!--                </div>-->
+            <!--            </li>-->
             <li class="nav-item">
                 <a class="nav-link" href="/searchprofile">
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-people" viewBox="0 0 16 16">
@@ -53,8 +53,6 @@
             </li>
         </ul>
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="editprofile">Edit Profile<span class="sr-only"(current)></span></a>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Account
@@ -70,35 +68,15 @@
         </ul>
     </div>
 </nav>
+<div class="container">
 
-<div style = "text-align: center">
-    <img src = "../Picture/profilephoto.png" height = "200px" width = "200px" alt = "Profile Photo">
 </div>
-<h3 id="fullname" style="text-align: center"><%=firstname%> <%=lastname%></h3>
-<h4 id="head_username" style="text-align: center; text-size: 31px; border-color: Blue"><%= username %></h4>
-<script src="javascripts/myprofile.js"></script>
-<div style="text-align: center; padding: 10px">
-<button onclick="window.location.href='/editprofile';"> Edit Profile </button>
-</div>
-<div style="text-align: center;">
-    <button onclick="window.location.href='/viewblocked'"; class="btn-danger" id="btnBlockUser">View Blocked</button>
-    <button onclick="window.location.href='/viewfriends'"; class="btn-success" id="btnAddFriend">View Friends</button>
-</div>
-<div style="...; border:5px solid black; align: 'center'; height: 150px;margin: 0 100px;">
-    <div class = "bio">
-        <h3>Biography</h3>
-        <p><%= bio %></p>
+<div style="padding-top: 10px" class="container">
+    <div class="jumbotron" id="output" style="text-align: center">
+        <button onclick="window.location.href='/myprofile'" class="btn-warning btn-lg" id="btnback">Back</button>
+        <button class="btn-danger btn-lg" id="btnViewBlocked">View Blocked</button>
     </div>
 </div>
-<div style="...; border:5px solid black; align: 'center'; float: left; height: 150px;width: 500px;margin: 20px 100px;">
-    <div class = "boxOne">
-        <h4>Languages Spoken</h4>
-    </div>
-</div>
-<div style="...; border:5px solid black; align: 'center'; float: right; height: 150px;width: 500px;margin: 20px 100px;">
-    <div class = "boxTwo">
-        <h4>Languages to be Learned</h4>
-    </div>
-</div>
+<script src="javascripts/viewblocked.js"></script>
 </body>
 </html>

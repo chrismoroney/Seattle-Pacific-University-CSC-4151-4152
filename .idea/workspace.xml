@@ -28,16 +28,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9192ada3-c883-4128-9689-585ec6d745c2" name="Default Changelist" comment="this should fix the jquery issue">
+      <change afterPath="$PROJECT_DIR$/public/javascripts/viewblocked.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/javascripts/viewfriends.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routes/viewblocked.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routes/viewfriends.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/viewblocked.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/viewfriends.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/chats.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/chats.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/homepage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/User.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/javascripts/searchprofile.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/searchprofile.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/myprofile.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/myprofile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/otherprofile.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/otherprofile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/posts.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/posts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/room.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/room.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/searchprofile.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/searchprofile.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,6 +85,7 @@
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="12.18.3" />
     <property name="javascript.nodejs.core.library.typings.version" value="12.20.7" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/javascripts" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -96,7 +98,19 @@
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/javascripts" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -123,6 +137,7 @@
       <workItem from="1618347222126" duration="1673000" />
       <workItem from="1618350124516" duration="623000" />
       <workItem from="1618462847139" duration="4334000" />
+      <workItem from="1618618219298" duration="2332000" />
     </task>
     <task id="LOCAL-00001" summary="minor fixes to chats.js">
       <created>1617501873889</created>
@@ -135,53 +150,52 @@
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="minor fixes to chats.js" />
     <option name="LAST_COMMIT_MESSAGE" value="minor fixes to chats.js" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1638" height="248" key="GridCell.Tab.0.bottom" timestamp="1618349200302">
+    <state width="1638" height="248" key="GridCell.Tab.0.bottom" timestamp="1618643978066">
       <screen x="0" y="23" width="1680" height="982" />
     </state>
     <state width="1237" height="176" key="GridCell.Tab.0.bottom/0.0.1280.720@0.0.1280.720" timestamp="1617649529827" />
-    <state width="1638" height="248" key="GridCell.Tab.0.bottom/0.23.1680.981@0.23.1680.981" timestamp="1618348733400" />
-    <state width="1638" height="248" key="GridCell.Tab.0.bottom/0.23.1680.982@0.23.1680.982" timestamp="1618349200302" />
+    <state width="1638" height="248" key="GridCell.Tab.0.bottom/0.23.1680.981@0.23.1680.981" timestamp="1618619518729" />
+    <state width="1638" height="248" key="GridCell.Tab.0.bottom/0.23.1680.982@0.23.1680.982" timestamp="1618643978066" />
     <state width="1877" height="285" key="GridCell.Tab.0.bottom/1920.-87.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1617477418816" />
-    <state width="1638" height="248" key="GridCell.Tab.0.center" timestamp="1618349200301">
+    <state width="1638" height="248" key="GridCell.Tab.0.center" timestamp="1618643978065">
       <screen x="0" y="23" width="1680" height="982" />
     </state>
     <state width="1237" height="176" key="GridCell.Tab.0.center/0.0.1280.720@0.0.1280.720" timestamp="1617649529826" />
-    <state width="1638" height="248" key="GridCell.Tab.0.center/0.23.1680.981@0.23.1680.981" timestamp="1618348733399" />
-    <state width="1638" height="248" key="GridCell.Tab.0.center/0.23.1680.982@0.23.1680.982" timestamp="1618349200301" />
+    <state width="1638" height="248" key="GridCell.Tab.0.center/0.23.1680.981@0.23.1680.981" timestamp="1618619518728" />
+    <state width="1638" height="248" key="GridCell.Tab.0.center/0.23.1680.982@0.23.1680.982" timestamp="1618643978065" />
     <state width="1877" height="285" key="GridCell.Tab.0.center/1920.-87.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1617477418816" />
-    <state width="1638" height="248" key="GridCell.Tab.0.left" timestamp="1618349200301">
+    <state width="1638" height="248" key="GridCell.Tab.0.left" timestamp="1618643978065">
       <screen x="0" y="23" width="1680" height="982" />
     </state>
     <state width="1237" height="176" key="GridCell.Tab.0.left/0.0.1280.720@0.0.1280.720" timestamp="1617649529826" />
-    <state width="1638" height="248" key="GridCell.Tab.0.left/0.23.1680.981@0.23.1680.981" timestamp="1618348733399" />
-    <state width="1638" height="248" key="GridCell.Tab.0.left/0.23.1680.982@0.23.1680.982" timestamp="1618349200301" />
+    <state width="1638" height="248" key="GridCell.Tab.0.left/0.23.1680.981@0.23.1680.981" timestamp="1618619518727" />
+    <state width="1638" height="248" key="GridCell.Tab.0.left/0.23.1680.982@0.23.1680.982" timestamp="1618643978065" />
     <state width="1877" height="285" key="GridCell.Tab.0.left/1920.-87.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1617477418815" />
-    <state width="1638" height="248" key="GridCell.Tab.0.right" timestamp="1618349200302">
+    <state width="1638" height="248" key="GridCell.Tab.0.right" timestamp="1618643978065">
       <screen x="0" y="23" width="1680" height="982" />
     </state>
     <state width="1237" height="176" key="GridCell.Tab.0.right/0.0.1280.720@0.0.1280.720" timestamp="1617649529826" />
-    <state width="1638" height="248" key="GridCell.Tab.0.right/0.23.1680.981@0.23.1680.981" timestamp="1618348733400" />
-    <state width="1638" height="248" key="GridCell.Tab.0.right/0.23.1680.982@0.23.1680.982" timestamp="1618349200302" />
+    <state width="1638" height="248" key="GridCell.Tab.0.right/0.23.1680.981@0.23.1680.981" timestamp="1618619518729" />
+    <state width="1638" height="248" key="GridCell.Tab.0.right/0.23.1680.982@0.23.1680.982" timestamp="1618643978065" />
     <state width="1877" height="285" key="GridCell.Tab.0.right/1920.-87.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1617477418816" />
     <state x="339" y="165" key="com.intellij.ide.util.TipDialog" timestamp="1618462855686">
       <screen x="0" y="0" width="1280" height="680" />
