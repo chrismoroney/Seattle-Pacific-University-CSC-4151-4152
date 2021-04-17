@@ -20,7 +20,7 @@ function CreateTable(users){
             '           <td>' + users[user]["firstname"] + " " + users[user]["lastname"] + '</td>\n' +
             '           <td>' + users[user]["langExp"]+  '</td>\n' +
             '           <td>' + users[user]["langLearn"]+  '</td>\n' +
-            '           <td><button onclick="window.location.href=\'/otherprofile\';">View Profile</button></td> \n'+
+            '           <td><button onclick="window.location.href=\'/otherprofile\'" id="gotoprofile">View Profile</button></td> \n'+
             '       </tr>\n';
     }
 
@@ -62,3 +62,9 @@ document.getElementById("btnLoadUsersByUsername").addEventListener("click", (eve
     xhttp.open("GET", url, true);
     xhttp.send();
 });
+/*
+document.getElementById("gotoprofile").addEventListener("click", (event) =>{
+    let url = "lingojiveapi.herokuapp.com/users/" + users[user]["username"]
+});
+*/
+
