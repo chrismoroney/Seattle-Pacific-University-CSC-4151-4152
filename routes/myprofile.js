@@ -24,7 +24,7 @@ router.post('/'
 */
 router.get('/', function(req, res, next) {
     res.render('myprofile.html', {root: 'views', username: req.session.username, firstname: req.session.firstname,
-        lastname: req.session.lastname, bio: req.session.bio})
+        lastname: req.session.lastname, bio: req.session.bio, langExp: req.session.langExp, langLearn: req.session.langLearn})
 });
 
 module.exports = router;
