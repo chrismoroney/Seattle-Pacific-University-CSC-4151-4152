@@ -29,8 +29,10 @@
   <component name="ChangeListManager">
     <list default="true" id="9192ada3-c883-4128-9689-585ec6d745c2" name="Default Changelist" comment="this should fix the jquery issue">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/javascripts/otherprofile.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/otherprofile.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/javascripts/searchprofile.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/searchprofile.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/otherprofile.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/otherprofile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/otherprofile.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/otherprofile.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +126,7 @@
       <workItem from="1618462847139" duration="4334000" />
       <workItem from="1618618219298" duration="3317000" />
       <workItem from="1618677012363" duration="2349000" />
-      <workItem from="1618799163415" duration="2063000" />
+      <workItem from="1618799163415" duration="6303000" />
     </task>
     <task id="LOCAL-00001" summary="minor fixes to chats.js">
       <created>1617501873889</created>

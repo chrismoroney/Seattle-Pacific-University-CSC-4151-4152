@@ -72,7 +72,6 @@
 </div>
 <h3 id="fullname" style="text-align: center"><%= firstName %> <%= lastName %></h3>
 <h4 id="head_username" style="text-align: center; text-size: 31px; border-color: Blue"><%= username %></h4>
-<script src="javascripts/otherprofile.js"></script>
 <div style="text-align: center;">
     <div>
         <button class="btn-danger" id="btnBlockUser">Block</button>
@@ -81,21 +80,22 @@
     <div style="...; border:5px solid black; align: 'center'; height: 150px;margin: 0 100px;">
         <div class = "bio">
             <h3>Biography</h3>
-            <p style="text-align: center"><%= bio %></p>
+            <p id="bio" style="text-align: center"><%= bio %></p>
         </div>
     </div>
     <div style="...; border:5px solid black; align: 'center'; float: left; height: 150px;width: 500px;margin: 20px 100px;">
         <div class = "boxOne">
             <h4>Languages Spoken</h4>
-            <p style="text-align: center"><%= langExp %> </p>
+            <p id="langExp" style="text-align: center"><%= langExp %> </p>
         </div>
     </div>
     <div style="...; border:5px solid black; align: 'center'; float: right; height: 150px;width: 500px;margin: 20px 100px;">
         <div class = "boxTwo">
             <h4>Languages to be Learned</h4>
-            <p style="text-align: center"><%= langLearn %></p>
+            <p id="langLearn" style="text-align: center"><%= langLearn %></p>
         </div>
     </div>
 </div>
+<script src="/javascripts/otherprofile.js"></script>
 </body>
 </html>
