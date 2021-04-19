@@ -20,6 +20,7 @@ function CreateTable(users){
             '           <td>' + users[user]["firstname"] + " " + users[user]["lastname"] + '</td>\n' +
             '           <td>' + users[user]["langExp"]+  '</td>\n' +
             '           <td>' + users[user]["langLearn"]+  '</td>\n' +
+            // '           <td><button onclick="window.location.href=\'/otherprofile\'" id="gotoprofile">View Profile</button></td> \n'+
             '           <td><button onclick="window.location.href=\'/otherprofile\'" id="gotoprofile">View Profile</button></td> \n'+
             '       </tr>\n';
     }
