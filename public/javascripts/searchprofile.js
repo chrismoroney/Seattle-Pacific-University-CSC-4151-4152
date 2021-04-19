@@ -14,13 +14,15 @@ function CreateTable(users){
         '   <tbody>\n';
 
     for (let user in users){
+        let href = "/otherprofile/" + users[user]["username"];
         table +=
             '       <tr>\n' +
             '           <td>' + users[user]["username"]+  '</td>\n' +
             '           <td>' + users[user]["firstname"] + " " + users[user]["lastname"] + '</td>\n' +
             '           <td>' + users[user]["langExp"]+  '</td>\n' +
             '           <td>' + users[user]["langLearn"]+  '</td>\n' +
-            '           <td><button onclick="window.location.href=\'/otherprofile\'" id="gotoprofile">View Profile</button></td> \n'+
+            // '           <td><button onclick="window.location.href=\'/otherprofile\'" id="gotoprofile">View Profile</button></td> \n'+
+            '           <td><a href=' + href + '>View Profile</a></td> \n'+
             '       </tr>\n';
     }
 
