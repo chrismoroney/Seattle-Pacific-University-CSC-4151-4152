@@ -12,16 +12,11 @@ xhttp.onreadystatechange = function(){
             bio = users[user]["bio"];
         }
 
-        alert(firstName);
-
         document.getElementById("fullname").innerText = firstName + " " + lastName;
         document.getElementById("bio").innerText = bio;
         document.getElementById("langLearn").innerText = langLearn;
         document.getElementById("langExp").innerText = langExp;
-        // res.render('otherprofile.html', {
-        //     root: 'views', username: username, firstName: firstName,
-        //     lastName: lastName, bio: bio, langExp: langExp,
-        //     langLearn: langLearn})
+
     } else if (this.status == 404) {
         console.log("error");
     }
