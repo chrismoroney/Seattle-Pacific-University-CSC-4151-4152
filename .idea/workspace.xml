@@ -29,6 +29,8 @@
   <component name="ChangeListManager">
     <list default="true" id="9192ada3-c883-4128-9689-585ec6d745c2" name="Default Changelist" comment="this should fix the jquery issue">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/otherprofile.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/otherprofile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/otherprofile.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/otherprofile.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +95,7 @@
       <recent name="$PROJECT_DIR$/public/javascripts" />
     </key>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -122,6 +124,7 @@
       <workItem from="1618462847139" duration="4334000" />
       <workItem from="1618618219298" duration="3317000" />
       <workItem from="1618677012363" duration="2349000" />
+      <workItem from="1618799163415" duration="1137000" />
     </task>
     <task id="LOCAL-00001" summary="minor fixes to chats.js">
       <created>1617501873889</created>
@@ -134,19 +137,20 @@
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
+    <option name="version" value="1" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="minor fixes to chats.js" />
@@ -181,10 +185,10 @@
     <state width="1638" height="248" key="GridCell.Tab.0.right/0.23.1680.981@0.23.1680.981" timestamp="1618619518729" />
     <state width="1638" height="248" key="GridCell.Tab.0.right/0.23.1680.982@0.23.1680.982" timestamp="1618643978065" />
     <state width="1877" height="281" key="GridCell.Tab.0.right/1920.-87.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1618680881948" />
-    <state x="339" y="165" key="com.intellij.ide.util.TipDialog" timestamp="1618462855686">
+    <state x="339" y="165" key="com.intellij.ide.util.TipDialog" timestamp="1618799217633">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="339" y="165" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1618462855686" />
+    <state x="339" y="165" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1618799217633" />
     <state x="297" y="161" key="run.anything.popup" timestamp="1617501662183">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
