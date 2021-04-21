@@ -13,7 +13,9 @@ let UserSchema = new Schema({
     langLearn: [String],
     onlineStatus: Boolean,
     friends: [String],
-    blocked: [String]
+    blocked: [String],
+    blocking: [String],
+    blockedBy: [String]
 });
 
 module.exports = mongoose.model('User', UserSchema);
