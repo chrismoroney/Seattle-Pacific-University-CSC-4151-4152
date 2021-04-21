@@ -20,8 +20,8 @@ xhttp.onreadystatechange = function(){
         document.getElementById("bio").innerText = bio;
         document.getElementById("langLearn").innerText = langLearn;
         document.getElementById("langExp").innerText = langExp;
-        document.getElementById("btnBlockUser").onclick = blockUser();
-
+        document.getElementById("btnBlockUser").onclick = blockUser;
+        
     } else if (this.status == 404) {
         console.log("error");
     }
