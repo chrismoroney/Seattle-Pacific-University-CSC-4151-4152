@@ -14,7 +14,6 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/:ChatID', function(req, res, next) {
-    // res.render('index', { title: 'Express' });
     var chatID = req.params.ChatID;
     console.log(chatID);
     if(req.params.ChatID){

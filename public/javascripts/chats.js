@@ -132,7 +132,6 @@ form2.addEventListener('submit', function(e) {
     var url4 = 'https://lingojiveapi.herokuapp.com/chats/';
     // var url4 = 'http://localhost:3000/chats/';
 
-
     e.preventDefault();
     if (recipient.value) {
         var member1 = document.getElementById('username').innerText;

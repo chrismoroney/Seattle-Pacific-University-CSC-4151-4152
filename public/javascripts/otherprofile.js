@@ -78,3 +78,19 @@ document.getElementById("chatButton").addEventListener("click", function(){
         alertBox.innerHTML = 'Calling ' + otherUsername +
             '<a href="' + url + '">' + ' Join Room ' + '<\a>';
 });
+
+document.getElementById("messageButton").addEventListener("click", function(){
+    let xhttp = new XMLHttpRequest();
+    let url = 'https://lingojiveapi.herokuapp.com/chats/';
+    // var url4 = 'http://localhost:3000/chats/';
+
+    let member1 = username;
+    let member2 = otherUsername;
+
+    let name = "uniformchatname";
+    let params = 'Name='+name+'&Member1='+member1+'&Member2='+member2;
+
+    xhttp.open("POST", url, true);
+    xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xhttp.send(params);
+})
