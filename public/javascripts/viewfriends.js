@@ -11,10 +11,11 @@ function CreateTable(users){
         '   <tbody>\n';
 
     for (let user in users){
+        let href = "/otherprofile/" + users[user]["friends"];
         table +=
             '       <tr>\n' +
-            '           <td>' + users[user]["friends"] +  '</td>\n' +
-            '           <td><button onclick="window.location.href=\'/otherprofile\';">View Profile</button></td> \n'+
+            '           <td>' + users[user]["username"] +  '</td>\n' +
+            '           <td><a href=' + href + '><input type=button value=\'View Profile\'></a></td> \n'+
             '       </tr>\n';
     }
 
@@ -25,7 +26,6 @@ function CreateTable(users){
 }
 // Still need to figure out
 document.getElementById("btnViewFriends").addEventListener("click", (event) =>{
-    username = req.session.username
     let url = "http://lingojiveapi.herokuapp.com/users/" + username;
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function(){
