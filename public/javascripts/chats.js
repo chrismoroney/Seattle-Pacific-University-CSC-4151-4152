@@ -5,6 +5,7 @@ var messages = document.getElementById('messages');
 var username = document.getElementById('username').innerText;
 var url = 'https://lingojiveapi.herokuapp.com/chats';
 // var url = 'http://localhost:3000/chats';
+//cool, witty comment
 var chatID = 0;
 var messageScroll = document.getElementById('messageScroll');
 
