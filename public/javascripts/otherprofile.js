@@ -46,3 +46,25 @@ function blockUser() {
     xhttp2.open("GET", blockurl, true);
     xhttp2.send();
 }
+
+
+
+
+document.getElementById("btnAddFriend").addEventListener("click", (event) =>{
+    let currentFriend = false;
+    let url = "http://lingojiveapi.herokuapp.com/users/" + username + "/";
+    let userData = "friends=" + otherUsername;
+    let xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function (){
+        if (this.readyState == 4 && this.status == 200){
+
+            document.getElementById("btnAddFriend").innerText = "Remove Friend";
+            currentFriend = true;
+            // Need option for Remove Friend
+        }
+    };
+    xhttp.open('PATCH', url, true);
+    // Just needed to place this line AFTER opening the object
+    xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhttp.send(userData);
+});
