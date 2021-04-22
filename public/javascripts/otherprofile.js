@@ -1,8 +1,8 @@
-var username = document.getElementById("head_username").innerText;
-let url = "http://lingojiveapi.herokuapp.com/users/" + username;
+
+let url = "http://lingojiveapi.herokuapp.com/users/" + otherUsername;
 let xhttp = new XMLHttpRequest();
 
-let blockurl = "http://lingojiveapi.herokuapp.com/blockuser/" + username;
+let blockurl = "http://lingojiveapi.herokuapp.com/blockuser/" + otherUsername;
 let xhttp2 = new XMLHttpRequest();
 xhttp.onreadystatechange = function(){
     if (this.readyState == 4 && this.status == 200){
@@ -16,11 +16,19 @@ xhttp.onreadystatechange = function(){
             bio = users[user]["bio"];
         }
 
-        document.getElementById("fullname").innerText = firstName + " " + lastName;
-        document.getElementById("bio").innerText = bio;
-        document.getElementById("langLearn").innerText = langLearn;
-        document.getElementById("langExp").innerText = langExp;
-        document.getElementById("btnBlockUser").onclick = blockUser;
+
+        if(users[0]["blocking"].indexOf(username) > -1){
+            $("#btnAddFriend").remove();
+            $("#fullname").remove();
+            $("#userInfo").hide().after("<h3>You cannot view this user's profile because you are blocked</h3>");
+        }
+        else{
+            document.getElementById("fullname").innerText = firstName + " " + lastName;
+            document.getElementById("bio").innerText = bio;
+            document.getElementById("langLearn").innerText = langLearn;
+            document.getElementById("langExp").innerText = langExp;
+            document.getElementById("btnBlockUser").onclick = blockUser;
+        }
         
     } else if (this.status == 404) {
         console.log("error");

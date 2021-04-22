@@ -7,6 +7,10 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script>
+        const username = '<%= username %>';
+        const otherUsername = '<%= otherUsername %>';
+    </script>
 </head>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="/">LingoJive</a>
@@ -58,28 +62,29 @@
     <img src = "../Picture/profilephoto.png" height = "200px" width = "200px" alt = "Profile Photo">
 </div>
 <h3 id="fullname" style="text-align: center"><%= firstName %> <%= lastName %></h3>
-<h4 id="head_username" style="text-align: center; text-size: 31px; border-color: Blue"><%= username %></h4>
 <div style="text-align: center;">
     <div>
         <button class="btn-danger" id="btnBlockUser" onclick="">Block</button>
         <button class="btn-success" id="btnAddFriend">Add Friend</button>
     </div>
-    <div style="...; border:5px solid black; align: 'center'; height: 150px;margin: 0 100px;">
-        <div class = "bio">
-            <h3>Biography</h3>
-            <p id="bio" style="text-align: center"><%= bio %></p>
+    <div id="userInfo">
+        <div style="...; border:5px solid black; align: 'center'; height: 150px;margin: 0 100px;">
+            <div class = "bio">
+                <h3>Biography</h3>
+                <p id="bio" style="text-align: center"><%= bio %></p>
+            </div>
         </div>
-    </div>
-    <div style="...; border:5px solid black; align: 'center'; float: left; height: 150px;width: 500px;margin: 20px 100px;">
-        <div class = "boxOne">
-            <h4>Languages Spoken</h4>
-            <p id="langExp" style="text-align: center"><%= langExp %> </p>
+        <div style="...; border:5px solid black; align: 'center'; float: left; height: 150px;width: 500px;margin: 20px 100px;">
+            <div class = "boxOne">
+                <h4>Languages Spoken</h4>
+                <p id="langExp" style="text-align: center"><%= langExp %> </p>
+            </div>
         </div>
-    </div>
-    <div style="...; border:5px solid black; align: 'center'; float: right; height: 150px;width: 500px;margin: 20px 100px;">
-        <div class = "boxTwo">
-            <h4>Languages to be Learned</h4>
-            <p id="langLearn" style="text-align: center"><%= langLearn %></p>
+        <div style="...; border:5px solid black; align: 'center'; float: right; height: 150px;width: 500px;margin: 20px 100px;">
+            <div class = "boxTwo">
+                <h4>Languages to be Learned</h4>
+                <p id="langLearn" style="text-align: center"><%= langLearn %></p>
+            </div>
         </div>
     </div>
 </div>

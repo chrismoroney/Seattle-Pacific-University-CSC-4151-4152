@@ -13,9 +13,9 @@ router.get('/', function(req, res, next) {
 router.get('/:username', function(req, res){
     var username = req.params.username;
         res.render('otherprofile.html', {
-            root: 'views', username: username, firstName: "",
+            root: 'views', username: req.session.username, firstName: "",
             lastName: "", bio: "", langExp: "",
-            langLearn: ""});
+            langLearn: "", otherUsername: username});
 });
 
 module.exports = router;
