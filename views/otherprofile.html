@@ -10,7 +10,9 @@
     <script>
         const username = '<%= username %>';
         const otherUsername = '<%= otherUsername %>';
+        const roomId = '<%= roomId %>';
     </script>
+    <link rel="stylesheet" href="../stylesheets/otherprofile.css">
 </head>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="/">LingoJive</a>
@@ -66,6 +68,16 @@
     <div>
         <button class="btn-danger" id="btnBlockUser" onclick="">Block</button>
         <button class="btn-success" id="btnAddFriend">Add Friend</button>
+        <button class="btn-primary" id="messageButton">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z"/>
+            </svg>
+        </button>
+        <button class="btn-primary" id="chatButton">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-camera-video-fill" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M0 5a2 2 0 0 1 2-2h7.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 4.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 13H2a2 2 0 0 1-2-2V5z"/>
+            </svg>
+        </button>
     </div>
     <div id="userInfo">
         <div style="...; border:5px solid black; align: 'center'; height: 150px;margin: 0 100px;">
@@ -88,6 +100,8 @@
         </div>
     </div>
 </div>
+<div class="container alertBox"></div>
+<script src="/socket.io/socket.io.js"></script>
 <script src="/javascripts/otherprofile.js"></script>
 </body>
 </html>
