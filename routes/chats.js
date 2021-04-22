@@ -8,16 +8,9 @@ function HandleError(response, reason, message, code){
 }
 
 router.get('/', function(req, res, next) {
-    // res.render('index', { title: 'Express' });
     console.log('called');
-    // let chat = req.query['chat'];
-    // if(chat){
-    //     res.render('directmessage.html', {root: 'views', username: req.session.username, chatID: req.params.ChatID})
-    // }
-    // else {
     let roomId = uuidV4();
         res.render('chats.html', {root: 'views', username: req.session.username, roomId: roomId})
-    // }
 });
 
 router.get('/:ChatID', function(req, res, next) {
