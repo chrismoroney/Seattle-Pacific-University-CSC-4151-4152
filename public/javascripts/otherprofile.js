@@ -1,3 +1,4 @@
+var socket = io();
 
 let url = "http://lingojiveapi.herokuapp.com/users/" + otherUsername;
 let xhttp = new XMLHttpRequest();
@@ -67,4 +68,13 @@ document.getElementById("btnAddFriend").addEventListener("click", (event) =>{
     // Just needed to place this line AFTER opening the object
     xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     xhttp.send(userData);
+});
+
+document.getElementById("chatButton").addEventListener("click", function(){
+        socket.emit("send-call-invite", {invitee: otherUsername, inviter: username, roomId: roomId});
+        let url = "http://lingojive.herokuapp.com/videochat/" + roomId;
+        let alertBox = document.getElementsByClassName("alertBox")[0];
+        alertBox.style.display = "block";
+        alertBox.innerHTML = 'Calling ' + otherUsername +
+            '<a href="' + url + '">' + ' Join Room ' + '<\a>';
 });
