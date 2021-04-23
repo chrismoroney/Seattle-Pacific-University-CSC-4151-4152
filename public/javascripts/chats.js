@@ -133,26 +133,26 @@ form.addEventListener('submit', function(e) {
     }
 });
 
-form2.addEventListener('submit', function(e) {
-    var xhttp4 = new XMLHttpRequest();
-    var url4 = 'https://lingojiveapi.herokuapp.com/chats/';
-    // var url4 = 'http://localhost:3000/chats/';
-
-    e.preventDefault();
-    if (recipient.value) {
-        var member1 = document.getElementById('username').innerText;
-        var member2 = recipient.value;
-
-        var name = "uniformchatname";
-        var params = 'Name='+name+'&Member1='+member1+'&Member2='+member2;
-        recipient.value = '';
-
-        xhttp4.open("POST", url4,
-            true);
-        xhttp4.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-        xhttp4.send(params);
-    }
-});
+// form2.addEventListener('submit', function(e) {
+//     var xhttp4 = new XMLHttpRequest();
+//     var url4 = 'https://lingojiveapi.herokuapp.com/chats/';
+//     // var url4 = 'http://localhost:3000/chats/';
+//
+//     e.preventDefault();
+//     if (recipient.value) {
+//         var member1 = document.getElementById('username').innerText;
+//         var member2 = recipient.value;
+//
+//         var name = "uniformchatname";
+//         var params = 'Name='+name+'&Member1='+member1+'&Member2='+member2;
+//         recipient.value = '';
+//
+//         xhttp4.open("POST", url4,
+//             true);
+//         xhttp4.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+//         xhttp4.send(params);
+//     }
+// });
 
 socket.on("direct message sent", data => {
     if(data.ChatID == chatID){
