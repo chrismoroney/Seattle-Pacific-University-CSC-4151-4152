@@ -5,7 +5,6 @@ var messages = document.getElementById('messages');
 var username = document.getElementById('username').innerText;
 var url = 'https://lingojiveapi.herokuapp.com/chats';
 // var url = 'http://localhost:3000/chats';
-//cool, witty comment
 var chatID = 0;
 var messageScroll = document.getElementById('messageScroll');
 
@@ -65,7 +64,8 @@ xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
         console.log(this.responseText);
         var response = JSON.parse(this.responseText);
-        for(let i = 0; i < response.length; ++i){
+        var displayedMessageId;
+        for(let i = response.length - 1; i >= 0; --i){
             let li = document.createElement("li");
 
             li.className = "linkClass list-group-item";
@@ -74,6 +74,9 @@ xhttp.onreadystatechange = function() {
             let text = document.createTextNode(response[i].Members[0]);
             if(response[i].Members[0] === username){
                 text.nodeValue = response[i].Members[1];
+            }
+            if(text.nodeValue == targetName){
+                displayedMessageId = li.id;
             }
             li.appendChild(text);
             let videoCall = document.createElement("button");
@@ -91,7 +94,9 @@ xhttp.onreadystatechange = function() {
             li.addEventListener("click", function(){
                 showMessages(li.id);
             });
-
+        }
+        if(targetName != ""){
+            showMessages(displayedMessageId);
         }
         window.scrollTo(0,document.querySelector(".chatcol3").scrollHeight);
     }

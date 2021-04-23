@@ -94,5 +94,6 @@ document.getElementById("messageButton").addEventListener("click", function(){
     xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xhttp.send(params);
 
-    window.location.href = "/chats"
+    // window.location.href = "/chats"
+    window.location.href = "/chats/" + otherUsername;
 })
