@@ -7,6 +7,12 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script>
+        const username = '<%= username %>';
+        const otherUsername = '<%= otherUsername %>';
+        const roomId = '<%= roomId %>';
+    </script>
+    <link rel="stylesheet" href="../stylesheets/otherprofile.css">
 </head>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="/">LingoJive</a>
@@ -15,19 +21,6 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-<!--            <li class="nav-item dropdown">-->
-<!--                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
-<!--                    Actions-->
-<!--                </a>-->
-<!--                <div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
-<!--                    <a class="dropdown-item" href="/createprofile">Create a Profile</a>-->
-<!--                    <a class="dropdown-item" href="/searchprofile">Search Profile</a>-->
-<!--                    <a class="dropdown-item" href="/socket">Socket</a>-->
-<!--                    <a class="dropdown-item" href="/messenger">Messenger (Demo)</a>-->
-<!--                    <a class="dropdown-item" href="/chats">DM Chats</a>-->
-<!--                    <a class="dropdown-item" href="/posts">Posts</a>-->
-<!--                </div>-->
-<!--            </li>-->
             <li class="nav-item">
                 <a class="nav-link" href="/searchprofile">
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-people" viewBox="0 0 16 16">
@@ -70,30 +63,45 @@
 <div style = "text-align: center">
     <img src = "../Picture/profilephoto.png" height = "200px" width = "200px" alt = "Profile Photo">
 </div>
-<h3 id="fullname" style="text-align: center"></h3>
-<h4 id="head_username" style="text-align: center; text-size: 31px; border-color: Blue"></h4>
-<script src="javascripts/otherprofile.js"></script>
+<h3 id="fullname" style="text-align: center"><%= firstName %> <%= lastName %></h3>
 <div style="text-align: center;">
     <div>
-        <button class="btn-danger" id="btnBlockUser">Block</button>
+        <button class="btn-danger" id="btnBlockUser" onclick="">Block</button>
         <button class="btn-success" id="btnAddFriend">Add Friend</button>
+        <button class="btn-primary" id="messageButton">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z"/>
+            </svg>
+        </button>
+        <button class="btn-primary" id="chatButton">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-camera-video-fill" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M0 5a2 2 0 0 1 2-2h7.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 4.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 13H2a2 2 0 0 1-2-2V5z"/>
+            </svg>
+        </button>
     </div>
-    <div style="...; border:5px solid black; align: 'center'; height: 150px;margin: 0 100px;">
-        <div class = "bio">
-            <h3>Biography</h3>
-            <p></p>
+    <div id="userInfo">
+        <div style="...; border:5px solid black; align: 'center'; height: 150px;margin: 0 100px;">
+            <div class = "bio">
+                <h3>Biography</h3>
+                <p id="bio" style="text-align: center"><%= bio %></p>
+            </div>
         </div>
-    </div>
-    <div style="...; border:5px solid black; align: 'center'; float: left; height: 150px;width: 500px;margin: 20px 100px;">
-        <div class = "boxOne">
-            <h4>Languages Spoken</h4>
+        <div style="...; border:5px solid black; align: 'center'; float: left; height: 150px;width: 500px;margin: 20px 100px;">
+            <div class = "boxOne">
+                <h4>Languages Spoken</h4>
+                <p id="langExp" style="text-align: center"><%= langExp %> </p>
+            </div>
         </div>
-    </div>
-    <div style="...; border:5px solid black; align: 'center'; float: right; height: 150px;width: 500px;margin: 20px 100px;">
-        <div class = "boxTwo">
-            <h4>Languages to be Learned</h4>
+        <div style="...; border:5px solid black; align: 'center'; float: right; height: 150px;width: 500px;margin: 20px 100px;">
+            <div class = "boxTwo">
+                <h4>Languages to be Learned</h4>
+                <p id="langLearn" style="text-align: center"><%= langLearn %></p>
+            </div>
         </div>
     </div>
 </div>
+<div class="container alertBox"></div>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/javascripts/otherprofile.js"></script>
 </body>
 </html>

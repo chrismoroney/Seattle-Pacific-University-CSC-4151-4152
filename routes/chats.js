@@ -8,25 +8,18 @@ function HandleError(response, reason, message, code){
 }
 
 router.get('/', function(req, res, next) {
-    // res.render('index', { title: 'Express' });
     console.log('called');
-    // let chat = req.query['chat'];
-    // if(chat){
-    //     res.render('directmessage.html', {root: 'views', username: req.session.username, chatID: req.params.ChatID})
-    // }
-    // else {
     let roomId = uuidV4();
-        res.render('chats.html', {root: 'views', username: req.session.username, roomId: roomId})
-    // }
+    res.render('chats.html', {root: 'views', username: req.session.username, roomId: roomId,
+                                targetName: ""})
 });
 
-router.get('/:ChatID', function(req, res, next) {
-    // res.render('index', { title: 'Express' });
-    var chatID = req.params.ChatID;
-    console.log(chatID);
-    if(req.params.ChatID){
-        console.log(req.params.ChatID);
-        res.render('directmessage.html', {root: 'views', username: req.session.username, ChatID: req.params.ChatID})
-    }
+router.get('/:targetName', function(req, res, next) {
+    var targetName = req.params.targetName;
+    console.log(targetName);
+
+    let roomId = uuidV4();
+    res.render('chats.html', {root: 'views', username: req.session.username, targetName: targetName,
+                                        roomId: roomId})
 });
 module.exports = router;

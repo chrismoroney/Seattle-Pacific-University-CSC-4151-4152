@@ -1,3 +1,4 @@
+
 function CreateTable(users){
     let table = "";
     table =
@@ -14,14 +15,20 @@ function CreateTable(users){
         '   <tbody>\n';
 
     for (let user in users){
-        table +=
-            '       <tr>\n' +
-            '           <td>' + users[user]["username"]+  '</td>\n' +
-            '           <td>' + users[user]["firstname"] + " " + users[user]["lastname"] + '</td>\n' +
-            '           <td>' + users[user]["langExp"]+  '</td>\n' +
-            '           <td>' + users[user]["langLearn"]+  '</td>\n' +
-            '           <td><button onclick="window.location.href=\'/otherprofile\'" id="gotoprofile">View Profile</button></td> \n'+
-            '       </tr>\n';
+        console.log(users[user]);
+        let href = "/otherprofile/" + users[user]["username"];
+        if(users[user]["blocking"].indexOf(username) == -1){
+
+            table +=
+                '       <tr>\n' +
+                '           <td>' + users[user]["username"]+  '</td>\n' +
+                '           <td>' + users[user]["firstname"] + " " + users[user]["lastname"] + '</td>\n' +
+                '           <td>' + users[user]["langExp"]+  '</td>\n' +
+                '           <td>' + users[user]["langLearn"]+  '</td>\n' +
+                //'           <td><button onclick="window.location.href=\'/otherprofile\'" id="gotoprofile">View Profile</button></td> \n'+
+                '           <td><a href=' + href + '><input type=button value=\'View Profile\'></a></td> \n'+
+                '       </tr>\n';
+        }
     }
 
     table +=
