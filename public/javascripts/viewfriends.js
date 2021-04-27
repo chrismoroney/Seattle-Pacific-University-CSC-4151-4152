@@ -11,7 +11,7 @@ function CreateTable(users){
         '   <tbody>\n';
 
     for (let user in users){
-        let friends = users[user]["friends"]
+        let friends = users[user]["friends"];
         for (let friend in friends){
             let href = "/otherprofile/" + friends[friend];
             table +=
