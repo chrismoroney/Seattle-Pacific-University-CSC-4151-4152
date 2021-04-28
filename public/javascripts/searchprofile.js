@@ -1,3 +1,22 @@
+var xhttp = new XMLHttpRequest();
+var url = 'https://lingojiveapi.herokuapp.com/chats';
+var numUnreadMessages = 0;
+
+xhttp.onreadystatechange = function(){
+    console.log("called");
+    if(this.readyState == 4 && this.status == 200){
+        console.log(this.responseText);
+        var response = JSON.parse(this.responseText);
+        for(let i = 0; i < response.length; ++i){
+            if(response[i].UnreadBy){
+                if(response[i].UnreadBy == username){
+                    numUnreadMessages++;
+                }
+            }
+        }
+        document.getElementById("button_badge").innerText = numUnreadMessages.toString();
+    }
+}
 
 function CreateTable(users){
     let table = "";
@@ -69,6 +88,9 @@ document.getElementById("btnLoadUsersByUsername").addEventListener("click", (eve
     xhttp.open("GET", url, true);
     xhttp.send();
 });
+
+xhttp.open("GET", url, true);
+xhttp.send();
 /*
 document.getElementById("gotoprofile").addEventListener("click", (event) =>{
     let url = "lingojiveapi.herokuapp.com/users/" + users[user]["username"]
