@@ -50,25 +50,51 @@ function blockUser() {
 
 
 
+var userFriendsData = "";
+function makeFriendsList(users) {
+    for (let user in users){
+        let friends = users[user]["friends"];
+        for (let friend in friends) {
+            if(friends[friend] == otherUsername){
+                userFriendsData += "";
+            } else {
+                userFriendsData += "friends=" + friends[friend] + "&";
+            }
+        }
+    }
+}
 
 document.getElementById("btnAddFriend").addEventListener("click", (event) =>{
-    let currentFriend = false;
-    let url = "http://lingojiveapi.herokuapp.com/users/" + username + "/";
-    let userData = "friends=" + otherUsername + "&";
-    let xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function (){
+    let url = "http://lingojiveapi.herokuapp.com/users/" + username;
+    let friendxhttp = new XMLHttpRequest();
+    friendxhttp.onreadystatechange = function (){
+        if (this.readyState == 4 && this.status == 200){
+            document.getElementById("btnAddFriend").innerText = "Remove Friend";
+            makeFriendsList(JSON.parse(this.responseText));
+            friendsPartTwo();
+        };
+    };
+    friendxhttp.open('GET', url,true);
+    friendxhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    friendxhttp.send();
+});
+
+function friendsPartTwo(){
+    let url = "http://lingojiveapi.herokuapp.com/users/" + username;
+    userFriendsData += "friends=" + otherUsername + "&";
+
+    let friendxhttp2 = new XMLHttpRequest();
+    friendxhttp2.onreadystatechange = function (){
         if (this.readyState == 4 && this.status == 200){
 
-            document.getElementById("btnAddFriend").innerText = "Remove Friend";
-            currentFriend = true;
-            // Need option for Remove Friend
-        }
+        };
     };
-    xhttp.open('PATCH', url, true);
-    // Just needed to place this line AFTER opening the object
-    xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    xhttp.send(userData);
-});
+    friendxhttp2.open('PATCH', url, true);
+    friendxhttp2.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    friendxhttp2.send(userFriendsData);
+}
+
+
 
 document.getElementById("chatButton").addEventListener("click", function(){
         socket.emit("send-call-invite", {invitee: otherUsername, inviter: username, roomId: roomId});
@@ -79,7 +105,7 @@ document.getElementById("chatButton").addEventListener("click", function(){
             '<a href="' + url + '">' + ' Join Room ' + '<\a>';
 });
 
-document.getElementById("messageButton").addEventListener("click", function(){
+document.getElementById("messageButton").addEventListener("click", function() {
     let xhttp = new XMLHttpRequest();
     // let url = 'https://lingojiveapi.herokuapp.com/chats/';
     var url = 'http://localhost:5000/chats/';
@@ -87,7 +113,7 @@ document.getElementById("messageButton").addEventListener("click", function(){
     let member2 = otherUsername;
 
     let name = "uniformchatname";
-    let params = 'Name='+name+'&Member1='+member1+'&Member2='+member2;
+    let params = 'Name=' + name + '&Member1=' + member1 + '&Member2=' + member2;
 
     xhttp.open("POST", url, true);
     xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
