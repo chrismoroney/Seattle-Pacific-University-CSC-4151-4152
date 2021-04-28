@@ -107,8 +107,8 @@ document.getElementById("chatButton").addEventListener("click", function(){
 
 document.getElementById("messageButton").addEventListener("click", function() {
     let xhttp = new XMLHttpRequest();
-    // let url = 'https://lingojiveapi.herokuapp.com/chats/';
-    var url = 'http://localhost:5000/chats/';
+    let url = 'https://lingojiveapi.herokuapp.com/chats/';
+    // var url = 'http://localhost:5000/chats/';
     let member1 = username;
     let member2 = otherUsername;
 
