@@ -71,14 +71,18 @@ xhttp.onreadystatechange = function() {
             li.className = "linkClass list-group-item";
             li.id = response[i]._id;
             chats.appendChild(li);
+            let span = document.createElement("span");
+            span.id = response[i]._id + "span";
             let text = document.createTextNode(response[i].Members[0]);
+            span.appendChild(text);
             if(response[i].Members[0] === username){
                 text.nodeValue = response[i].Members[1];
             }
             // if(text.nodeValue == targetName){
             //     displayedMessageId = li.id;
             // }
-            li.appendChild(text);
+            // li.appendChild(text);
+            li.appendChild(span);
             let videoCall = document.createElement("button");
             videoCall.innerText = "call";
             videoCall.addEventListener("click", function(){
@@ -134,7 +138,7 @@ form.addEventListener('submit', function(e) {
 
         socket.emit("direct message", {Sender: sender, Message: message, ChatID: chatID});
 
-        recipient = document.getElementById(chatID).innerText;
+        recipient = document.getElementById(chatID + "span").innerText;
         var params2 = 'ChatID='+chatID+'&Recipient='+recipient;
         xhttp4.open("PATCH", url4, true);
         xhttp4.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
