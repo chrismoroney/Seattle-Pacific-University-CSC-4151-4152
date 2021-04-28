@@ -115,8 +115,8 @@ form.addEventListener('submit', function(e) {
     var url3 = 'https://lingojiveapi.herokuapp.com/directmessages/';
     // var url3 = 'http://localhost:3000/directmessages/';
     var xhttp4 = new XMLHttpRequest();
-    // var url4 = 'https://lingojiveapi.herokuapp.com/chats/'
-    var url4 = 'http://localhost:5000/chats/';
+    var url4 = 'https://lingojiveapi.herokuapp.com/chats/'
+    // var url4 = 'http://localhost:5000/chats/';
 
     e.preventDefault();
     if (input.value) {
