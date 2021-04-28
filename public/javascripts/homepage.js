@@ -1,6 +1,6 @@
 var url = 'https://lingojiveapi.herokuapp.com/chats';
 var xhttp = new XMLHttpRequest();
-alert(username);
+var numUnreadMessages = 0;
 
 xhttp.onreadystatechange = function(){
     console.log("called");
@@ -10,12 +10,14 @@ xhttp.onreadystatechange = function(){
         for(let i = 0; i < response.length; ++i){
             if(response[i].UnreadBy){
                 if(response[i].UnreadBy == username){
-                    alert("unread messages!");
+                    numUnreadMessages++;
                 }
             }
         }
+        document.getElementById("button_badge").innerText = numUnreadMessages.toString();
     }
 }
 
 xhttp.open("GET", url, true);
 xhttp.send();
+
