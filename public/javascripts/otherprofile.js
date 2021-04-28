@@ -107,9 +107,8 @@ document.getElementById("chatButton").addEventListener("click", function(){
 
 document.getElementById("messageButton").addEventListener("click", function() {
     let xhttp = new XMLHttpRequest();
-    let url = 'https://lingojiveapi.herokuapp.com/chats/';
-    // var url4 = 'http://localhost:3000/chats/';
-
+    // let url = 'https://lingojiveapi.herokuapp.com/chats/';
+    var url = 'http://localhost:5000/chats/';
     let member1 = username;
     let member2 = otherUsername;
 
@@ -120,6 +119,6 @@ document.getElementById("messageButton").addEventListener("click", function() {
     xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xhttp.send(params);
 
-    // window.location.href = "/chats"
-    window.location.href = "/chats/" + otherUsername;
-});
+    window.location.href = "/chats"
+    // window.location.href = "/chats/" + otherUsername;
+})

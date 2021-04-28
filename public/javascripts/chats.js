@@ -12,7 +12,7 @@ var form = document.getElementById('form');
 var form2 = document.getElementById('form2');
 var input = document.getElementById('chatMsg');
 var input2 = document.getElementById('composeMsg');
-var recipient = document.getElementById('recipient');
+var recipient;
 
 url += "/" + username;
 console.log("Username: " + username);
@@ -64,21 +64,25 @@ xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
         console.log(this.responseText);
         var response = JSON.parse(this.responseText);
-        var displayedMessageId;
+        var displayedMessageId = response[response.length-1]._id;
         for(let i = response.length - 1; i >= 0; --i){
             let li = document.createElement("li");
 
             li.className = "linkClass list-group-item";
             li.id = response[i]._id;
             chats.appendChild(li);
+            let span = document.createElement("span");
+            span.id = response[i]._id + "span";
             let text = document.createTextNode(response[i].Members[0]);
+            span.appendChild(text);
             if(response[i].Members[0] === username){
                 text.nodeValue = response[i].Members[1];
             }
-            if(text.nodeValue == targetName){
-                displayedMessageId = li.id;
-            }
-            li.appendChild(text);
+            // if(text.nodeValue == targetName){
+            //     displayedMessageId = li.id;
+            // }
+            // li.appendChild(text);
+            li.appendChild(span);
             let videoCall = document.createElement("button");
             videoCall.innerText = "call";
             videoCall.addEventListener("click", function(){
@@ -95,9 +99,10 @@ xhttp.onreadystatechange = function() {
                 showMessages(li.id);
             });
         }
-        if(targetName != ""){
-            showMessages(displayedMessageId);
-        }
+        // if(targetName != ""){
+        //     showMessages(displayedMessageId);
+        // }
+        showMessages(displayedMessageId);
         window.scrollTo(0,document.querySelector(".chatcol3").scrollHeight);
     }
 };
@@ -109,7 +114,9 @@ form.addEventListener('submit', function(e) {
     var xhttp3 = new XMLHttpRequest();
     var url3 = 'https://lingojiveapi.herokuapp.com/directmessages/';
     // var url3 = 'http://localhost:3000/directmessages/';
-
+    var xhttp4 = new XMLHttpRequest();
+    // var url4 = 'https://lingojiveapi.herokuapp.com/chats/'
+    var url4 = 'http://localhost:5000/chats/';
 
     e.preventDefault();
     if (input.value) {
@@ -130,6 +137,12 @@ form.addEventListener('submit', function(e) {
         messageScroll.scrollTop = messageScroll.scrollHeight;
 
         socket.emit("direct message", {Sender: sender, Message: message, ChatID: chatID});
+
+        recipient = document.getElementById(chatID + "span").innerText;
+        var params2 = 'ChatID='+chatID+'&Recipient='+recipient;
+        xhttp4.open("PATCH", url4, true);
+        xhttp4.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        xhttp4.send(params2);
     }
 });
 

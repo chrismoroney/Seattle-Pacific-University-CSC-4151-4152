@@ -3,16 +3,6 @@ const socket = io();
 var messages = document.getElementById('messages');
 var form = document.getElementById('form');
 var input = document.getElementById('input');
-//
-// form.addEventListener('submit', function(e) {
-//     e.preventDefault();
-//     if (input.value) {
-//         socket.emit('chat message', input.value);
-//         input.value = '';
-//     }
-// });
-
-
 
 var url = 'https://lingojiveapi.herokuapp.com/posts';
 // var url = 'http://localhost:5000/posts';
@@ -21,12 +11,7 @@ var xhttp = new XMLHttpRequest();
 
 xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-        // document.getElementById("ecShowTable").innerHTML = CreateTable(JSON.parse(this.responseText));
-        // var item = document.createElement('li');
         console.log(this.responseText);
-        // while (messages.hasChildNodes()) {
-        //     messages.removeChild(messages.firstChild);
-        // }
         messages.innerHTML = '';
         var response = JSON.parse(this.responseText);
         for(let i = 0; i < response.length; ++i){
@@ -42,9 +27,6 @@ xhttp.onreadystatechange = function() {
             button.textContent= 'Reply';
             item.prepend(button);
         }
-        // item.textContent = JSON.parse(this.responseText)[0].Body;
-        // messages.appendChild(item);
-        // window.scrollTo(0, document.body.scrollHeight);
     }
 };
 
@@ -52,15 +34,7 @@ xhttp.open("GET", url,
     true);
 xhttp.send();
 
-// socket.on('chat message', function(msg) {
-//     // var item = document.createElement('li');
-//     // item.textContent = msg;
-//     // messages.appendChild(item);
-//     // window.scrollTo(0, document.body.scrollHeight);
-//     xhttp.open("GET", url,
-//         true);
-//     xhttp.send();
-// });
+
 
 socket.on('post', function(postContent) {
     xhttp.open("GET", url,
@@ -75,15 +49,6 @@ form.addEventListener('submit', function(e) {
         var name = document.getElementById('label1').innerText;
         var params = 'Name='+name+'&Body='+body;
         input.value = '';
-        // socket.emit('chat message', input.value);
-        // input.value = '';
-        // let post = new Post(req.body);
-        // post.save((err) =>{
-        //     if(err)
-        //         sendStatus(500);
-        //         res.sendStatus(200);
-        // })
-        // socket.emit('chat message', input.value);
         socket.emit('post', input.value);
 
         xhttp.open("POST", url,
@@ -92,3 +57,28 @@ form.addEventListener('submit', function(e) {
         xhttp.send(params);
     }
 });
+
+var url2 = 'https://lingojiveapi.herokuapp.com/chats';
+// var url2 = 'http://localhost:5000/chats';
+var xhttp2 = new XMLHttpRequest();
+var numUnreadMessages = 0;
+
+
+xhttp2.onreadystatechange = function(){
+    console.log("called");
+    if(this.readyState == 4 && this.status == 200){
+        console.log(this.responseText);
+        var response = JSON.parse(this.responseText);
+        for(let i = 0; i < response.length; ++i){
+            if(response[i].UnreadBy){
+                if(response[i].UnreadBy == username){
+                    numUnreadMessages++;
+                }
+            }
+        }
+        document.getElementById("button_badge").innerText = numUnreadMessages.toString();
+    }
+}
+
+xhttp2.open("GET", url2, true);
+xhttp2.send();
