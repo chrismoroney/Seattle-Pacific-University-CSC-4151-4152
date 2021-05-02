@@ -81,30 +81,30 @@ function makefollowsList(users) {
     userFollowingData = "";
     addOther = true;
     for (let user in users){
-        follows = users[user]["follows"];
+        follows = users[user]["following"];
         for (let follow in follows) {
             if(follows[follow] == otherUsername){
                 userFollowingData += "";
                 addOther = false;
             } else {
-                userFollowingData += "follows=" + follows[follow] + "&";
+                userFollowingData += "following=" + follows[follow] + "&";
             }
         }
         if(addOther){
-            userFollowingData += "follows=" + otherUsername;
+            userFollowingData += "following=" + otherUsername;
         }
     }
 }
 
-document.getElementById("btnAddfollow").addEventListener("click", (event) =>{
+document.getElementById("btnAddFollow").addEventListener("click", (event) =>{
     let url = "http://lingojiveapi.herokuapp.com/users/" + username;
     let followxhttp = new XMLHttpRequest();
     followxhttp.onreadystatechange = function (){
         if (this.readyState == 4 && this.status == 200){
-            if(document.getElementById("btnAddfollow").innerText == "Remove follow"){
-                document.getElementById("btnAddfollow").innerText = "Add follow";
+            if(document.getElementById("btnAddFollow").innerText == "Unfollow"){
+                document.getElementById("btnAddFollow").innerText = "Follow";
             } else {
-                document.getElementById("btnAddfollow").innerText = "Remove follow";
+                document.getElementById("btnAddFollow").innerText = "Unfollow";
             }
             makefollowsList(JSON.parse(this.responseText));
             followsPartTwo(userFollowingData);
