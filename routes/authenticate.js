@@ -43,6 +43,8 @@ router.post('/'
                         req.session.langExp = userObj.langExp;
                         res.locals.langLearn = userObj.langLearn;
                         req.session.langLearn = userObj.langLearn;
+                        res.locals.blocking = userObj.blocking;
+                        req.session.blockedBy = userObj.blockedBy;
                         console.log(req.session.bio);
                         // console.log(username);
                         req.session.loggedIn = true;
