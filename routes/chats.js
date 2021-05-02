@@ -19,7 +19,6 @@ router.get('/:targetName', function(req, res, next) {
     console.log(targetName);
 
     let roomId = uuidV4();
-    res.render('chats.html', {root: 'views', username: req.session.username, targetName: targetName,
-                                        roomId: roomId})
+    res.render('chats.html', {root: 'views', username: req.session.username, targetName: targetName, roomId: roomId, blocking: req.session.blocking, blockedBy: req.session.blockedBy})
 });
 module.exports = router;
