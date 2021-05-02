@@ -14,13 +14,14 @@ function CreateTable(users){
         let friends = users[user]["friends"];
         for (let friend in friends){
             let href = "/otherprofile/" + friends[friend];
-            table +=
-                '       <tr>\n' +
-                '           <td>' + friends[friend] +  '</td>\n' +
-                '           <td><a href=' + href + '><input type=button value=\'View Profile\'></a></td> \n'+
-                '       </tr>\n';
+            if(friends[friend] != ""){
+                table +=
+                    '       <tr>\n' +
+                    '           <td>' + friends[friend] +  '</td>\n' +
+                    '           <td><a href=' + href + '><input type=button value=\'View Profile\'></a></td> \n'+
+                    '       </tr>\n';
+            }
         }
-
     }
 
     table +=

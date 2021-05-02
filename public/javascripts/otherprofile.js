@@ -64,7 +64,6 @@ function check() {
 function checkInitialFriend(users){
     for (let user in users) {
         let friends = users[user]["friends"];
-        console.log(friends);
         for (let friend in friends) {
             if (friends[friend] == otherUsername) {
                 document.getElementById("btnAddFriend").innerText = "Remove Friend";
@@ -122,7 +121,7 @@ function friendsPartTwo(userFriendsData){
     friendxhttp2.open('PATCH', url, true);
     friendxhttp2.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     if(friends.length == 1 && !addOther){
-        userFriendsData = "";
+        userFriendsData = "friends=";
     }
     friendxhttp2.send(userFriendsData);
 }
