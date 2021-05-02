@@ -19,7 +19,7 @@ xhttp.onreadystatechange = function(){
 
 
         if(users[0]["blocking"].indexOf(username) > -1){
-            $("#btnAddFriend").remove();
+            $("#btnAddfollow").remove();
             $("#fullname").remove();
             $("#userInfo").hide().after("<h3>You cannot view this user's profile because you are blocked</h3>");
         }
@@ -50,80 +50,80 @@ function blockUser() {
 
 function check() {
     let url = "http://lingojiveapi.herokuapp.com/users/" + username;
-    let initialFriend = new XMLHttpRequest();
-    initialFriend.onload = function (){
+    let initialfollow = new XMLHttpRequest();
+    initialfollow.onload = function (){
         if (this.readyState == 4 && this.status == 200){
-            checkInitialFriend(JSON.parse(this.responseText))
+            checkInitialfollow(JSON.parse(this.responseText))
         };
     };
-    initialFriend.open('GET', url,true);
-    initialFriend.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    initialFriend.send();
+    initialfollow.open('GET', url,true);
+    initialfollow.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    initialfollow.send();
 }
 
-function checkInitialFriend(users){
+function checkInitialfollow(users){
     for (let user in users) {
-        let friends = users[user]["friends"];
-        for (let friend in friends) {
-            if (friends[friend] == otherUsername) {
-                document.getElementById("btnAddFriend").innerText = "Remove Friend";
+        let follows = users[user]["follows"];
+        for (let follow in follows) {
+            if (follows[follow] == otherUsername) {
+                document.getElementById("btnAddfollow").innerText = "Remove follow";
             } else {
-                document.getElementById("btnAddFriend").innerText = "Add Friend";
+                document.getElementById("btnAddfollow").innerText = "Add follow";
             }
         }
     }
 }
 
-var userFriendsData;
-var friends;
+var userFollowingData;
+var follows;
 var addOther;
-function makeFriendsList(users) {
-    userFriendsData = "";
+function makefollowsList(users) {
+    userFollowingData = "";
     addOther = true;
     for (let user in users){
-        friends = users[user]["friends"];
-        for (let friend in friends) {
-            if(friends[friend] == otherUsername){
-                userFriendsData += "";
+        follows = users[user]["follows"];
+        for (let follow in follows) {
+            if(follows[follow] == otherUsername){
+                userFollowingData += "";
                 addOther = false;
             } else {
-                userFriendsData += "friends=" + friends[friend] + "&";
+                userFollowingData += "follows=" + follows[follow] + "&";
             }
         }
         if(addOther){
-            userFriendsData += "friends=" + otherUsername;
+            userFollowingData += "follows=" + otherUsername;
         }
     }
 }
 
-document.getElementById("btnAddFriend").addEventListener("click", (event) =>{
+document.getElementById("btnAddfollow").addEventListener("click", (event) =>{
     let url = "http://lingojiveapi.herokuapp.com/users/" + username;
-    let friendxhttp = new XMLHttpRequest();
-    friendxhttp.onreadystatechange = function (){
+    let followxhttp = new XMLHttpRequest();
+    followxhttp.onreadystatechange = function (){
         if (this.readyState == 4 && this.status == 200){
-            if(document.getElementById("btnAddFriend").innerText == "Remove Friend"){
-                document.getElementById("btnAddFriend").innerText = "Add Friend";
+            if(document.getElementById("btnAddfollow").innerText == "Remove follow"){
+                document.getElementById("btnAddfollow").innerText = "Add follow";
             } else {
-                document.getElementById("btnAddFriend").innerText = "Remove Friend";
+                document.getElementById("btnAddfollow").innerText = "Remove follow";
             }
-            makeFriendsList(JSON.parse(this.responseText));
-            friendsPartTwo(userFriendsData);
+            makefollowsList(JSON.parse(this.responseText));
+            followsPartTwo(userFollowingData);
         };
     };
-    friendxhttp.open('GET', url,true);
-    friendxhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    friendxhttp.send();
+    followxhttp.open('GET', url,true);
+    followxhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    followxhttp.send();
 });
 
-function friendsPartTwo(userFriendsData){
+function followsPartTwo(userFollowingData){
     let url = "http://lingojiveapi.herokuapp.com/users/" + username;
-    let friendxhttp2 = new XMLHttpRequest();
-    friendxhttp2.open('PATCH', url, true);
-    friendxhttp2.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    if(friends.length == 1 && !addOther){
-        userFriendsData = "friends=";
+    let followxhttp2 = new XMLHttpRequest();
+    followxhttp2.open('PATCH', url, true);
+    followxhttp2.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    if(follows.length == 1 && !addOther){
+        userFollowingData = "following=";
     }
-    friendxhttp2.send(userFriendsData);
+    followxhttp2.send(userFollowingData);
 }
 
 document.getElementById("chatButton").addEventListener("click", function(){

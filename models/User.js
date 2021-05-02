@@ -12,7 +12,7 @@ let UserSchema = new Schema({
     langExp: [String],
     langLearn: [String],
     onlineStatus: Boolean,
-    friends: [String],
+    following: [String],
     blocked: [String],
     blocking: [String],
     blockedBy: [String]
