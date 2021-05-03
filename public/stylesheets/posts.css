@@ -47,10 +47,11 @@ nav{position: fixed;
     background-color: #fa3e3e;
     border-radius: 2px;
     color: white;
+    display: none;
 
     padding: 1px 3px;
     font-size: 13px;
     position: absolute;
     top: 15px;
-    left: 200px;
+    left: 210px;
 }

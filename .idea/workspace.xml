@@ -27,16 +27,11 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-<<<<<<< Updated upstream
     <list default="true" id="9192ada3-c883-4128-9689-585ec6d745c2" name="Default Changelist" comment="cannot view profiles that have you blocked">
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/viewfriends.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/viewfollowing.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/viewfriends.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/viewfollowing.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/viewfriends.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/viewfollowing.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/stylesheets/posts.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/posts.css" afterDir="false" />
     </list>
-=======
     <list default="true" id="9192ada3-c883-4128-9689-585ec6d745c2" name="Default Changelist" comment="this should fix the jquery issue" />
->>>>>>> Stashed changes
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -70,18 +65,22 @@
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
   <component name="ProjectId" id="1qUevC3h5bkDPiCIjkMKnECFFKO" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="javascript.nodejs.core.library.configured.version" value="14.16.0" />
+    <property name="javascript.nodejs.core.library.configured.version" value="12.18.3" />
     <property name="javascript.nodejs.core.library.typings.version" value="14.14.43" />
     <property name="jsx.switch.disabled" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -101,13 +100,6 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public/javascripts" />
     </key>
-  </component>
-  <component name="RunManager">
-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
@@ -139,14 +131,8 @@
       <workItem from="1618618219298" duration="3346000" />
       <workItem from="1619554048768" duration="16354000" />
       <workItem from="1619631865925" duration="245000" />
-<<<<<<< Updated upstream
       <workItem from="1619906572531" duration="11599000" />
       <workItem from="1619978906757" duration="1310000" />
-=======
-      <workItem from="1619906572531" duration="7407000" />
-      <workItem from="1619916123245" duration="1451000" />
-      <workItem from="1619918090643" duration="12588000" />
->>>>>>> Stashed changes
     </task>
     <task id="LOCAL-00001" summary="minor fixes to chats.js">
       <created>1617501873889</created>
@@ -162,7 +148,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618976973833</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="minor changes towards expanding blocklist">
+      <created>1620007477875</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1620007477875</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -181,40 +174,42 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="minor fixes to chats.js" />
     <MESSAGE value="starting block function" />
-    <option name="LAST_COMMIT_MESSAGE" value="starting block function" />
+    <MESSAGE value="minor changes towards expanding blocklist" />
+    <option name="LAST_COMMIT_MESSAGE" value="minor changes towards expanding blocklist" />
   </component>
   <component name="WindowStateProjectService">
     <state x="740" y="280" key="FileChooserDialogImpl" timestamp="1619979008502">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="740" y="280" key="FileChooserDialogImpl/1920.-87.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1619979008502" />
-    <state width="1877" height="280" key="GridCell.Tab.0.bottom" timestamp="1619980164673">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state width="1237" height="176" key="GridCell.Tab.0.bottom" timestamp="1620012026731">
+      <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="1237" height="176" key="GridCell.Tab.0.bottom/0.0.1280.720@0.0.1280.720" timestamp="1617649529827" />
+    <state width="1237" height="176" key="GridCell.Tab.0.bottom/0.0.1280.720@0.0.1280.720" timestamp="1620012026731" />
     <state width="1638" height="248" key="GridCell.Tab.0.bottom/0.23.1680.981@0.23.1680.981" timestamp="1618645459347" />
     <state width="1638" height="248" key="GridCell.Tab.0.bottom/0.23.1680.982@0.23.1680.982" timestamp="1618643978066" />
     <state width="1877" height="280" key="GridCell.Tab.0.bottom/1920.-87.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1619980164673" />
-    <state width="1877" height="280" key="GridCell.Tab.0.center" timestamp="1619980164673">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state width="1237" height="176" key="GridCell.Tab.0.center" timestamp="1620012026731">
+      <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="1237" height="176" key="GridCell.Tab.0.center/0.0.1280.720@0.0.1280.720" timestamp="1617649529826" />
+    <state width="1237" height="176" key="GridCell.Tab.0.center/0.0.1280.720@0.0.1280.720" timestamp="1620012026731" />
     <state width="1638" height="248" key="GridCell.Tab.0.center/0.23.1680.981@0.23.1680.981" timestamp="1618645459346" />
     <state width="1638" height="248" key="GridCell.Tab.0.center/0.23.1680.982@0.23.1680.982" timestamp="1618643978065" />
     <state width="1877" height="280" key="GridCell.Tab.0.center/1920.-87.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1619980164673" />
-    <state width="1877" height="280" key="GridCell.Tab.0.left" timestamp="1619980164673">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state width="1237" height="176" key="GridCell.Tab.0.left" timestamp="1620012026731">
+      <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="1237" height="176" key="GridCell.Tab.0.left/0.0.1280.720@0.0.1280.720" timestamp="1617649529826" />
+    <state width="1237" height="176" key="GridCell.Tab.0.left/0.0.1280.720@0.0.1280.720" timestamp="1620012026731" />
     <state width="1638" height="248" key="GridCell.Tab.0.left/0.23.1680.981@0.23.1680.981" timestamp="1618645459346" />
     <state width="1638" height="248" key="GridCell.Tab.0.left/0.23.1680.982@0.23.1680.982" timestamp="1618643978065" />
     <state width="1877" height="280" key="GridCell.Tab.0.left/1920.-87.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1619980164673" />
-    <state width="1877" height="280" key="GridCell.Tab.0.right" timestamp="1619980164673">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state width="1237" height="176" key="GridCell.Tab.0.right" timestamp="1620012026731">
+      <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="1237" height="176" key="GridCell.Tab.0.right/0.0.1280.720@0.0.1280.720" timestamp="1617649529826" />
+    <state width="1237" height="176" key="GridCell.Tab.0.right/0.0.1280.720@0.0.1280.720" timestamp="1620012026731" />
     <state width="1638" height="248" key="GridCell.Tab.0.right/0.23.1680.981@0.23.1680.981" timestamp="1618645459347" />
     <state width="1638" height="248" key="GridCell.Tab.0.right/0.23.1680.982@0.23.1680.982" timestamp="1618643978065" />
     <state width="1877" height="280" key="GridCell.Tab.0.right/1920.-87.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1619980164673" />
@@ -266,10 +261,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="354" key="GridCell.Tab.3.right/1920.-87.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1619919265533" />
-    <state x="339" y="165" key="com.intellij.ide.util.TipDialog" timestamp="1619554047964">
+    <state x="339" y="165" key="com.intellij.ide.util.TipDialog" timestamp="1620010743329">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="339" y="165" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1619554047964" />
+    <state x="339" y="165" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1620010743329" />
     <state x="297" y="161" key="run.anything.popup" timestamp="1617501662183">
       <screen x="0" y="0" width="1280" height="720" />
     </state>

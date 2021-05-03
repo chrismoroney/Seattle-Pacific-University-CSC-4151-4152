@@ -3,6 +3,7 @@ var url = 'https://lingojiveapi.herokuapp.com/chats';
 var numUnreadMessages = 0;
 
 xhttp.onreadystatechange = function(){
+    numUnreadMessages = 0;
     console.log("called");
     if(this.readyState == 4 && this.status == 200){
         console.log(this.responseText);
@@ -14,7 +15,10 @@ xhttp.onreadystatechange = function(){
                 }
             }
         }
-        document.getElementById("button_badge").innerText = numUnreadMessages.toString();
+        if(numUnreadMessages > 0){
+            document.getElementById("button_badge").innerText = numUnreadMessages.toString();
+            document.getElementById("button_badge").style.display = "inline";
+        }
     }
 }
 
