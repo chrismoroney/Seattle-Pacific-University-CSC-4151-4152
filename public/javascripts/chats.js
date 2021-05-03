@@ -19,6 +19,18 @@ console.log("Username: " + username);
 console.log("URL: " + url);
 var xhttp = new XMLHttpRequest();
 
+function readMessage(id){
+    let xhttp = new XMLHttpRequest();
+    let url = 'https://lingojiveapi.herokuapp.com/chats/'
+    // let url = 'http://localhost:5000/chats/';
+
+    // e.preventDefault();
+    recipient = "";
+    let params = 'ChatID='+chatID+'&Recipient='+recipient;
+    xhttp.open("PATCH", url, true);
+    xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xhttp.send(params);
+}
 
 function showMessages(id){
     var xhttp2 = new XMLHttpRequest();
@@ -57,6 +69,8 @@ function showMessages(id){
     chatID = id;
     xhttp2.open("GET", url2, true);
     xhttp2.send();
+
+    readMessage(id);
 }
 
 xhttp.onreadystatechange = function() {
