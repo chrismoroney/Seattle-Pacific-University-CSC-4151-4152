@@ -44,6 +44,8 @@ router.post('/'
                         res.locals.langLearn = userObj.langLearn;
                         req.session.langLearn = userObj.langLearn;
                         res.locals.blocking = userObj.blocking;
+                        req.session.blocking = userObj.blocking;
+                        res.locals.blockedBy = userObj.blockedBy;
                         req.session.blockedBy = userObj.blockedBy;
                         console.log(req.session.bio);
                         // console.log(username);

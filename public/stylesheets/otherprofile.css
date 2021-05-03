@@ -24,3 +24,7 @@
     top: 15px;
     left: 200px;
 }
+
+#btnUnblockUser{
+    display: none;
+}
