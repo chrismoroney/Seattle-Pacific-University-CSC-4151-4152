@@ -27,12 +27,16 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="9192ada3-c883-4128-9689-585ec6d745c2" name="Default Changelist" comment="cannot view profiles that have you blocked">
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/javascripts/viewfriends.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/viewfollowing.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/viewfriends.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/viewfollowing.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/viewfriends.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/viewfollowing.html" afterDir="false" />
     </list>
+=======
+    <list default="true" id="9192ada3-c883-4128-9689-585ec6d745c2" name="Default Changelist" comment="this should fix the jquery issue" />
+>>>>>>> Stashed changes
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -135,8 +139,14 @@
       <workItem from="1618618219298" duration="3346000" />
       <workItem from="1619554048768" duration="16354000" />
       <workItem from="1619631865925" duration="245000" />
+<<<<<<< Updated upstream
       <workItem from="1619906572531" duration="11599000" />
       <workItem from="1619978906757" duration="1310000" />
+=======
+      <workItem from="1619906572531" duration="7407000" />
+      <workItem from="1619916123245" duration="1451000" />
+      <workItem from="1619918090643" duration="12588000" />
+>>>>>>> Stashed changes
     </task>
     <task id="LOCAL-00001" summary="minor fixes to chats.js">
       <created>1617501873889</created>
