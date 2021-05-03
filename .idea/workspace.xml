@@ -29,7 +29,16 @@
   <component name="ChangeListManager">
     <list default="true" id="9192ada3-c883-4128-9689-585ec6d745c2" name="Default Changelist" comment="cannot view profiles that have you blocked">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/chats.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/chats.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/javascripts/editprofile.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/editprofile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/javascripts/homepage.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/homepage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/javascripts/myprofile.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/myprofile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/javascripts/posts.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/posts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/javascripts/searchprofile.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/searchprofile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/stylesheets/editprofile.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/editprofile.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/stylesheets/homepage.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/homepage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/stylesheets/myprofile.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/myprofile.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/stylesheets/posts.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/posts.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/stylesheets/searchprofile.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/searchprofile.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
