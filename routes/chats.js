@@ -10,8 +10,7 @@ function HandleError(response, reason, message, code){
 router.get('/', function(req, res, next) {
     console.log('called');
     let roomId = uuidV4();
-    res.render('chats.html', {root: 'views', username: req.session.username, roomId: roomId,
-                                targetName: ""})
+    res.render('chats.html', {root: 'views', username: req.session.username, roomId: roomId, targetName: "", blocking: JSON.stringify(req.session.blocking), blockedBy: JSON.stringify(req.session.blockedBy)})
 });
 
 router.get('/:targetName', function(req, res, next) {

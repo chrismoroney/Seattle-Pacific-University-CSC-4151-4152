@@ -3,8 +3,12 @@ var socket = io();
 let url = "http://lingojiveapi.herokuapp.com/users/" + otherUsername;
 let xhttp = new XMLHttpRequest();
 
-let blockurl = "http://lingojiveapi.herokuapp.com/blockuser/" + otherUsername;
+//let blockurl = "http://lingojiveapi.herokuapp.com/blockuser/" + otherUsername;
+let blockurl = "http://localhost:5000/blockuser/" + otherUsername;
 let xhttp2 = new XMLHttpRequest();
+let xhttp3 = new XMLHttpRequest();
+//let unblockurl = "http://lingojiveapi.herokuapp.com/unblockuser/" + otherUsername;
+let unblockurl = "http://localhost:5000/unblockuser/" + otherUsername;
 xhttp.onreadystatechange = function(){
     if (this.readyState == 4 && this.status == 200){
         let users = JSON.parse(this.responseText);
@@ -19,11 +23,25 @@ xhttp.onreadystatechange = function(){
 
 
         if(users[0]["blocking"].indexOf(username) > -1){
+
+            if(users[0]["blockedBy"].indexOf(username) > -1) {
+                $("#btnBlockUser").hide();
+                $("#btnUnblockUser").show();
+            }
             $("#btnAddfollow").remove();
+            $("#messageButton").remove();
             $("#fullname").remove();
-            $("#userInfo").hide().after("<h3>You cannot view this user's profile because you are blocked</h3>");
+            $("#userInfo").hide().after("<h3 class='blockWarning'>You cannot view this user's profile because you are blocked</h3>");
         }
         else{
+            if(users[0]["blockedBy"].indexOf(username) > -1){
+                $("#btnBlockUser").hide();
+                $("#btnUnblockUser").show();
+                $("#btnAddfollow").hide();
+                $("#messageButton").hide();
+                $("#fullname").hide();
+                $("#userInfo").hide().after("<h3 class='blockWarning'>You cannot view this user's profile because you have blocked them</h3>");
+            }
             document.getElementById("fullname").innerText = firstName + " " + lastName;
             document.getElementById("bio").innerText = bio;
             document.getElementById("langLearn").innerText = langLearn;
@@ -39,15 +57,46 @@ xhttp.open("GET", url, true);
 xhttp.send();
 
 xhttp2.onreadystatechange = function (){
-    window.location.href = "http://lingojiveapi.herokuapp.com/blockeduser/" + username;
+    if (this.readyState == 4 && this.status == 200){
+        $("#btnBlockUser").hide();
+        $("#btnUnblockUser").show();
+        $("#btnAddfollow").hide();
+        $("#messageButton").hide();
+        $("#fullname").hide();
+        $("#userInfo").hide().after("<h3 class='blockWarning'>You cannot view this user's profile because you have blocked them</h3>");
+    }
+    else if(this.status == 404){
+        alert("There was an error, please try again later");
+    }
+}
+xhttp3.onreadystatechange = function (){
+    if (this.readyState == 4 && this.status == 200){
+        $("#btnBlockUser").show();
+        $("#btnUnblockUser").hide();
+        $("#btnAddfollow").show();
+        $("#messageButton").show();
+        $("#fullname").show();
+        $("#userInfo").show();
+        $(".blockWarming").hide();
+    }
+    else{
+        alert("There was an error, please try again later");
+    }
 }
 
 function blockUser() {
 
-    xhttp2.open("GET", blockurl, true);
-    xhttp2.send();
+    xhttp2.open("Patch", blockurl, true);
+    xhttp2.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xhttp2.send("blockedUser=" + otherUsername);
 }
+function unblockUser(){
 
+
+    xhttp3.open("Patch", unblockurl, true);
+    xhttp3.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xhttp3.send("blockedUser=" + otherUsername);
+}
 function check() {
     let url = "http://lingojiveapi.herokuapp.com/users/" + username;
     let initialfollow = new XMLHttpRequest();

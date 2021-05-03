@@ -61,43 +61,47 @@ function showMessages(id){
 
 xhttp.onreadystatechange = function() {
     console.log("Called");
+    console.log(blocking);
+    console.log(blockedBy);
     if (this.readyState == 4 && this.status == 200) {
-        console.log(this.responseText);
         var response = JSON.parse(this.responseText);
         var displayedMessageId = response[response.length-1]._id;
         for(let i = response.length - 1; i >= 0; --i){
-            let li = document.createElement("li");
+            if(blockedBy.indexOf(response[i].Members[0]) == -1 && blockedBy.indexOf(response[i].Members[1]) == -1 && blocking.indexOf(response[i].Members[0]) == -1 && blocking.indexOf(response[i].Members[1]) == -1){
 
-            li.className = "linkClass list-group-item";
-            li.id = response[i]._id;
-            chats.appendChild(li);
-            let span = document.createElement("span");
-            span.id = response[i]._id + "span";
-            let text = document.createTextNode(response[i].Members[0]);
-            span.appendChild(text);
-            if(response[i].Members[0] === username){
-                text.nodeValue = response[i].Members[1];
+                let li = document.createElement("li");
+
+                li.className = "linkClass list-group-item";
+                li.id = response[i]._id;
+                chats.appendChild(li);
+                let span = document.createElement("span");
+                span.id = response[i]._id + "span";
+                let text = document.createTextNode(response[i].Members[0]);
+                span.appendChild(text);
+                if(response[i].Members[0] === username){
+                    text.nodeValue = response[i].Members[1];
+                }
+                // if(text.nodeValue == targetName){
+                //     displayedMessageId = li.id;
+                // }
+                // li.appendChild(text);
+                li.appendChild(span);
+                let videoCall = document.createElement("button");
+                videoCall.innerText = "call";
+                videoCall.addEventListener("click", function(){
+                    socket.emit("send-call-invite", {invitee: text.nodeValue, inviter: username, roomId: roomId});
+                    let url = "http://lingojive.herokuapp.com/videochat/" + roomId;
+                    let alertBox = document.getElementsByClassName("alertBox")[0];
+                    alertBox.style.display = "block";
+                    alertBox.innerHTML = 'Calling ' + text.nodeValue +
+                        '<a href="' + url + '">' + ' Join Room ' + '<\a>';
+                    ;
+                })
+                li.appendChild(videoCall);
+                li.addEventListener("click", function(){
+                    showMessages(li.id);
+                });
             }
-            // if(text.nodeValue == targetName){
-            //     displayedMessageId = li.id;
-            // }
-            // li.appendChild(text);
-            li.appendChild(span);
-            let videoCall = document.createElement("button");
-            videoCall.innerText = "call";
-            videoCall.addEventListener("click", function(){
-                socket.emit("send-call-invite", {invitee: text.nodeValue, inviter: username, roomId: roomId});
-                let url = "http://lingojive.herokuapp.com/videochat/" + roomId;
-                let alertBox = document.getElementsByClassName("alertBox")[0];
-                alertBox.style.display = "block";
-                alertBox.innerHTML = 'Calling ' + text.nodeValue +
-                '<a href="' + url + '">' + ' Join Room ' + '<\a>';
-                ;
-            })
-            li.appendChild(videoCall);
-            li.addEventListener("click", function(){
-                showMessages(li.id);
-            });
         }
         // if(targetName != ""){
         //     showMessages(displayedMessageId);
