@@ -27,16 +27,11 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-<<<<<<< Updated upstream
     <list default="true" id="9192ada3-c883-4128-9689-585ec6d745c2" name="Default Changelist" comment="cannot view profiles that have you blocked">
-=======
-    <list default="true" id="9192ada3-c883-4128-9689-585ec6d745c2" name="Default Changelist" comment="starting block function">
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/bin_www.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/bin_www.xml" afterDir="false" />
->>>>>>> Stashed changes
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/stylesheets/posts.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/posts.css" afterDir="false" />
     </list>
+    <list default="true" id="9192ada3-c883-4128-9689-585ec6d745c2" name="Default Changelist" comment="this should fix the jquery issue" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -85,13 +80,8 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-<<<<<<< Updated upstream
     <property name="javascript.nodejs.core.library.configured.version" value="12.18.3" />
     <property name="javascript.nodejs.core.library.typings.version" value="14.14.43" />
-=======
-    <property name="javascript.nodejs.core.library.configured.version" value="14.16.0" />
-    <property name="javascript.nodejs.core.library.typings.version" value="14.14.41" />
->>>>>>> Stashed changes
     <property name="jsx.switch.disabled" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -138,24 +128,11 @@
       <workItem from="1618347222126" duration="1673000" />
       <workItem from="1618350124516" duration="623000" />
       <workItem from="1618462847139" duration="4334000" />
-<<<<<<< Updated upstream
       <workItem from="1618618219298" duration="3346000" />
       <workItem from="1619554048768" duration="16354000" />
       <workItem from="1619631865925" duration="245000" />
       <workItem from="1619906572531" duration="11599000" />
       <workItem from="1619978906757" duration="1310000" />
-      <workItem from="1620010730707" duration="2125000" />
-=======
-      <workItem from="1618618219298" duration="3317000" />
-      <workItem from="1618677012363" duration="2349000" />
-      <workItem from="1618799163415" duration="6303000" />
-      <workItem from="1618958391288" duration="11330000" />
-      <workItem from="1618985940393" duration="163000" />
-      <workItem from="1619057048126" duration="625000" />
-      <workItem from="1619060196153" duration="3654000" />
-      <workItem from="1619113288469" duration="2584000" />
-      <workItem from="1619129994802" duration="2488000" />
->>>>>>> Stashed changes
     </task>
     <task id="LOCAL-00001" summary="minor fixes to chats.js">
       <created>1617501873889</created>
@@ -203,7 +180,6 @@
     <MESSAGE value="minor changes towards expanding blocklist" />
     <option name="LAST_COMMIT_MESSAGE" value="minor changes towards expanding blocklist" />
   </component>
-<<<<<<< Updated upstream
   <component name="WindowStateProjectService">
     <state x="740" y="280" key="FileChooserDialogImpl" timestamp="1619979008502">
       <screen x="0" y="0" width="1920" height="1050" />
@@ -294,6 +270,4 @@
     </state>
     <state x="297" y="161" key="run.anything.popup/0.0.1280.720@0.0.1280.720" timestamp="1617501662183" />
   </component>
-=======
->>>>>>> Stashed changes
 </project>
