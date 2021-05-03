@@ -15,7 +15,10 @@ xhttp.onreadystatechange = function(){
                 }
             }
         }
-        document.getElementById("button_badge").innerText = numUnreadMessages.toString();
+        if(numUnreadMessages > 0){
+            document.getElementById("button_badge").innerText = numUnreadMessages.toString();
+            document.getElementById("button_badge").style.display = "inline";
+        }
     }
 }
 
