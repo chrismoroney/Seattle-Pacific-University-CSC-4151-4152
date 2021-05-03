@@ -23,15 +23,18 @@
   </component>
   <component name="CMakeSettings">
     <configurations>
-      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" ENABLED="true" />
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
     </configurations>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9192ada3-c883-4128-9689-585ec6d745c2" name="Default Changelist" comment="cannot view profiles that have you blocked">
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/viewfriends.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/viewfollowing.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/viewfriends.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/viewfollowing.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/viewfriends.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/viewfollowing.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/stylesheets/homepage.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/homepage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/stylesheets/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/stylesheets/messenger.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/messenger.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/stylesheets/otherprofile.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/otherprofile.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/stylesheets/posts.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/posts.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/stylesheets/searchprofile.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/searchprofile.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +80,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="javascript.nodejs.core.library.configured.version" value="14.16.0" />
+    <property name="javascript.nodejs.core.library.configured.version" value="12.18.3" />
     <property name="javascript.nodejs.core.library.typings.version" value="14.14.43" />
     <property name="jsx.switch.disabled" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -98,14 +101,7 @@
       <recent name="$PROJECT_DIR$/public/javascripts" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-  </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -137,6 +133,7 @@
       <workItem from="1619631865925" duration="245000" />
       <workItem from="1619906572531" duration="11599000" />
       <workItem from="1619978906757" duration="1310000" />
+      <workItem from="1620010730707" duration="145000" />
     </task>
     <task id="LOCAL-00001" summary="minor fixes to chats.js">
       <created>1617501873889</created>
@@ -156,19 +153,20 @@
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
+    <option name="version" value="1" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="minor fixes to chats.js" />
@@ -256,10 +254,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="354" key="GridCell.Tab.3.right/1920.-87.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1619919265533" />
-    <state x="339" y="165" key="com.intellij.ide.util.TipDialog" timestamp="1619554047964">
+    <state x="339" y="165" key="com.intellij.ide.util.TipDialog" timestamp="1620010743329">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="339" y="165" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1619554047964" />
+    <state x="339" y="165" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1620010743329" />
     <state x="297" y="161" key="run.anything.popup" timestamp="1617501662183">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
