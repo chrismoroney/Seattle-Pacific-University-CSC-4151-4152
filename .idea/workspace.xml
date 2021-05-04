@@ -29,8 +29,8 @@
   <component name="ChangeListManager">
     <list default="true" id="9192ada3-c883-4128-9689-585ec6d745c2" name="Default Changelist" comment="cannot view profiles that have you blocked">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/stylesheets/homepage.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/homepage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/homepage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/javascripts/viewfollowing.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/viewfollowing.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/viewfollowing.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/viewfollowing.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +81,7 @@
     <property name="cf.first.check.clang-format" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="12.18.3" />
-    <property name="javascript.nodejs.core.library.typings.version" value="14.14.43" />
+    <property name="javascript.nodejs.core.library.typings.version" value="12.20.11" />
     <property name="jsx.switch.disabled" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -103,13 +103,6 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public/javascripts" />
     </key>
-  </component>
-  <component name="RunManager">
-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
@@ -143,6 +136,7 @@
       <workItem from="1619631865925" duration="245000" />
       <workItem from="1619906572531" duration="11599000" />
       <workItem from="1619978906757" duration="1310000" />
+      <workItem from="1620155522105" duration="138000" />
     </task>
     <task id="LOCAL-00001" summary="minor fixes to chats.js">
       <created>1617501873889</created>
@@ -195,34 +189,34 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="740" y="280" key="FileChooserDialogImpl/1920.-87.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1619979008502" />
-    <state width="1877" height="280" key="GridCell.Tab.0.bottom" timestamp="1620063316113">
+    <state width="914" height="282" key="GridCell.Tab.0.bottom" timestamp="1620155660826">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1237" height="176" key="GridCell.Tab.0.bottom/0.0.1280.720@0.0.1280.720" timestamp="1620012026731" />
     <state width="1638" height="248" key="GridCell.Tab.0.bottom/0.23.1680.981@0.23.1680.981" timestamp="1618645459347" />
     <state width="1638" height="248" key="GridCell.Tab.0.bottom/0.23.1680.982@0.23.1680.982" timestamp="1618643978066" />
-    <state width="1877" height="280" key="GridCell.Tab.0.bottom/1920.-87.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1620063316113" />
-    <state width="1877" height="280" key="GridCell.Tab.0.center" timestamp="1620063316112">
+    <state width="914" height="282" key="GridCell.Tab.0.bottom/1920.-87.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1620155660826" />
+    <state width="914" height="282" key="GridCell.Tab.0.center" timestamp="1620155660826">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1237" height="176" key="GridCell.Tab.0.center/0.0.1280.720@0.0.1280.720" timestamp="1620012026731" />
     <state width="1638" height="248" key="GridCell.Tab.0.center/0.23.1680.981@0.23.1680.981" timestamp="1618645459346" />
     <state width="1638" height="248" key="GridCell.Tab.0.center/0.23.1680.982@0.23.1680.982" timestamp="1618643978065" />
-    <state width="1877" height="280" key="GridCell.Tab.0.center/1920.-87.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1620063316112" />
-    <state width="1877" height="280" key="GridCell.Tab.0.left" timestamp="1620063316112">
+    <state width="914" height="282" key="GridCell.Tab.0.center/1920.-87.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1620155660826" />
+    <state width="914" height="282" key="GridCell.Tab.0.left" timestamp="1620155660826">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1237" height="176" key="GridCell.Tab.0.left/0.0.1280.720@0.0.1280.720" timestamp="1620012026731" />
     <state width="1638" height="248" key="GridCell.Tab.0.left/0.23.1680.981@0.23.1680.981" timestamp="1618645459346" />
     <state width="1638" height="248" key="GridCell.Tab.0.left/0.23.1680.982@0.23.1680.982" timestamp="1618643978065" />
-    <state width="1877" height="280" key="GridCell.Tab.0.left/1920.-87.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1620063316112" />
-    <state width="1877" height="280" key="GridCell.Tab.0.right" timestamp="1620063316113">
+    <state width="914" height="282" key="GridCell.Tab.0.left/1920.-87.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1620155660826" />
+    <state width="914" height="282" key="GridCell.Tab.0.right" timestamp="1620155660826">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1237" height="176" key="GridCell.Tab.0.right/0.0.1280.720@0.0.1280.720" timestamp="1620012026731" />
     <state width="1638" height="248" key="GridCell.Tab.0.right/0.23.1680.981@0.23.1680.981" timestamp="1618645459347" />
     <state width="1638" height="248" key="GridCell.Tab.0.right/0.23.1680.982@0.23.1680.982" timestamp="1618643978065" />
-    <state width="1877" height="280" key="GridCell.Tab.0.right/1920.-87.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1620063316113" />
+    <state width="914" height="282" key="GridCell.Tab.0.right/1920.-87.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1620155660826" />
     <state width="1877" height="354" key="GridCell.Tab.1.bottom" timestamp="1619919265533">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

@@ -11,13 +11,13 @@ function CreateTable(users){
         '   <tbody>\n';
 
     for (let user in users){
-        let friends = users[user]["friends"];
-        for (let friend in friends){
-            let href = "/otherprofile/" + friends[friend];
-            if(friends[friend] != ""){
+        let follows = users[user]["following"];
+        for (let follow in follows){
+            let href = "/otherprofile/" + follows[follow];
+            if(follows[follow] != ""){
                 table +=
                     '       <tr>\n' +
-                    '           <td>' + friends[friend] +  '</td>\n' +
+                    '           <td>' + follows[follow] +  '</td>\n' +
                     '           <td><a href=' + href + '><input type=button value=\'View Profile\'></a></td> \n'+
                     '       </tr>\n';
             }
