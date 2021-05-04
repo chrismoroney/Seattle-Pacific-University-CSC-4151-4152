@@ -89,3 +89,9 @@ ul{
     top: 15px;
     left: 200px;
 }
+
+#chatButton{
+    float: right;
+    border: 2px solid black;
+    border-radius: 5px;
+}
