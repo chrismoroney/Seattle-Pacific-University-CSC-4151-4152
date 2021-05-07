@@ -113,12 +113,10 @@ function check() {
 function checkInitialfollow(users){
     for (let user in users) {
         let follows = users[user]["following"];
-        for (let follow in follows) {
-            if (follows[follow] == otherUsername) {
-                document.getElementById("btnAddFollow").innerText = "Follow";
-            } else {
-                document.getElementById("btnAddFollow").innerText = "Unfollow";
-            }
+        if(follows.includes(otherUsername)){
+            document.getElementById("btnAddFollow").innerText = "Unfollow";
+        } else {
+            document.getElementById("btnAddFollow").innerText = "Follow";
         }
     }
 }
