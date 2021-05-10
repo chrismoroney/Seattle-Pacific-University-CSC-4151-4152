@@ -93,9 +93,10 @@ function blockUser() {
     $("#messageButton").hide();
     $("#fullname").hide();
     $("#userInfo").hide();
-    if($(".blockWarning").length > 0){
-        $("#userInfo").after("<h3 class='blockWarning'>You cannot view this user's profile because you have blocked them</h3>");
-    }
+    $('#chatButton').hide();
+    $('#btnAddFollow').hide();
+
+    $("#userInfo").after("<h3 class='blockWarning'>You cannot view this user's profile because you have blocked them</h3>");
 }
 
 function unblockUser(){
@@ -103,11 +104,13 @@ function unblockUser(){
     block(otherUsername);
     $("#btnBlockUser").show();
     $("#btnUnblockUser").hide();
-    $("#btnAddfollow").show();
-    $("#messageButton").show();
-    $("#fullname").show();
-    $("#userInfo").show();
-    $(".blockWarming").hide();
+    if($(".blockWarning").text() == "You cannot view this user's profile because you have blocked them"){
+        $("#btnAddfollow").show();
+        $("#messageButton").show();
+        $("#fullname").show();
+        $("#userInfo").show();
+        $(".blockWarning").remove();
+    }
 }
 
 function block(thisUsername){
@@ -123,19 +126,13 @@ function block(thisUsername){
             console.log("users:");
             console.log(JSON.parse(this.responseText));
             makeblockList(JSON.parse(this.responseText));
+            checkFollowForBlock(JSON.parse(this.responseText));
             patchBlock(thisUsername, userBlockingData);
         };
     };
     blockxhttp.open('GET', url,true);
     blockxhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     blockxhttp.send();
-}
-function unblockUser(){
-
-
-    xhttp3.open("Patch", unblockurl, true);
-    xhttp3.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-    xhttp3.send("blockedUser=" + otherUsername);
 }
 function check() {
     let url = "http://lingojiveapi.herokuapp.com/users/" + username;
@@ -160,7 +157,6 @@ function checkInitialfollow(users){
         }
     }
 }
-
 var userFollowingData;
 var userBlockingData;
 var follows;
@@ -185,6 +181,7 @@ function makefollowsList(users) {
         }
     }
 }
+
 function makeblockList(users) {
     let notThisUser = "";
     userBlockingData = "";
@@ -225,6 +222,7 @@ function makeblockList(users) {
         userBlockingData = field + "=";
     }
 }
+
 document.getElementById("btnAddFollow").addEventListener("click", (event) =>{
     let url = "http://lingojiveapi.herokuapp.com/users/" + username;
     let followxhttp = new XMLHttpRequest();
