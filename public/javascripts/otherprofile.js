@@ -3,8 +3,8 @@ var socket = io();
 let url = "http://lingojiveapi.herokuapp.com/users/" + otherUsername;
 let xhttp = new XMLHttpRequest();
 
-//let blockurl = "http://lingojiveapi.herokuapp.com/blockuser/" + otherUsername;
-let blockurl = "http://localhost:5000/blockuser/" + otherUsername;
+let blockurl = "http://lingojiveapi.herokuapp.com/blockuser/" + otherUsername;
+//let blockurl = "http://localhost:5000/blockuser/" + otherUsername;
 let xhttp2 = new XMLHttpRequest();
 let xhttp3 = new XMLHttpRequest();
 //let unblockurl = "http://lingojiveapi.herokuapp.com/unblockuser/" + otherUsername;
@@ -85,10 +85,50 @@ xhttp3.onreadystatechange = function (){
 }
 
 function blockUser() {
+    block(username);
+    block(otherUsername);
+    $("#btnBlockUser").hide();
+    $("#btnUnblockUser").show();
+    $("#btnAddfollow").hide();
+    $("#messageButton").hide();
+    $("#fullname").hide();
+    $("#userInfo").hide();
+    if($(".blockWarning").length > 0){
+        $("#userInfo").after("<h3 class='blockWarning'>You cannot view this user's profile because you have blocked them</h3>");
+    }
+}
 
-    xhttp2.open("Patch", blockurl, true);
-    xhttp2.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-    xhttp2.send("blockedUser=" + otherUsername);
+function unblockUser(){
+    block(username);
+    block(otherUsername);
+    $("#btnBlockUser").show();
+    $("#btnUnblockUser").hide();
+    $("#btnAddfollow").show();
+    $("#messageButton").show();
+    $("#fullname").show();
+    $("#userInfo").show();
+    $(".blockWarming").hide();
+}
+
+function block(thisUsername){
+    let url =  "http://lingojiveapi.herokuapp.com/users/" + thisUsername;
+    let blockxhttp = new XMLHttpRequest();
+    blockxhttp.onreadystatechange = function (){
+        if (this.readyState == 4 && this.status == 200){
+            if(document.getElementById("btnAddFollow").innerText == "Unfollow"){
+                document.getElementById("btnAddFollow").innerText = "Follow";
+            } else {
+                document.getElementById("btnAddFollow").innerText = "Unfollow";
+            }
+            console.log("users:");
+            console.log(JSON.parse(this.responseText));
+            makeblockList(JSON.parse(this.responseText));
+            patchBlock(thisUsername, userBlockingData);
+        };
+    };
+    blockxhttp.open('GET', url,true);
+    blockxhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    blockxhttp.send();
 }
 function unblockUser(){
 
@@ -124,7 +164,10 @@ function checkInitialfollow(users){
 }
 
 var userFollowingData;
+var userBlockingData;
 var follows;
+var blocklist;
+var field;
 var addOther;
 function makefollowsList(users) {
     userFollowingData = "";
@@ -144,7 +187,46 @@ function makefollowsList(users) {
         }
     }
 }
+function makeblockList(users) {
+    let notThisUser = "";
+    userBlockingData = "";
+    addOther = true;
+    for (let user in users){
+        field = "";
+        if(users[user]["username"] == username){
+            notThisUser = otherUsername;
+            field = "blocking";
+        }
+        else if(users[user]["username"] == otherUsername){
+            notThisUser = username;
+            field = "blockedBy";
+        }
+        console.log("field:" + field);
+        if(field != ""){
+            blocklist = users[user][field];
+            for (let blocker in blocklist) {
+                if(blocklist[blocker] == notThisUser){
+                    userBlockingData += "";
+                    addOther = false;
+                } else {
+                    userBlockingData += field + "=" + blocklist[blocker] + "&";
+                }
+            }
+            if(addOther){
+                if(field == "blocking"){
+                    userBlockingData += field + "=" + otherUsername;
 
+                }
+                else if(field == "blockedBy"){
+                    userBlockingData += field + "=" + username;
+                }
+            }
+        }
+    }
+    if(blocklist.length == 1 && !addOther){
+        userBlockingData = field + "=";
+    }
+}
 document.getElementById("btnAddFollow").addEventListener("click", (event) =>{
     let url = "http://lingojiveapi.herokuapp.com/users/" + username;
     let followxhttp = new XMLHttpRequest();
@@ -175,6 +257,15 @@ function followsPartTwo(userFollowingData){
     followxhttp2.send(userFollowingData);
 }
 
+function patchBlock(thisUser, userBlockingData){
+    console.log("thisUser:" + thisUser);
+    console.log("userFollowing " + userBlockingData)
+    let url = "http://lingojiveapi.herokuapp.com/users/" + thisUser;
+    let blockxhttp2 = new XMLHttpRequest();
+    blockxhttp2.open('PATCH', url, true);
+    blockxhttp2.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    blockxhttp2.send(userBlockingData);
+}
 document.getElementById("chatButton").addEventListener("click", function(){
         socket.emit("send-call-invite", {invitee: otherUsername, inviter: username, roomId: roomId});
         let url = "http://lingojive.herokuapp.com/videochat/" + roomId;
