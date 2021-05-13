@@ -85,8 +85,8 @@ xhttp3.onreadystatechange = function (){
 }
 
 function blockUser() {
-    block(username);
-    block(otherUsername);
+    block(username, true);
+    block(otherUsername, true);
     $("#btnBlockUser").hide();
     $("#btnUnblockUser").show();
     $("#btnAddfollow").hide();
@@ -100,20 +100,21 @@ function blockUser() {
 }
 
 function unblockUser(){
-    block(username);
-    block(otherUsername);
+    block(username, false);
+    block(otherUsername, false);
     $("#btnBlockUser").show();
     $("#btnUnblockUser").hide();
     if($(".blockWarning").text() == "You cannot view this user's profile because you have blocked them"){
-        $("#btnAddfollow").show();
+        $("#btnAddFollow").show();
         $("#messageButton").show();
         $("#fullname").show();
         $("#userInfo").show();
+        document.getElementById("btnAddFollow").innerText = "Follow";
         $(".blockWarning").remove();
     }
 }
 
-function block(thisUsername){
+function block(thisUsername, unfollow){
     let url =  "http://lingojiveapi.herokuapp.com/users/" + thisUsername;
     let blockxhttp = new XMLHttpRequest();
     blockxhttp.onreadystatechange = function (){
@@ -125,8 +126,7 @@ function block(thisUsername){
             }
             console.log("users:");
             console.log(JSON.parse(this.responseText));
-            makeblockList(JSON.parse(this.responseText));
-            checkFollowForBlock(JSON.parse(this.responseText));
+            makeblockList(JSON.parse(this.responseText), unfollow);
             patchBlock(thisUsername, userBlockingData);
         };
     };
@@ -182,7 +182,7 @@ function makefollowsList(users) {
     }
 }
 
-function makeblockList(users) {
+function makeblockList(users, unfollow) {
     let notThisUser = "";
     userBlockingData = "";
     addOther = true;
@@ -214,6 +214,14 @@ function makeblockList(users) {
                 }
                 else if(field == "blockedBy"){
                     userBlockingData += field + "=" + username;
+                }
+            }
+            if(unfollow){
+                follows = users[user]["following"];
+                for (let follow in follows) {
+                    if(follows[follow] != notThisUser){
+                        userBlockingData += "&following=" + follows[follow];
+                    }
                 }
             }
         }
