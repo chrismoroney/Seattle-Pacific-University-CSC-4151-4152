@@ -34,6 +34,21 @@
             height: 100%;
             object-fit: cover;
         }
+
+        .rateUser{
+            display: none;
+            z-index: 1;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            border: 2px solid black;
+            width: 400px;
+            height: 200px;
+            margin-top: -100px;
+            margin-left: -200px;
+            align-content: center;
+            background: white;
+        }
     </style>
 </head>
 <body>
@@ -97,6 +112,8 @@
     </div>
 </nav>
 <div id="video-grid"></div>
+<button id="hangUpButton">End Call</button>
+<div class="container rateUser">Rate User!</div>
 <!--<script src="/socket.io/socket.io.js"></script>-->
 <!--<script src="/javascripts/room.js"></script>-->
 </body>

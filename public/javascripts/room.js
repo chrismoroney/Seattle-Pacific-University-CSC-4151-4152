@@ -32,11 +32,15 @@ navigator.mediaDevices.getUserMedia({
     })
 
     socket.on('user-connected', userId => {
+        alert('user connected')
         connectToNewUser(userId, stream)
     })
 })
 
 socket.on('user-disconnected', userId => {
+    // alert('user disconnected')
+    let rateUserBox = document.getElementsByClassName("rateUser")[0]
+    rateUserBox.style.display = "block"
     if (peers[userId]) peers[userId].close()
 })
 
@@ -65,3 +69,7 @@ function addVideoStream(video, stream) {
     })
     videoGrid.append(video)
 }
+
+document.getElementById("hangUpButton").addEventListener("click", function(){
+    window.location.href = "/"
+})
