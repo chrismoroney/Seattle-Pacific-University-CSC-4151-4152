@@ -29,7 +29,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9192ada3-c883-4128-9689-585ec6d745c2" name="Default Changelist" comment="blocking now causes mutual unfollow">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/otherprofile.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/otherprofile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/javascripts/room.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/room.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +103,7 @@
       <recent name="D:\Github\Seattle-Pacific-University-CSC-4151-4152\public\Picture" />
     </key>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -139,6 +139,8 @@
       <workItem from="1620195700163" duration="159000" />
       <workItem from="1620339202403" duration="629000" />
       <workItem from="1620430337221" duration="423000" />
+      <workItem from="1620876838469" duration="4278000" />
+      <workItem from="1621140597725" duration="623000" />
     </task>
     <task id="LOCAL-00001" summary="minor fixes to chats.js">
       <created>1617501873889</created>
@@ -179,19 +181,20 @@
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
+    <option name="version" value="1" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
@@ -203,9 +206,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="blocking now causes mutual unfollow" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="740" y="280" key="FileChooserDialogImpl" timestamp="1619979008502">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state x="493" y="165" key="FileChooserDialogImpl" timestamp="1620936401774">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state x="493" y="165" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1620936401774" />
     <state x="740" y="280" key="FileChooserDialogImpl/1920.-87.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1619979008502" />
     <state width="1237" height="176" key="GridCell.Tab.0.bottom" timestamp="1620689086979">
       <screen x="0" y="0" width="1280" height="720" />
@@ -283,10 +287,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="354" key="GridCell.Tab.3.right/1920.-87.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1619919265533" />
-    <state x="339" y="165" key="com.intellij.ide.util.TipDialog" timestamp="1620010743329">
+    <state x="339" y="165" key="com.intellij.ide.util.TipDialog" timestamp="1620876911767">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="339" y="165" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1620010743329" />
+    <state x="339" y="165" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1620876911767" />
     <state x="297" y="161" key="run.anything.popup" timestamp="1617501662183">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
