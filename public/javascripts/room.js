@@ -1,9 +1,9 @@
 const socket = io('');
 //test
-socket.emit('join-room', ROOM_ID, 10);
-socket.on('user-connected', userId => {
-    console.log('user connected' + userId + "????");
-});
+// socket.emit('join-room', ROOM_ID, 10);
+// socket.on('user-connected', userId => {
+//     console.log('user connected' + userId + "????");
+// });
 //test end
 
 const videoGrid = document.getElementById('video-grid')
