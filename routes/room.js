@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
 })
 
 router.get('/:room', (req, res) => {
-    res.render('room.html', { root: 'views', roomId: req.params.room })
+    res.render('room.html', { root: 'views', roomId: req.params.room, myusername: req.session.username })
 })
 
 module.exports = router;

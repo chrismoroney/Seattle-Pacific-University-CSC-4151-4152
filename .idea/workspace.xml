@@ -29,8 +29,9 @@
   <component name="ChangeListManager">
     <list default="true" id="9192ada3-c883-4128-9689-585ec6d745c2" name="Default Changelist" comment="blocking now causes mutual unfollow">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/chats.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/chats.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/www" beforeDir="false" afterPath="$PROJECT_DIR$/bin/www" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/javascripts/room.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/room.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/room.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/room.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/room.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/room.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
