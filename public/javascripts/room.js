@@ -2,10 +2,11 @@ const socket = io('');
 
 let peerUserName = ''
 let peerId = ''
-socket.emit('here-is-my-username', myusername)
+// socket.emit('here-is-my-username', myusername)
 socket.on('here-is-their-username', theirusername => {
     alert(theirusername)
     peerUserName = theirusername
+    socket.emit('here-is-my-username', myusername)
 })
 //test
 // socket.emit('join-room', ROOM_ID, 10);
@@ -44,10 +45,10 @@ navigator.mediaDevices.getUserMedia({
         peerId = userId
         connectToNewUser(userId, stream)
         socket.emit('here-is-my-username', myusername)
-        socket.on('here-is-their-username', theirusername => {
-            alert(theirusername)
-            peerUserName = theirusername
-        })
+        // socket.on('here-is-their-username', theirusername => {
+        //     alert(theirusername)
+        //     peerUserName = theirusername
+        // })
     })
 })
 
@@ -122,8 +123,8 @@ document.getElementById("submitRating").addEventListener("click", function(){
     // xhttpGet.open("GET", xhttpGetUrl, true)
     // xhttpGet.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     // xhttpGet.send();
-    alert(peerUserName)
-    alert(userData)
+    // alert(peerUserName)
+    // alert(userData)
     let rateUserUrl = 'http://localhost:5000/users/' + peerUserName
     // alert(document.getElementById("overallFluency").value)
     let xhttpRate = new XMLHttpRequest();
