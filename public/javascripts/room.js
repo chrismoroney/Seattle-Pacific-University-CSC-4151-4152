@@ -40,7 +40,7 @@ navigator.mediaDevices.getUserMedia({
     })
 
     socket.on('user-connected', userId => {
-        alert('user connected')
+        // alert('user connected')
         peerId = userId
         connectToNewUser(userId, stream)
         socket.emit('here-is-my-username', myusername)
@@ -90,6 +90,17 @@ document.getElementById("hangUpButton").addEventListener("click", function(){
 
 document.getElementById("submitRating").addEventListener("click", function(){
     let userData = "overallFluency=" + document.getElementById("overallFluency").value
+    userData += "&pronunciation=" + document.getElementById("pronunciation").value
+    userData += "&conversationalAbility=" + document.getElementById("conversationalAbility").value
+    userData += "&listening=" + document.getElementById("listening").value
+    userData += "&speaking=" + document.getElementById("speaking").value
+
+    // overallFluency: [Number],
+    //     pronunciation: [Number],
+    //     conversationalAbility: [Number],
+    //     listening: [Number],
+    //     speaking: [Number]
+
     // let xhttpGetUrl = 'http://localhost:5000/users/'
     // let xhttpGet = new XMLHttpRequest()
     // xhttpGet.onreadystatechange = function(){
@@ -118,7 +129,7 @@ document.getElementById("submitRating").addEventListener("click", function(){
     let xhttpRate = new XMLHttpRequest();
     xhttpRate.onreadystatechange = function(){
         if(this.readyState == 4 && this.status == 200){
-            alert("User Rated!")
+            // alert("User Rated!")
             window.location.href = "/"
         }
     }
