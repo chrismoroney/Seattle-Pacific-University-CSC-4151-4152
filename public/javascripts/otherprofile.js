@@ -298,7 +298,7 @@ document.getElementById("messageButton").addEventListener("click", function() {
 })
 
 function checkProfilePic(){
-    let url = "http://lingojiveapi.herokuapp.com/users/" + otherUsername;
+    let url = "https://lingojiveapi.herokuapp.com/users/" + otherUsername;
     let xml = new XMLHttpRequest();
     xml.onload = function (){
         if (this.readyState == 4 && this.status == 200){

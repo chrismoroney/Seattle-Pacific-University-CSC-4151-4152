@@ -26,7 +26,7 @@ xhttp.open("GET", url, true);
 xhttp.send();
 
 function checkProfilePic(){
-    let url = "http://lingojiveapi.herokuapp.com/users/" + username;
+    let url = "https://lingojiveapi.herokuapp.com/users/" + username;
     let xml = new XMLHttpRequest();
     xml.onload = function (){
         if (this.readyState == 4 && this.status == 200){
