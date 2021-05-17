@@ -2,10 +2,11 @@ const socket = io('');
 
 let peerUserName = ''
 let peerId = ''
-socket.emit('here-is-my-username', myusername)
+// socket.emit('here-is-my-username', myusername)
 socket.on('here-is-their-username', theirusername => {
     alert(theirusername)
     peerUserName = theirusername
+    socket.emit('here-is-my-username', myusername)
 })
 //test
 // socket.emit('join-room', ROOM_ID, 10);
@@ -40,14 +41,14 @@ navigator.mediaDevices.getUserMedia({
     })
 
     socket.on('user-connected', userId => {
-        alert('user connected')
+        // alert('user connected')
         peerId = userId
         connectToNewUser(userId, stream)
         socket.emit('here-is-my-username', myusername)
-        socket.on('here-is-their-username', theirusername => {
-            alert(theirusername)
-            peerUserName = theirusername
-        })
+        // socket.on('here-is-their-username', theirusername => {
+        //     alert(theirusername)
+        //     peerUserName = theirusername
+        // })
     })
 })
 
@@ -90,6 +91,17 @@ document.getElementById("hangUpButton").addEventListener("click", function(){
 
 document.getElementById("submitRating").addEventListener("click", function(){
     let userData = "overallFluency=" + document.getElementById("overallFluency").value
+    userData += "&pronunciation=" + document.getElementById("pronunciation").value
+    userData += "&conversationalAbility=" + document.getElementById("conversationalAbility").value
+    userData += "&listening=" + document.getElementById("listening").value
+    userData += "&speaking=" + document.getElementById("speaking").value
+
+    // overallFluency: [Number],
+    //     pronunciation: [Number],
+    //     conversationalAbility: [Number],
+    //     listening: [Number],
+    //     speaking: [Number]
+
     // let xhttpGetUrl = 'http://localhost:5000/users/'
     // let xhttpGet = new XMLHttpRequest()
     // xhttpGet.onreadystatechange = function(){
@@ -111,14 +123,14 @@ document.getElementById("submitRating").addEventListener("click", function(){
     // xhttpGet.open("GET", xhttpGetUrl, true)
     // xhttpGet.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     // xhttpGet.send();
-    alert(peerUserName)
-    alert(userData)
+    // alert(peerUserName)
+    // alert(userData)
     let rateUserUrl = 'http://localhost:5000/users/' + peerUserName
     // alert(document.getElementById("overallFluency").value)
     let xhttpRate = new XMLHttpRequest();
     xhttpRate.onreadystatechange = function(){
         if(this.readyState == 4 && this.status == 200){
-            alert("User Rated!")
+            // alert("User Rated!")
             window.location.href = "/"
         }
     }
