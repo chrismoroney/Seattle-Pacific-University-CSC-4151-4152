@@ -38,7 +38,7 @@
 
 .activeChat{
     color: #fff;
-    background-color: #007bff;
+    background-color: #ec9c3c;
     border-color: #007bff;
 }
 ul{
@@ -53,7 +53,7 @@ ul{
 .thisUser{
     margin-left: 40%;
     color: #fff;
-    background-color: #007bff;
+    background-color: #ec9c3c;
     border-color: #007bff;
 }
 .otherUser{
@@ -79,7 +79,7 @@ ul{
 }
 
 #button_badge {
-    background-color: #fa3e3e;
+    background-color: #ec9c3c;
     border-radius: 2px;
     color: white;
 
@@ -94,4 +94,11 @@ ul{
     float: right;
     border: 2px solid black;
     border-radius: 5px;
+}
+.dropdown{
+    display: inline-block;
+}
+.linkClass{
+    display: flex;
+    justify-content: space-between;
 }
