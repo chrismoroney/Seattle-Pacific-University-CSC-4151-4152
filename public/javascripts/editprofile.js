@@ -2,8 +2,8 @@ let url = 'https://lingojiveapi.herokuapp.com/chats';
 let xhttp = new XMLHttpRequest();
 let numUnreadMessages = 0;
 
-var FormData = require('form-data');
-var fs = require('fs');
+//var FormData = require('form-data');
+//var fs = require('fs');
 
 
 
@@ -198,3 +198,5 @@ document.getElementById("submitPicBtn").addEventListener("click", (event) =>{
     xhttpPic.setRequestHeader("Content-Type", "multipart/form-data");
     xhttpPic.send(new FormData(formElement));
 });
+
+
