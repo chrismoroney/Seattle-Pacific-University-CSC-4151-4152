@@ -18,6 +18,7 @@
     "express": "^4.16.4",
     "express-openid-connect": "^2.2.1",
     "express-session": "^1.17.1",
+    "form-data": "^4.0.0",
     "http": "^0.0.1-security",
     "http-errors": "~1.6.3",
     "jquery": "^3.6.0",
