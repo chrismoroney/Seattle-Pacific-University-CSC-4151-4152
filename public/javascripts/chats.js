@@ -90,16 +90,44 @@ xhttp.onreadystatechange = function() {
                 chats.appendChild(li);
                 let span = document.createElement("span");
                 span.id = response[i]._id + "span";
+                let thisMember = '';
                 let text = document.createTextNode(response[i].Members[0]);
+                thisMember = response[i].Members[0];
                 span.appendChild(text);
                 if(response[i].Members[0] === username){
                     text.nodeValue = response[i].Members[1];
+                    thisMember = response[i].Members[1];
                 }
+                let dropdown = document.createElement('div');
+                dropdown.className = 'dropdown';
+                dropdown.innerHTML = '<a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink' + thisMember + '" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">'+
+                        'Actions'+
+                    '</a>';
+                let menu =document.createElement('div');
+                menu.className = "dropdown-menu";
+                menu.setAttribute("aria-labelledby", 'dropdownMenuLink' + thisMember);
+                menu.innerHTML = '<a class="dropdown-item" href="/otherprofile/' + thisMember +'">View user profile</a>'+
+                                '<a class="dropdown-item" href="#">Another action</a>';
+                let videoLink = document.createElement('div');
+                videoLink.innerHTML = '<a class="dropdown-item" href="#">Video chat</a>';
+                videoLink.addEventListener("click", function(){
+                    socket.emit("send-call-invite", {invitee: text.nodeValue, inviter: username, roomId: roomId});
+                    // let url = "http://lingojive.herokuapp.com/videochat/" + roomId;
+                    let url = "http://localhost:3000/videochat/" + roomId;
+                    let alertBox = document.getElementsByClassName("alertBox")[0];
+                    alertBox.style.display = "block";
+                    alertBox.innerHTML = 'Calling ' + text.nodeValue +
+                        '<a href="' + url + '">' + ' Join Room ' + '<\a>';
+                    ;
+                })
+                menu.appendChild(videoLink);
                 // if(text.nodeValue == targetName){
                 //     displayedMessageId = li.id;
                 // }
                 // li.appendChild(text);
                 li.appendChild(span);
+                dropdown.appendChild(menu);
+                li.appendChild(dropdown);
                 let videoCall = document.createElement("button");
                 // videoCall.innerText = "call";
                 videoCall.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-camera-video-fill" viewBox="0 0 16 16">' +
@@ -117,7 +145,7 @@ xhttp.onreadystatechange = function() {
                         '<a href="' + url + '">' + ' Join Room ' + '<\a>';
                     ;
                 })
-                li.appendChild(videoCall);
+                //li.appendChild(videoCall);
                 li.addEventListener("click", function(){
                     showMessages(li.id);
                 });
