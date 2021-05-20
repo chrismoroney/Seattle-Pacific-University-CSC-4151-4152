@@ -6,7 +6,7 @@ let storage = multer.diskStorage({
         callback(null, 'profileImages');
     },
     filename: function(req, file, callback) {
-        file.originalname = Date.now().toString() + file.originalname.replace("[^\\w\\s-.", "");
+        file.originalname = Date.now().toString() + file.originalname.replace(/[^\w.]+/g, "");
         console.log(file);
         callback(null, file.originalname);
     }
