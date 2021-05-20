@@ -41,9 +41,9 @@ function checkProfilePic(){
 function checkImage(users){
     for (let user in users) {
         let img = users[user]["profileImage"];
-        console.log("img=" + img);
+        console.log(img);
         if(img != ""){
-            document.getElementById("photo").src = "http://lingojiveapi.herokuapp.com/profilepics/" + img;
+            document.getElementById("photo").src = "../profileImages/" + img;
         } else {
             document.getElementById("photo").src = "../Picture/profilephoto.png";
         }

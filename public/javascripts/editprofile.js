@@ -192,11 +192,10 @@ xhttpPic.onreadystatechange = function (){
 };
 
 document.getElementById("submitPicBtn").addEventListener("click", (event) =>{
-    var formElement = document.querySelector("#submitPic");
-
-    xhttpPic.open('PATCH', url, true);
-    xhttpPic.setRequestHeader("Content-Type", "multipart/form-data");
-    xhttpPic.send(new FormData(formElement));
+    window.location.pathname = "profilepics";
 });
+
+
+
 
 

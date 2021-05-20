@@ -314,7 +314,7 @@ function checkImage(users){
     for (let user in users) {
         let img = users[user]["profileImage"];
         if(img != ""){
-            document.getElementById("photo").src = "http://lingojiveapi.herokuapp.com/" + img;
+            document.getElementById("photo").src = "../profileImages/" + img;
         } else {
             document.getElementById("photo").src = "../Picture/profilephoto.png";
         }
