@@ -55,7 +55,7 @@
         <ul class="navbar-nav ml-auto">
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Account
+                    <%= username %>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="/myprofile">My Profile</a>
@@ -82,12 +82,12 @@
             <div class="col-12 chatcol3" id="messageScroll">
                 <ul id="messages" class="listgroup"></ul>
             </div>
-            <form method="post" id="form">
-                <div class="input-group">
-                    <label for="chatMsg" id="username"><%= username %></label>
+            <form method="post" id="form" style="width: 100%">
+                <div class="input-group" style="width: 95%">
+                    <label for="chatMsg" id="username" style="margin-top: 10px;"><%= username %></label>
                     <input type="text" id="chatMsg" class="form-control" autocomplete="off">
                     <div class="input-group-append">
-                        <button class="btn btn-primary" id="submitPic">Submit photo</button>
+                        <button class="btn btn-primary" id="submitPic">Send</button>
                     </div>
                 </div>
             </form>
