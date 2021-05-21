@@ -4,10 +4,11 @@ let peerUserName = ''
 let peerId = ''
 // socket.emit('here-is-my-username', myusername)
 socket.on('here-is-their-username', theirusername => {
-    alert(theirusername)
+    // alert(theirusername)
     peerUserName = theirusername
     socket.emit('here-is-my-username', myusername)
 })
+
 //test
 // socket.emit('join-room', ROOM_ID, 10);
 // socket.on('user-connected', userId => {
@@ -44,6 +45,7 @@ navigator.mediaDevices.getUserMedia({
         // alert('user connected')
         peerId = userId
         connectToNewUser(userId, stream)
+        // setTimeout(function(){console.log("wait")},500)
         socket.emit('here-is-my-username', myusername)
         // socket.on('here-is-their-username', theirusername => {
         //     alert(theirusername)
