@@ -10,7 +10,7 @@
     <script>
         var username = '<%= username %>';
     </script>
-    <link rel="stylesheet" href="./stylesheets/myprofile.css">
+    <link rel="stylesheet" href="../stylesheets/profile.css">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -81,22 +81,28 @@
     <button onclick="window.location.href='/viewblocked'"; class="btn-danger" id="btnBlockUser">View Blocked</button>
     <button onclick="window.location.href='/viewfollowing'"; class="btn-success" id="btnAddFollow">View Following</button>
 </div>
-<div style="...; border:5px solid black; align: 'center'; height: 150px;margin: 0 100px;">
-    <div class = "bio">
-        <h3>Biography</h3>
-        <p style="text-align: center"><%= bio %></p>
+<div id="userInfo" class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class = "bio">
+                <h3>Biography</h3>
+                <p id="bio" style="text-align: center"><%= bio %></p>
+            </div>
+        </div>
     </div>
-</div>
-<div style="...; border:5px solid black; align: 'center'; float: left; height: 150px;width: 500px;margin: 20px 100px;">
-    <div class = "boxOne">
-        <h4>Languages Spoken</h4>
-        <p style="text-align: center"><%= langExp %></p>
-    </div>
-</div>
-<div style="...; border:5px solid black; align: 'center'; float: right; height: 150px;width: 500px;margin: 20px 100px;">
-    <div class = "boxTwo">
-        <h4>Languages to be Learned</h4>
-        <p style="text-align: center"><%= langLearn %></p>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class = "boxOne">
+                <h4>Languages Spoken</h4>
+                <p id="langExp" style="text-align: center"><%= langExp %> </p>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class = "boxTwo">
+                <h4>Languages to be Learned</h4>
+                <p id="langLearn" style="text-align: center"><%= langLearn %></p>
+            </div>
+        </div>
     </div>
 </div>
 <script src="/javascripts/myprofile.js"></script>

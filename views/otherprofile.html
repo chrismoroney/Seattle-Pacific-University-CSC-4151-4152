@@ -12,7 +12,7 @@
         const otherUsername = '<%= otherUsername %>';
         const roomId = '<%= roomId %>';
     </script>
-    <link rel="stylesheet" href="../stylesheets/otherprofile.css">
+    <link rel="stylesheet" href="../stylesheets/profile.css">
 </head>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="nav-link" href="/">
@@ -84,23 +84,27 @@
             </svg>
         </button>
     </div>
-    <div id="userInfo">
-        <div style="...; border:5px solid black; align: 'center'; height: 150px;margin: 0 100px;">
-            <div class = "bio">
-                <h3>Biography</h3>
-                <p id="bio" style="text-align: center"><%= bio %></p>
+    <div id="userInfo" class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class = "bio">
+                    <h3>Biography</h3>
+                    <p id="bio" style="text-align: center"><%= bio %></p>
+                </div>
             </div>
         </div>
-        <div style="...; border:5px solid black; align: 'center'; float: left; height: 150px;width: 500px;margin: 20px 100px;">
-            <div class = "boxOne">
-                <h4>Languages Spoken</h4>
-                <p id="langExp" style="text-align: center"><%= langExp %> </p>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class = "boxOne">
+                    <h4>Languages Spoken</h4>
+                    <p id="langExp" style="text-align: center"><%= langExp %> </p>
+                </div>
             </div>
-        </div>
-        <div style="...; border:5px solid black; align: 'center'; float: right; height: 150px;width: 500px;margin: 20px 100px;">
-            <div class = "boxTwo">
-                <h4>Languages to be Learned</h4>
-                <p id="langLearn" style="text-align: center"><%= langLearn %></p>
+            <div class="col-sm-6">
+                <div class = "boxTwo">
+                    <h4>Languages to be Learned</h4>
+                    <p id="langLearn" style="text-align: center"><%= langLearn %></p>
+                </div>
             </div>
         </div>
     </div>
