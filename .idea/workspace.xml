@@ -28,8 +28,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9192ada3-c883-4128-9689-585ec6d745c2" name="Default Changelist" comment="blocking now causes mutual unfollow">
+      <change afterPath="$PROJECT_DIR$/public/stylesheets/room.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/javascripts/chats.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/chats.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/javascripts/room.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/room.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/room.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/room.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/chats.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/chats.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/room.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/room.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +49,7 @@
       <list>
         <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -76,6 +82,7 @@
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="12.18.3" />
     <property name="javascript.nodejs.core.library.typings.version" value="14.17.0" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -143,7 +150,7 @@
       <workItem from="1621829938892" duration="1554000" />
       <workItem from="1621833329175" duration="1525000" />
       <workItem from="1621874076736" duration="3627000" />
-      <workItem from="1621969113832" duration="416000" />
+      <workItem from="1621969113832" duration="6816000" />
     </task>
     <task id="LOCAL-00001" summary="minor fixes to chats.js">
       <created>1617501873889</created>

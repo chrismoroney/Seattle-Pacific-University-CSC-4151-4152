@@ -136,8 +136,8 @@ xhttp.onreadystatechange = function() {
                 menu.appendChild(blockLink);
                 videoLink.addEventListener("click", function(){
                     socket.emit("send-call-invite", {invitee: text.nodeValue, inviter: username, roomId: roomId});
-                    //let url = "http://lingojive.herokuapp.com/videochat/" + roomId;
-                     let url = "http://localhost:3000/videochat/" + roomId;
+                    let url = "http://lingojive.herokuapp.com/videochat/" + roomId;
+                     // let url = "http://localhost:3000/videochat/" + roomId;
                     let alertBox = document.getElementsByClassName("alertBox")[0];
                     alertBox.style.display = "block";
                     alertBox.innerHTML = 'Calling ' + text.nodeValue +

@@ -11,8 +11,9 @@ router.get('/', (req, res) => {
     res.redirect('/videochat' +`/${uuidV4()}`)
 })
 
-router.get('/:roomId', (req, res) => {
-    res.render('room.html', { root: 'views', roomId: req.params.roomId, myusername: req.session.username })
+router.get('/:room', (req, res) => {
+    res.render('room.html', { root: 'views', roomId: req.params.room, myusername: req.session.username })
+    // res.sendFile('room.html', {root: 'views'})
 })
 
 module.exports = router;

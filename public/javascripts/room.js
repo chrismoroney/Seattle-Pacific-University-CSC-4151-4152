@@ -127,7 +127,7 @@ document.getElementById("submitRating").addEventListener("click", function(){
     // alert(peerUserName)
     // alert(userData)
     // let rateUserUrl = 'http://localhost:5000/users/' + peerUserName
-    let rateUserUrl = 'http://lingojive.herokuapp.com/' + peerUserName
+    let rateUserUrl = 'http://lingojiveapi.herokuapp.com/users/' + peerUserName
     // alert(document.getElementById("overallFluency").value)
     let xhttpRate = new XMLHttpRequest();
     xhttpRate.onreadystatechange = function(){
