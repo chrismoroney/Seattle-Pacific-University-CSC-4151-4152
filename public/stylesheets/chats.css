@@ -63,7 +63,24 @@ ul{
     margin-top: 2px;
 }
 
-.alertBox{
+.alertBoxSend{
+    text-align: center;
+    display: none;
+    z-index: 1;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    border: 2px solid black;
+    width: 400px;
+    height: 200px;
+    margin-top: -100px;
+    margin-left: -200px;
+    align-content: center;
+    background: white;
+}
+
+.alertBoxReceive{
+    text-align: center;
     display: none;
     z-index: 1;
     position: fixed;
@@ -101,4 +118,30 @@ ul{
 .linkClass{
     display: flex;
     justify-content: space-between;
+}
+
+.alertBoxSendInner{
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.alertBoxSendBottom{
+    text-align: center;
+    font-size: 20px;
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+}
+
+.alertBoxReceiveInner{
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.alertBoxReceiveBottom{
+    text-align: center;
+    font-size: 20px;
+    position: absolute;
+    bottom: 20px;
+    left: 0;
 }

@@ -138,11 +138,21 @@ xhttp.onreadystatechange = function() {
                     socket.emit("send-call-invite", {invitee: text.nodeValue, inviter: username, roomId: roomId});
                     let url = "http://lingojive.herokuapp.com/videochat/" + roomId;
                      // let url = "http://localhost:3000/videochat/" + roomId;
-                    let alertBox = document.getElementsByClassName("alertBox")[0];
+                    let alertBox = document.getElementsByClassName("alertBoxSend")[0];
                     alertBox.style.display = "block";
-                    alertBox.innerHTML = 'Calling ' + text.nodeValue +
-                        '<a href="' + url + '">' + ' Join Room ' + '<\a>';
-                    ;
+                    // alertBox.innerHTML = 'Calling ' + text.nodeValue +
+                    //     '<a href="' + url + '">' + ' Join Room ' + '<\a>';
+                    let alertBoxSendInner = document.getElementsByClassName("alertBoxSendInner")[0];
+                    alertBoxSendInner.innerHTML = 'Calling ' + text.nodeValue + '...'
+                        // '<a href="' + url + '">' + ' Join Room ' + '<\a>';
+                    // let alertBoxSendBottom = document.getElementsByClassName("alertBoxSendBottom")[0];
+                    // alertBoxSendBottom.innerHTML = '<a href="' + url + '">' + ' Join Room ' + '<\a>';
+
+                    let alertBoxSendButton = document.getElementsByClassName("alertBoxSendButton")[0];
+                    alertBoxSendButton.addEventListener('click', function(){
+                        window.location.href = url;
+                    })
+                    // alertBoxSendButton.innerHTML = '<a href="' + url + '">' + ' Join Room ' + '<\a>';
                 })
                 menu.appendChild(videoLink);
                 // if(text.nodeValue == targetName){
@@ -260,10 +270,19 @@ socket.on('call-invite', (data) => {
         console.log(data.invitee, data.inviter, data.roomId)
         let url = "http://lingojive.herokuapp.com/videochat/" + data.roomId;
         // let url = "http://localhost:3000/videochat/" + data.roomId;
-        let alertBox = document.getElementsByClassName("alertBox")[0];
-        alertBox.style.display = "block";
-        alertBox.innerHTML = data.inviter + ' wants to chat with you: ' +
-                             '<a href="' + url + '">' + 'Accept' + '<\a>';
+        let alertBoxReceive = document.getElementsByClassName("alertBoxReceive")[0];
+        alertBoxReceive.style.display = "block";
+        let alertBoxReceiveInner = document.getElementsByClassName("alertBoxReceiveInner")[0];
+        alertBoxReceiveInner.innerHTML = data.inviter + ' wants to chat with you: '
+                             // '<a href="' + url + '">' + 'Accept' + '<\a>';
+        let alertBoxReceiveDecline = document.getElementsByClassName("alertBoxReceiveDecline")[0];
+        alertBoxReceiveDecline.addEventListener('click', function(){
+            alertBoxReceive.style.display = "none";
+        })
+        let alertBoxReceiveAccept = document.getElementsByClassName("alertBoxReceiveAccept")[0];
+        alertBoxReceiveAccept.addEventListener('click', function(){
+            window.location.href = url;
+        })
     }
 })
 
