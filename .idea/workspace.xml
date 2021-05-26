@@ -28,13 +28,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9192ada3-c883-4128-9689-585ec6d745c2" name="Default Changelist" comment="blocking now causes mutual unfollow">
-      <change afterPath="$PROJECT_DIR$/public/stylesheets/room.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/javascripts/chats.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/chats.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/room.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/room.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/room.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/room.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/stylesheets/chats.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/chats.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/chats.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/chats.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/room.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/room.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,6 +148,7 @@
       <workItem from="1621833329175" duration="1525000" />
       <workItem from="1621874076736" duration="3627000" />
       <workItem from="1621969113832" duration="6816000" />
+      <workItem from="1622046513401" duration="4223000" />
     </task>
     <task id="LOCAL-00001" summary="minor fixes to chats.js">
       <created>1617501873889</created>
@@ -286,10 +284,10 @@
     </state>
     <state width="1638" height="316" key="GridCell.Tab.3.right/0.23.1680.983@0.23.1680.983" timestamp="1621490666585" />
     <state width="1877" height="354" key="GridCell.Tab.3.right/1920.-87.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1619919265533" />
-    <state x="339" y="165" key="com.intellij.ide.util.TipDialog" timestamp="1621969112933">
+    <state x="339" y="165" key="com.intellij.ide.util.TipDialog" timestamp="1622046512152">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="339" y="165" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1621969112933" />
+    <state x="339" y="165" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1622046512152" />
     <state x="297" y="152" key="run.anything.popup" timestamp="1621832699700">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
