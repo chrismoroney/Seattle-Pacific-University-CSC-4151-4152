@@ -101,3 +101,10 @@ document.getElementById("gotoprofile").addEventListener("click", (event) =>{
 });
 */
 
+document.getElementById("btnLoadUsersByLanguage").addEventListener("click", (event) =>{
+    let languageSpoken = document.getElementById("languageSpoken").value;
+    let languageLearning = document.getElementById("languageLearning").value;
+    console.log("Language spoken: " + languageSpoken);
+    console.log("Language learning: " + languageLearning);
+})
+
