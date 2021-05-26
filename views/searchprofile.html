@@ -91,6 +91,42 @@
                placeholder="Username">
         <button class="btn btn-success" id="btnLoadUsersByUsername">Search</button>
     </div>
+    <p style="padding-top: 10px">Search by Language:</p>
+    <div class="input-group">
+        <label for="languageSpoken">Native Language</label>
+        <div class="dropdown bootstrap-select show-tick fit-width dropup" data-live-search="true">
+            <select class="selectpicker" id="languageSpoken">
+                <option value="">Select One...</option>
+                <option>English</option>
+                <option>Spanish</option>
+                <option>French</option>
+                <option>German</option>
+                <option>Hindi</option>
+                <option>Italian</option>
+                <option>Dutch</option>
+                <option>Mandarin</option>
+            </select>
+        </div>
+    </div>
+    <div class="input-group">
+
+        <label for="languageLearning">Language being Learned</label>
+        <div class="dropdown bootstrap-select show-tick fit-width dropup" data-live-search="true">
+
+            <select class="selectpicker" title="Select one" id="languageLearning">
+                <option value="">Select One...</option>
+                <option>English</option>
+                <option>Spanish</option>
+                <option>French</option>
+                <option>German</option>
+                <option>Hindi</option>
+                <option>Italian</option>
+                <option>Dutch</option>
+                <option>Mandarin</option>
+            </select>
+        </div>
+        <button class="btn btn-success" id="btnLoadUsersByLanguage">Search</button>
+    </div>
 </div>
 <div style="padding-top: 10px" class="container">
     <div class="jumbotron" id="output">
