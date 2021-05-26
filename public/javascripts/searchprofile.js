@@ -106,5 +106,30 @@ document.getElementById("btnLoadUsersByLanguage").addEventListener("click", (eve
     let languageLearning = document.getElementById("languageLearning").value;
     console.log("Language spoken: " + languageSpoken);
     console.log("Language learning: " + languageLearning);
+    let query = "?"
+    if(languageLearning !=""){
+        query = query + "languageLearning=" + languageLearning;
+    }
+    if(languageSpoken != ""){
+        if(languageLearning !=""){
+            query = query + "&";
+        }
+        query = query + "languageSpoken=" + languageSpoken;
+    }
+    let languageUrl = 'https://lingojiveapi.herokuapp.com/users/';
+    if(query != "?"){
+        languageUrl = languageUrl + query;
+    }
+    console.log(languageUrl);
+    let languageXhttp = new XMLHttpRequest();
+    languageXhttp.onreadystatechange = function(){
+        if (this.readyState == 4 && this.status == 200){
+            document.getElementById("output").innerHTML =
+                CreateTable(JSON.parse(this.responseText));
+        }
+    };
+    languageXhttp.open("GET", languageUrl, true);
+    languageXhttp.send();
+
 })
 
