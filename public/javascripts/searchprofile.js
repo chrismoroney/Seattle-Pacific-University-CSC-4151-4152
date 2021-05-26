@@ -75,6 +75,7 @@ document.getElementById("btnLoadUsersByName").addEventListener("click", (event) 
     xhttp.open("GET", url, true);
     xhttp.send();
 });
+
 document.getElementById("btnLoadUsersByUsername").addEventListener("click", (event) =>{
     document.getElementById("output").innerHTML = "";
     let url = "http://lingojiveapi.herokuapp.com/users/" + document.getElementById("Username").value;

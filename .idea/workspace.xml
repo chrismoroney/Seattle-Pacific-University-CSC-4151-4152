@@ -23,15 +23,14 @@
   </component>
   <component name="CMakeSettings">
     <configurations>
-      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" ENABLED="true" />
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
     </configurations>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9192ada3-c883-4128-9689-585ec6d745c2" name="Default Changelist" comment="blocking now causes mutual unfollow">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/chats.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/chats.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/stylesheets/chats.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/chats.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/chats.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/chats.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/javascripts/searchprofile.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/searchprofile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/searchprofile.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/searchprofile.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,8 +76,8 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="javascript.nodejs.core.library.configured.version" value="14.16.0" />
-    <property name="javascript.nodejs.core.library.typings.version" value="14.17.1" />
+    <property name="javascript.nodejs.core.library.configured.version" value="12.18.3" />
+    <property name="javascript.nodejs.core.library.typings.version" value="12.20.13" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -149,6 +148,7 @@
       <workItem from="1621874076736" duration="3627000" />
       <workItem from="1621969113832" duration="6816000" />
       <workItem from="1622046513401" duration="4223000" />
+      <workItem from="1622060963425" duration="780000" />
     </task>
     <task id="LOCAL-00001" summary="minor fixes to chats.js">
       <created>1617501873889</created>
@@ -187,42 +187,42 @@
     </state>
     <state x="493" y="165" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1620936401774" />
     <state x="740" y="280" key="FileChooserDialogImpl/1920.-87.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1619979008502" />
-    <state width="1638" height="316" key="GridCell.Tab.0.bottom" timestamp="1621490666582">
-      <screen x="0" y="23" width="1680" height="983" />
+    <state width="1877" height="281" key="GridCell.Tab.0.bottom" timestamp="1622061748686">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1237" height="176" key="GridCell.Tab.0.bottom/0.0.1280.720@0.0.1280.720" timestamp="1620689086979" />
     <state width="1638" height="248" key="GridCell.Tab.0.bottom/0.23.1680.981@0.23.1680.981" timestamp="1618645459347" />
     <state width="1638" height="248" key="GridCell.Tab.0.bottom/0.23.1680.982@0.23.1680.982" timestamp="1618643978066" />
     <state width="1638" height="316" key="GridCell.Tab.0.bottom/0.23.1680.983@0.23.1680.983" timestamp="1621490666582" />
     <state width="1638" height="256" key="GridCell.Tab.0.bottom/0.23.1680.984@0.23.1680.984" timestamp="1621443427747" />
-    <state width="1877" height="287" key="GridCell.Tab.0.bottom/1920.-87.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1621401324267" />
-    <state width="1638" height="316" key="GridCell.Tab.0.center" timestamp="1621490666581">
-      <screen x="0" y="23" width="1680" height="983" />
+    <state width="1877" height="281" key="GridCell.Tab.0.bottom/1920.-87.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1622061748686" />
+    <state width="1877" height="281" key="GridCell.Tab.0.center" timestamp="1622061748686">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1237" height="176" key="GridCell.Tab.0.center/0.0.1280.720@0.0.1280.720" timestamp="1620689086979" />
     <state width="1638" height="248" key="GridCell.Tab.0.center/0.23.1680.981@0.23.1680.981" timestamp="1618645459346" />
     <state width="1638" height="248" key="GridCell.Tab.0.center/0.23.1680.982@0.23.1680.982" timestamp="1618643978065" />
     <state width="1638" height="316" key="GridCell.Tab.0.center/0.23.1680.983@0.23.1680.983" timestamp="1621490666581" />
     <state width="1638" height="256" key="GridCell.Tab.0.center/0.23.1680.984@0.23.1680.984" timestamp="1621443427745" />
-    <state width="1877" height="287" key="GridCell.Tab.0.center/1920.-87.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1621401324267" />
-    <state width="1638" height="316" key="GridCell.Tab.0.left" timestamp="1621490666581">
-      <screen x="0" y="23" width="1680" height="983" />
+    <state width="1877" height="281" key="GridCell.Tab.0.center/1920.-87.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1622061748686" />
+    <state width="1877" height="281" key="GridCell.Tab.0.left" timestamp="1622061748686">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1237" height="176" key="GridCell.Tab.0.left/0.0.1280.720@0.0.1280.720" timestamp="1620689086979" />
     <state width="1638" height="248" key="GridCell.Tab.0.left/0.23.1680.981@0.23.1680.981" timestamp="1618645459346" />
     <state width="1638" height="248" key="GridCell.Tab.0.left/0.23.1680.982@0.23.1680.982" timestamp="1618643978065" />
     <state width="1638" height="316" key="GridCell.Tab.0.left/0.23.1680.983@0.23.1680.983" timestamp="1621490666581" />
     <state width="1638" height="256" key="GridCell.Tab.0.left/0.23.1680.984@0.23.1680.984" timestamp="1621443427733" />
-    <state width="1877" height="287" key="GridCell.Tab.0.left/1920.-87.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1621401324267" />
-    <state width="1638" height="316" key="GridCell.Tab.0.right" timestamp="1621490666582">
-      <screen x="0" y="23" width="1680" height="983" />
+    <state width="1877" height="281" key="GridCell.Tab.0.left/1920.-87.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1622061748686" />
+    <state width="1877" height="281" key="GridCell.Tab.0.right" timestamp="1622061748686">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1237" height="176" key="GridCell.Tab.0.right/0.0.1280.720@0.0.1280.720" timestamp="1620689086979" />
     <state width="1638" height="248" key="GridCell.Tab.0.right/0.23.1680.981@0.23.1680.981" timestamp="1618645459347" />
     <state width="1638" height="248" key="GridCell.Tab.0.right/0.23.1680.982@0.23.1680.982" timestamp="1618643978065" />
     <state width="1638" height="316" key="GridCell.Tab.0.right/0.23.1680.983@0.23.1680.983" timestamp="1621490666582" />
     <state width="1638" height="256" key="GridCell.Tab.0.right/0.23.1680.984@0.23.1680.984" timestamp="1621443427746" />
-    <state width="1877" height="287" key="GridCell.Tab.0.right/1920.-87.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1621401324267" />
+    <state width="1877" height="281" key="GridCell.Tab.0.right/1920.-87.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1622061748686" />
     <state width="1638" height="316" key="GridCell.Tab.1.bottom" timestamp="1621490666583">
       <screen x="0" y="23" width="1680" height="983" />
     </state>
