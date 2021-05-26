@@ -7,8 +7,8 @@ let blockurl = "http://lingojiveapi.herokuapp.com/blockuser/" + otherUsername;
 //let blockurl = "http://localhost:5000/blockuser/" + otherUsername;
 let xhttp2 = new XMLHttpRequest();
 let xhttp3 = new XMLHttpRequest();
-//let unblockurl = "http://lingojiveapi.herokuapp.com/unblockuser/" + otherUsername;
-let unblockurl = "http://localhost:5000/unblockuser/" + otherUsername;
+let unblockurl = "http://lingojiveapi.herokuapp.com/unblockuser/" + otherUsername;
+//let unblockurl = "http://localhost:5000/unblockuser/" + otherUsername;
 xhttp.onreadystatechange = function(){
     if (this.readyState == 4 && this.status == 200){
         let users = JSON.parse(this.responseText);
@@ -30,6 +30,7 @@ xhttp.onreadystatechange = function(){
             }
             $("#btnAddfollow").remove();
             $("#messageButton").remove();
+            $("#chatButton").remove();
             $("#fullname").remove();
             $("#userInfo").hide().after("<h3 class='blockWarning'>You cannot view this user's profile because you are blocked</h3>");
         }
@@ -39,6 +40,7 @@ xhttp.onreadystatechange = function(){
                 $("#btnUnblockUser").show();
                 $("#btnAddfollow").hide();
                 $("#messageButton").hide();
+                $("#chatButton").hide();
                 $("#fullname").hide();
                 $("#userInfo").hide().after("<h3 class='blockWarning'>You cannot view this user's profile because you have blocked them</h3>");
             }
@@ -62,6 +64,7 @@ xhttp2.onreadystatechange = function (){
         $("#btnUnblockUser").show();
         $("#btnAddfollow").hide();
         $("#messageButton").hide();
+        $("#chatButton").hide();
         $("#fullname").hide();
         $("#userInfo").hide().after("<h3 class='blockWarning'>You cannot view this user's profile because you have blocked them</h3>");
     }
@@ -75,6 +78,7 @@ xhttp3.onreadystatechange = function (){
         $("#btnUnblockUser").hide();
         $("#btnAddfollow").show();
         $("#messageButton").show();
+        $("#chatButton").show();
         $("#fullname").show();
         $("#userInfo").show();
         $(".blockWarming").hide();
@@ -107,6 +111,7 @@ function unblockUser(){
     if($(".blockWarning").text() == "You cannot view this user's profile because you have blocked them"){
         $("#btnAddFollow").show();
         $("#messageButton").show();
+        $("#chatButton").show();
         $("#fullname").show();
         $("#userInfo").show();
         document.getElementById("btnAddFollow").innerText = "Follow";
@@ -170,6 +175,7 @@ function makefollowsList(users) {
         follows = users[user]["following"];
         for (let follow in follows) {
             if(follows[follow] == otherUsername){
+
                 userFollowingData += "";
                 addOther = false;
             } else {
@@ -321,7 +327,33 @@ function checkImage(users){
     }
 }
 
+function checkIfBlocked(){
+    let url = "https://lingojiveapi.herokuapp.com/users/" + username;
+    let xml = new XMLHttpRequest();
+    xml.onload = function (){
+        if (this.readyState == 4 && this.status == 200){
+            checkBlocks(JSON.parse(this.responseText))
+        };
+    };
+    xml.open('GET', url,true);
+    xml.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xml.send();
+}
+
+function checkBlocks(users){
+    for (let user in users){
+        let blocks = users[user]["blocking"];
+        for (let block in blocks){
+            if(blocks[block] == otherUsername){
+                document.getElementById("btnAddFollow").style.display = "none";
+                document.getElementById("messageButton").style.display = "none";
+                document.getElementById("chatButton").style.display = "none";
+            }
+        }
+    }
+}
 window.onload = function(){
+    checkIfBlocked();
     checkProfilePic();
     check();
 }
