@@ -1,13 +1,20 @@
 #video-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, 300px);
-    grid-auto-rows: 300px;
+    grid-template-columns: repeat(auto-fill, 500px);
+    grid-auto-rows: 400px;
+    left: 6%;
+    top: 25%;
+    /*margin-left: -175px;*/
+    position: relative;
+    /*border: 5px solid black;*/
 }
 
 video {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border: 10px solid #483D8B;
+    outline: 5px solid #343a40;
 }
 
 .rateUser{
@@ -23,4 +30,10 @@ video {
     margin-left: -200px;
     align-content: center;
     background: white;
+}
+
+#hangUpButton{
+    left: 48%;
+    margin-top: 20px;
+    position: absolute;
 }
