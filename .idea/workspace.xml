@@ -23,15 +23,12 @@
   </component>
   <component name="CMakeSettings">
     <configurations>
-      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" ENABLED="true" />
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
     </configurations>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9192ada3-c883-4128-9689-585ec6d745c2" name="Default Changelist" comment="blocking now causes mutual unfollow">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/chats.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/chats.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/stylesheets/chats.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/chats.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/chats.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/chats.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +97,7 @@
       <recent name="D:\Github\Seattle-Pacific-University-CSC-4151-4152\public\Picture" />
     </key>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -148,7 +145,7 @@
       <workItem from="1621833329175" duration="1525000" />
       <workItem from="1621874076736" duration="3627000" />
       <workItem from="1621969113832" duration="6816000" />
-      <workItem from="1622046513401" duration="4223000" />
+      <workItem from="1622046513401" duration="4478000" />
     </task>
     <task id="LOCAL-00001" summary="minor fixes to chats.js">
       <created>1617501873889</created>
@@ -174,12 +171,13 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="493" y="165" key="FileChooserDialogImpl" timestamp="1620936401774">
