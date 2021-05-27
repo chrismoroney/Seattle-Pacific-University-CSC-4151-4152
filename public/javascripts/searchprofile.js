@@ -75,6 +75,22 @@ document.getElementById("btnLoadUsersByName").addEventListener("click", (event) 
     xhttp.open("GET", url, true);
     xhttp.send();
 });
+document.getElementById("btnLoadUsersByLastName").addEventListener("click", (event) =>{
+    document.getElementById("output").innerHTML = "";
+    let url = "http://lingojiveapi.herokuapp.com/users/?lastname=" + document.getElementById("lastname").value;
+    //figure something out for last name
+    //let url2 = "http://lingojiveapi.herokuapp.com/users/?lastname=" + document.getElementById("lastname").value;
+    console.log(url);
+    let xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function(){
+        if (this.readyState == 4 && this.status == 200){
+            document.getElementById("output").innerHTML =
+                CreateTable(JSON.parse(this.responseText));
+        }
+    };
+    xhttp.open("GET", url, true);
+    xhttp.send();
+});
 document.getElementById("btnLoadUsersByUsername").addEventListener("click", (event) =>{
     document.getElementById("output").innerHTML = "";
     let url = "http://lingojiveapi.herokuapp.com/users/" + document.getElementById("Username").value;
