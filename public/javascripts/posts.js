@@ -22,10 +22,16 @@ xhttp.onreadystatechange = function() {
             var user = document.createElement('div');
             user.textContent = response[i].Name;
             item.prepend(user);
-            const button = document.createElement('button')
+            var button = document.createElement('button')
             button.style="float: right";
             button.textContent= 'Reply';
             item.prepend(button);
+            button.id = "myReply";
+            item.prepend(button);
+            document.getElementById("myReply").onclick = Function()
+            {
+                location.href = 'https://lingojiveapi.herokuapp.com/replyBox';
+            };
         }
     }
 };
