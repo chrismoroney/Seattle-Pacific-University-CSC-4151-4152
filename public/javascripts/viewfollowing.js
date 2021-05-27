@@ -30,7 +30,8 @@ function CreateTable(users){
     return table;
 }
 // Still need to figure out
-document.getElementById("btnViewFriends").addEventListener("click", (event) =>{
+
+function loadFriends(){
     let url = "http://lingojiveapi.herokuapp.com/users/" + username;
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function(){
@@ -41,4 +42,6 @@ document.getElementById("btnViewFriends").addEventListener("click", (event) =>{
     };
     xhttp.open("GET", url, true);
     xhttp.send();
-});
+}
+
+window.onload=loadFriends;

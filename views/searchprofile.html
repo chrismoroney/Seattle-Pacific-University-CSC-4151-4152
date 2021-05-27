@@ -4,9 +4,24 @@
     <meta charset="UTF-8">
     <title>Search</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href=
+            "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src=
+                    "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    </script>
+    <script src=
+                    "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js">
+    </script>
+    <script src=
+                    "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js">
+    </script>
+
+    <!-- CDN link used below is compatible with this example -->
+    <link rel="stylesheet" href=
+            "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.min.css">
+    <script src=
+                    "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js">
+    </script>
     <script>
         const username = '<%= username %>';
     </script>
@@ -83,7 +98,7 @@
     <div class="input-group">
         <input type="text" name="firstname" id="firstname" class="form-control"
                placeholder="Name">
-        <button class="btn btn-success" id="btnLoadUsersByName">Search</button>
+        <button class="btn btn-search" id="btnLoadUsersByName">Search</button>
     </div>
     <label style="padding-top: 10px" for="lastname">Search by Last Name:</label>
     <div class="input-group">
@@ -95,7 +110,7 @@
     <div class="input-group">
         <input type="text" name="Username" id="Username" class="form-control"
                placeholder="Username">
-        <button class="btn btn-success" id="btnLoadUsersByUsername">Search</button>
+        <button class="btn btn-search" id="btnLoadUsersByUsername">Search</button>
     </div>
     <p style="padding-top: 10px">Search by Language:</p>
     <div class="input-group">
@@ -115,8 +130,7 @@
         </div>
     </div>
     <div class="input-group">
-
-        <label for="languageLearning">Language being Learned</label>
+        <label for="languageLearning">Learning Language</label>
         <div class="dropdown bootstrap-select show-tick fit-width dropup" data-live-search="true">
 
             <select class="selectpicker" title="Select one" id="languageLearning">
@@ -130,8 +144,8 @@
                 <option>Dutch</option>
                 <option>Mandarin</option>
             </select>
+            <button class="btn btn-search" id="btnLoadUsersByLanguage">Search</button>
         </div>
-        <button class="btn btn-success" id="btnLoadUsersByLanguage">Search</button>
     </div>
 </div>
 <div style="padding-top: 10px" class="container">

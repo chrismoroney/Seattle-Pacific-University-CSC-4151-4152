@@ -1,3 +1,14 @@
+.btn-login{
+    background-color: #EE973A !important;
+    color: #4B4B69 !important;
+}
+
+.img-center {
+    padding-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 body{
     max-width: 500px;
     margin: auto;

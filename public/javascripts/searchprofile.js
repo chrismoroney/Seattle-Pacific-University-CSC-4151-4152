@@ -148,4 +148,3 @@ document.getElementById("btnLoadUsersByLanguage").addEventListener("click", (eve
     languageXhttp.send();
 
 })
-
