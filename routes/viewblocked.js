@@ -4,7 +4,7 @@ var router = express.Router();
 /* GET home page. */
 router.get('/', function(req, res, next) {
     // res.render('index', { title: 'Express' });
-    res.render('viewblocked.html', {root: 'views'})
+    res.render('viewblocked.html', {root: 'views', username: req.session.username})
 });
 
 module.exports = router;

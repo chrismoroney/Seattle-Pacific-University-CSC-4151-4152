@@ -1,3 +1,8 @@
+.btn-send{
+    background-color: #4B4B69 !important;
+    color: white;
+}
+
 .chatscontainer{
     z-index: 0;
     /*border: 2px solid black;*/
