@@ -29,9 +29,9 @@ xhttp.onreadystatechange = function() {
             button.style="float: right";
             button.textContent= 'Reply';
             item.prepend(button);
-            button.id = "myReply";
+            button.id = "myReply" + i;
             item.prepend(button);
-            document.getElementById("myReply").onclick = "replyFunction"
+            document.getElementById("myReply" + i).onclick = "replyFunction"
 //             {
 //                 location.href = 'https://lingojiveapi.herokuapp.com/replyBox';
 //             };
