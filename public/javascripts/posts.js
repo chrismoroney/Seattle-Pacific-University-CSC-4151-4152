@@ -9,6 +9,9 @@ var url = 'https://lingojiveapi.herokuapp.com/posts';
 
 var xhttp = new XMLHttpRequest();
 
+var replyFunction = function(){
+    location.href = 'https://lingojiveapi.herokuapp.com/replyBox.html';
+}
 xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
         console.log(this.responseText);
@@ -28,10 +31,10 @@ xhttp.onreadystatechange = function() {
             item.prepend(button);
             button.id = "myReply";
             item.prepend(button);
-            document.getElementById("myReply").onclick = Function()
-            {
-                location.href = 'https://lingojiveapi.herokuapp.com/replyBox';
-            };
+            document.getElementById("myReply").onclick = "replyFunction"
+//             {
+//                 location.href = 'https://lingojiveapi.herokuapp.com/replyBox';
+//             };
         }
     }
 };
