@@ -1,4 +1,4 @@
-const express = require('express')
+var express = require('express')
 var router = express.Router();
 const { v4: uuidV4 } = require('uuid')
 
@@ -12,7 +12,8 @@ router.get('/', (req, res) => {
 })
 
 router.get('/:room', (req, res) => {
-    res.render('room.html', { root: 'views', roomId: req.params.room })
+    res.render('room.html', { root: 'views', roomId: req.params.room, myusername: req.session.username })
+    // res.sendFile('room.html', {root: 'views'})
 })
 
 module.exports = router;

@@ -1,20 +1,15 @@
 <!DOCTYPE html>
-<body lang="en">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Profile</title>
+    <title>Uploaded</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script>
-        const username = '<%= username %>';
-        const otherUsername = '<%= otherUsername %>';
-        const roomId = '<%= roomId %>';
-    </script>
-    <link rel="stylesheet" href="../stylesheets/profile.css">
 </head>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<body>
+<<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="nav-link" href="/">
         <div class="logo-image">
             <img src="../Picture/LingoJiveLogo.png" class="img-fluid" width="80px" height="80px">
@@ -37,6 +32,8 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
                         <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z"/>
                     </svg>
+                    <div id="button_badge">
+                    </div>
                 </a>
             </li>
             <li class="nav-item">
@@ -47,6 +44,9 @@
                     </svg>
                 </a>
             </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-center">
+            <li id="username" style="text-align: center; font-size: 36px; color: #c48843;"><%=username%></li>
         </ul>
         <ul class="navbar-nav ml-auto">
             <li class="nav-item dropdown">
@@ -59,58 +59,16 @@
                     <a class="dropdown-item" href="#">Settings & Privacy</a>
                     <a class="dropdown-item" href="#">Support</a>
                     <a class="dropdown-item" href="logout">Sign out</a>
+
                 </div>
             </li>
         </ul>
     </div>
 </nav>
-<div style = "text-align: center; padding-top: 20px">
-    <img src = "../Picture/profilephoto.png" id = "photo" height = "200px" width = "200px"  alt = "Profile Photo">
-</div>
-<h3 id="fullname" style="text-align: center"><%= firstName %> <%= lastName %></h3>
-<div style="text-align: center;">
-    <div>
-        <button class="btn-danger" id="btnBlockUser" onclick="">Block</button>
-        <button class="btn-danger" id="btnUnblockUser" onclick="unblockUser()   ">Unblock</button>
-        <button class="btn-success" id="btnAddFollow">Follow</button>
-        <button class="btn-primary" id="messageButton">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
-                <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z"/>
-            </svg>
-        </button>
-        <button class="btn-primary" id="chatButton">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-camera-video-fill" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M0 5a2 2 0 0 1 2-2h7.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 4.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 13H2a2 2 0 0 1-2-2V5z"/>
-            </svg>
-        </button>
-    </div>
-    <div id="userInfo" class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class = "bio">
-                    <h3>Biography</h3>
-                    <p id="bio" style="text-align: center"><%= bio %></p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-6">
-                <div class = "boxOne">
-                    <h4>Languages Spoken</h4>
-                    <p id="langExp" style="text-align: center"><%= langExp %> </p>
-                </div>
-            </div>
-            <div class="col-sm-6">
-                <div class = "boxTwo">
-                    <h4>Languages to be Learned</h4>
-                    <p id="langLearn" style="text-align: center"><%= langLearn %></p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="container alertBox"></div>
-<script src="/socket.io/socket.io.js"></script>
-<script src="/javascripts/otherprofile.js"></script>
+    <h1>Uploaded image</h1>
+    <p id="picName">
+        <%= message %>
+    </p>
+    <script src="/javascripts/upload.js"></script>
 </body>
 </html>

@@ -9,6 +9,7 @@ var session = require('express-session')
 var app = express();
 var $ = require('jquery');
 require('dotenv').config({path:'./env'});
+
 app.use(session({
   secret: 'keyboard cat',
   name: 'uniqueSessionId',
@@ -52,12 +53,15 @@ var videoChatRouter = require('./routes/room');
 var otherprofileRouter = require('./routes/otherprofile');
 var viewfollowingRouter = require('./routes/viewfollowing');
 var viewblockedRouter = require('./routes/viewblocked');
+var profilepicsRouter = require('./routes/profilepics');
+var uploadimgRouter = require('./routes/upload');
+
 
 require('dotenv').config();
-  
+
 // view engine setup
 
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({extended: true}));
 
 //commented out for video chat
 app.engine('html', require('ejs').renderFile);
@@ -77,9 +81,11 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(cors());
 app.use(logger('dev'));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static('profileImages'));
+app.use('/profileImages', express.static('profileImages'));
 
 app.use(bodyParser.json());
 
@@ -99,6 +105,8 @@ app.use('/videochat', videoChatRouter);
 app.use('/otherprofile', otherprofileRouter);
 app.use('/viewfollowing', viewfollowingRouter);
 app.use('/viewblocked', viewblockedRouter);
+app.use('/profilepics', profilepicsRouter);
+app.use('/upload', uploadimgRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

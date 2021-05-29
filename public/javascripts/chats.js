@@ -64,6 +64,7 @@ function showMessages(id){
     };
 
     $('.activeChat').removeClass('activeChat');
+    console.log("showMessages ID=" + id);
     document.getElementById(id).classList.add("activeChat");
     url2 += id;
     chatID = id;
@@ -90,16 +91,77 @@ xhttp.onreadystatechange = function() {
                 chats.appendChild(li);
                 let span = document.createElement("span");
                 span.id = response[i]._id + "span";
+                let thisMember = '';
                 let text = document.createTextNode(response[i].Members[0]);
+                thisMember = response[i].Members[0];
                 span.appendChild(text);
                 if(response[i].Members[0] === username){
                     text.nodeValue = response[i].Members[1];
+                    thisMember = response[i].Members[1];
                 }
+                let dropdown = document.createElement('div');
+                dropdown.className = 'dropdown';
+                dropdown.innerHTML = '<a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink' + thisMember + '" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">'+
+                        'Actions'+
+                    '</a>';
+                let menu =document.createElement('div');
+                menu.className = "dropdown-menu";
+                menu.setAttribute("aria-labelledby", 'dropdownMenuLink' + thisMember);
+                menu.innerHTML = '<a class="dropdown-item" href="/otherprofile/' + thisMember +'">View user profile</a>';
+                let videoLink = document.createElement('div');
+                videoLink.innerHTML = '<a class="dropdown-item" href="#">Video chat</a>';
+                let blockLink = document.createElement('div');
+                blockLink.innerHTML = '<a class="dropdown-item" href="#" >Block this user</a>';
+                blockLink.addEventListener("click", function(){
+                    blockUser(username, thisMember);
+                    let thisChat = this.parentElement.parentElement.parentElement;
+                    console.log("this id=" + thisChat.id);
+                    if(thisChat.parentElement.children.length > 1 && thisChat.nextElementSibling != null){
+                        let nextId = thisChat.nextElementSibling.id;
+                        console.log("next id=" + nextId);
+                        showMessages(nextId);
+                    }
+                    else if(thisChat.parentElement.children.length > 1){
+                        let prevId = thisChat.previousElementSibling.id;
+                        showMessages(prevId);
+                    }
+                    else{
+                        while (document.getElementById("chatCol2").lastChild){
+                            document.getElementById("chatCol2").removeChild(document.getElementById("chatCol2").lastChild);
+
+                        }
+                    }
+                    thisChat.remove();
+                });
+                menu.appendChild(blockLink);
+                videoLink.addEventListener("click", function(){
+                    socket.emit("send-call-invite", {invitee: text.nodeValue, inviter: username, roomId: roomId});
+                    let url = "http://lingojive.herokuapp.com/videochat/" + roomId;
+                     // let url = "http://localhost:3000/videochat/" + roomId;
+                    let alertBox = document.getElementsByClassName("alertBoxSend")[0];
+                    alertBox.style.display = "block";
+                    // alertBox.innerHTML = 'Calling ' + text.nodeValue +
+                    //     '<a href="' + url + '">' + ' Join Room ' + '<\a>';
+                    let alertBoxSendInner = document.getElementsByClassName("alertBoxSendInner")[0];
+                    alertBoxSendInner.innerHTML = 'Calling ' + text.nodeValue + '...'
+                        // '<a href="' + url + '">' + ' Join Room ' + '<\a>';
+                    // let alertBoxSendBottom = document.getElementsByClassName("alertBoxSendBottom")[0];
+                    // alertBoxSendBottom.innerHTML = '<a href="' + url + '">' + ' Join Room ' + '<\a>';
+
+                    let alertBoxSendButton = document.getElementsByClassName("alertBoxSendButton")[0];
+                    alertBoxSendButton.addEventListener('click', function(){
+                        window.location.href = url;
+                    })
+                    // alertBoxSendButton.innerHTML = '<a href="' + url + '">' + ' Join Room ' + '<\a>';
+                })
+                menu.appendChild(videoLink);
                 // if(text.nodeValue == targetName){
                 //     displayedMessageId = li.id;
                 // }
                 // li.appendChild(text);
                 li.appendChild(span);
+                dropdown.appendChild(menu);
+                li.appendChild(dropdown);
                 let videoCall = document.createElement("button");
                 // videoCall.innerText = "call";
                 videoCall.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-camera-video-fill" viewBox="0 0 16 16">' +
@@ -110,16 +172,19 @@ xhttp.onreadystatechange = function() {
                 videoCall.addEventListener("click", function(){
                     socket.emit("send-call-invite", {invitee: text.nodeValue, inviter: username, roomId: roomId});
                     let url = "http://lingojive.herokuapp.com/videochat/" + roomId;
+                    // let url = "http://localhost:3000/videochat/" + roomId;
                     let alertBox = document.getElementsByClassName("alertBox")[0];
                     alertBox.style.display = "block";
-                    alertBox.innerHTML = 'Calling ' + text.nodeValue +
-                        '<a href="' + url + '">' + ' Join Room ' + '<\a>';
+                    alertBox.innerHTML = 'Calling ' + text.nodeValue + '<a href="' + url + '">' + ' Join Room ' + '<\a>';
                     ;
                 })
-                li.appendChild(videoCall);
+                //li.appendChild(videoCall);
                 li.addEventListener("click", function(){
                     showMessages(li.id);
                 });
+            }
+            else if( displayedMessageId == response[i]._id){
+                displayedMessageId = response[i-1]._id;
             }
         }
         // if(targetName != ""){
@@ -131,6 +196,7 @@ xhttp.onreadystatechange = function() {
 };
 
 xhttp.open("GET", url, true);
+xhttp.setRequestHeader('Cache-Control', 'no-cache');
 xhttp.send();
 
 form.addEventListener('submit', function(e) {
@@ -204,10 +270,95 @@ socket.on('call-invite', (data) => {
     if(data.invitee == username){
         console.log(data.invitee, data.inviter, data.roomId)
         let url = "http://lingojive.herokuapp.com/videochat/" + data.roomId;
-        let alertBox = document.getElementsByClassName("alertBox")[0];
-        alertBox.style.display = "block";
-        alertBox.innerHTML = data.inviter + ' wants to chat with you: ' +
-                             '<a href="' + url + '">' + 'Accept' + '<\a>';
+        // let url = "http://localhost:3000/videochat/" + data.roomId;
+        let alertBoxReceive = document.getElementsByClassName("alertBoxReceive")[0];
+        alertBoxReceive.style.display = "block";
+        let alertBoxReceiveInner = document.getElementsByClassName("alertBoxReceiveInner")[0];
+        alertBoxReceiveInner.innerHTML = data.inviter + ' wants to chat with you: '
+                             // '<a href="' + url + '">' + 'Accept' + '<\a>';
+        let alertBoxReceiveDecline = document.getElementsByClassName("alertBoxReceiveDecline")[0];
+        alertBoxReceiveDecline.addEventListener('click', function(){
+            alertBoxReceive.style.display = "none";
+        })
+        let alertBoxReceiveAccept = document.getElementsByClassName("alertBoxReceiveAccept")[0];
+        alertBoxReceiveAccept.addEventListener('click', function(){
+            window.location.href = url;
+        })
     }
 })
 
+
+//blocking stuff
+function blockUser(thisUser, otherUser) {
+    block(thisUser, otherUser, true);
+    block(otherUser, thisUser, true);
+}
+function block(thisUsername, otherUsername, unfollow){
+    let url =  "http://lingojiveapi.herokuapp.com/users/" + thisUsername;
+    let blockxhttp = new XMLHttpRequest();
+    blockxhttp.onreadystatechange = function (){
+        if (this.readyState == 4 && this.status == 200){
+            makeblockList(JSON.parse(this.responseText), unfollow, thisUsername, otherUsername);
+            patchBlock(thisUsername, userBlockingData);
+        };
+    };
+    blockxhttp.open('GET', url,true);
+    blockxhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    blockxhttp.send();
+}
+
+
+var userBlockingData;
+var blocklist;
+var field;
+var addOther;
+
+function makeblockList(users, unfollow, thisUser, notThisUser) {
+    userBlockingData = "";
+    addOther = true;
+    for (let user in users){
+        field = "";
+        if(users[user]["username"] == username){
+            field = "blocking";
+        }
+        else{
+            field = "blockedBy";
+        }
+        console.log("field:" + field);
+        if(field != ""){
+            blocklist = users[user][field];
+            for (let blocker in blocklist) {
+                if(blocklist[blocker] == notThisUser){
+                    userBlockingData += "";
+                    addOther = false;
+                } else {
+                    userBlockingData += field + "=" + blocklist[blocker] + "&";
+                }
+            }
+            if(addOther){
+                userBlockingData += field + "=" + notThisUser;
+            }
+            if(unfollow){
+                follows = users[user]["following"];
+                for (let follow in follows) {
+                    if(follows[follow] != notThisUser){
+                        userBlockingData += "&following=" + follows[follow];
+                    }
+                }
+            }
+        }
+    }
+    if(blocklist.length == 1 && !addOther){
+        userBlockingData = field + "=";
+    }
+}
+
+function patchBlock(thisUser, userBlockingData){
+    console.log("thisUser:" + thisUser);
+    console.log("userFollowing " + userBlockingData)
+    let url = "http://lingojiveapi.herokuapp.com/users/" + thisUser;
+    let blockxhttp2 = new XMLHttpRequest();
+    blockxhttp2.open('PATCH', url, true);
+    blockxhttp2.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    blockxhttp2.send(userBlockingData);
+}

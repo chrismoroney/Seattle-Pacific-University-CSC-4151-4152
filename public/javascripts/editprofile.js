@@ -2,6 +2,10 @@ let url = 'https://lingojiveapi.herokuapp.com/chats';
 let xhttp = new XMLHttpRequest();
 let numUnreadMessages = 0;
 
+//var FormData = require('form-data');
+//var fs = require('fs');
+
+
 
 xhttp.onreadystatechange = function(){
     console.log("called");
@@ -179,6 +183,19 @@ document.getElementById("btnUpdateUser").addEventListener("click", (event) =>{
 document.getElementById("btnDiscardChanges").addEventListener("click", (event) =>{
     window.location.pathname = "myprofile";
 });
+
+let xhttpPic = new XMLHttpRequest();
+xhttpPic.onreadystatechange = function (){
+    if (this.readyState == 4 && this.status == 200){
+        $("#output2").text("Picture submitted successfully");
+    }
+};
+
+document.getElementById("submitPicBtn").addEventListener("click", (event) =>{
+    window.location.pathname = "profilepics";
+});
+
+
 
 
 

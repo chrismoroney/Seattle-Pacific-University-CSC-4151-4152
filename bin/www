@@ -181,6 +181,10 @@ io.on('connection', (socket) => {
     console.log("sent!");
     //test end
 
+    socket.on('here-is-my-username', theirusername =>{
+      socket.to(roomId).broadcast.emit('here-is-their-username', theirusername)
+    })
+
     socket.on('disconnect', () => {
       socket.to(roomId).broadcast.emit('user-disconnected', userId)
     })

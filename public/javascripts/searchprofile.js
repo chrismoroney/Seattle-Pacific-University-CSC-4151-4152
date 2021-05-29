@@ -62,9 +62,25 @@ function CreateTable(users){
 // Need to figure something out for username or name CONTAINING input
 document.getElementById("btnLoadUsersByName").addEventListener("click", (event) =>{
     document.getElementById("output").innerHTML = "";
-    let url = "http://lingojiveapi.herokuapp.com/users/?firstname=" + document.getElementById("firstname").value;
+        let url = "http://lingojiveapi.herokuapp.com/users/?firstname=" + document.getElementById("firstname").value;
     //figure something out for last name
     //let url2 = "http://lingojiveapi.herokuapp.com/users/?lastname=" + document.getElementById("lastname").value;
+    let xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function(){
+        if (this.readyState == 4 && this.status == 200){
+            document.getElementById("output").innerHTML =
+                CreateTable(JSON.parse(this.responseText));
+        }
+    };
+    xhttp.open("GET", url, true);
+    xhttp.send();
+});
+document.getElementById("btnLoadUsersByLastName").addEventListener("click", (event) =>{
+    document.getElementById("output").innerHTML = "";
+    let url = "http://lingojiveapi.herokuapp.com/users/?lastname=" + document.getElementById("lastname").value;
+    //figure something out for last name
+    //let url2 = "http://lingojiveapi.herokuapp.com/users/?lastname=" + document.getElementById("lastname").value;
+    console.log(url);
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function(){
         if (this.readyState == 4 && this.status == 200){
@@ -101,3 +117,34 @@ document.getElementById("gotoprofile").addEventListener("click", (event) =>{
 });
 */
 
+document.getElementById("btnLoadUsersByLanguage").addEventListener("click", (event) =>{
+    let languageSpoken = document.getElementById("languageSpoken").value;
+    let languageLearning = document.getElementById("languageLearning").value;
+    console.log("Language spoken: " + languageSpoken);
+    console.log("Language learning: " + languageLearning);
+    let query = "?"
+    if(languageLearning !=""){
+        query = query + "languageLearning=" + languageLearning;
+    }
+    if(languageSpoken != ""){
+        if(languageLearning !=""){
+            query = query + "&";
+        }
+        query = query + "languageSpoken=" + languageSpoken;
+    }
+    let languageUrl = 'https://lingojiveapi.herokuapp.com/users/';
+    if(query != "?"){
+        languageUrl = languageUrl + query;
+    }
+    console.log(languageUrl);
+    let languageXhttp = new XMLHttpRequest();
+    languageXhttp.onreadystatechange = function(){
+        if (this.readyState == 4 && this.status == 200){
+            document.getElementById("output").innerHTML =
+                CreateTable(JSON.parse(this.responseText));
+        }
+    };
+    languageXhttp.open("GET", languageUrl, true);
+    languageXhttp.send();
+
+})
