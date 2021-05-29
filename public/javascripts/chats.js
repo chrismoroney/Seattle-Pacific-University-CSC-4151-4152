@@ -196,6 +196,7 @@ xhttp.onreadystatechange = function() {
 };
 
 xhttp.open("GET", url, true);
+xhttp.setRequestHeader('Cache-Control', 'no-cache');
 xhttp.send();
 
 form.addEventListener('submit', function(e) {
