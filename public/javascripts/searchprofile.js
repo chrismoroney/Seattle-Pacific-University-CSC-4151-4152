@@ -62,7 +62,7 @@ function CreateTable(users){
 // Need to figure something out for username or name CONTAINING input
 document.getElementById("btnLoadUsersByName").addEventListener("click", (event) =>{
     document.getElementById("output").innerHTML = "";
-    let url = "http://lingojiveapi.herokuapp.com/users/?firstname=" + document.getElementById("firstname").value;
+        let url = "http://lingojiveapi.herokuapp.com/users/?firstname=" + document.getElementById("firstname").value;
     //figure something out for last name
     //let url2 = "http://lingojiveapi.herokuapp.com/users/?lastname=" + document.getElementById("lastname").value;
     let xhttp = new XMLHttpRequest();
