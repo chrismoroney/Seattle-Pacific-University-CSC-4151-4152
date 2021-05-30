@@ -55,6 +55,7 @@ var viewfollowingRouter = require('./routes/viewfollowing');
 var viewblockedRouter = require('./routes/viewblocked');
 var profilepicsRouter = require('./routes/profilepics');
 var uploadimgRouter = require('./routes/upload');
+var replyRouter = require('./routes/replyBox');
 
 
 require('dotenv').config();
@@ -107,6 +108,8 @@ app.use('/viewfollowing', viewfollowingRouter);
 app.use('/viewblocked', viewblockedRouter);
 app.use('/profilepics', profilepicsRouter);
 app.use('/upload', uploadimgRouter);
+app.use('/reply', replyRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

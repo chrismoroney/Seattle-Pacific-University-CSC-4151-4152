@@ -36,7 +36,7 @@ xhttp.onreadystatechange = function() {
 //                 location.href = 'https://lingojiveapi.herokuapp.com/replyBox';
 //             };
             document.getElementById("myReply" + i).addEventListener("click", function(){
-                window.location.href = 'https://lingojive.herokuapp.com/replyBox.html';
+                window.location.href = '/reply';
             })            
         }
     }
