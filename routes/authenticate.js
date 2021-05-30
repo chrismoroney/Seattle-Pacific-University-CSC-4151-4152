@@ -28,6 +28,8 @@ router.post('/'
                         // console.log(userObj);
                         // console.log("hi");
                         console.log("hello" + userObj);
+                        console.log(typeof(userObj.langLearn));
+                        console.log(typeof(userObj.conversationalAbility));
                     if(userObj.username == username && userObj.password == password){
                         res.locals.username = username;
                         req.session.username = username;
@@ -47,6 +49,54 @@ router.post('/'
                         req.session.blocking = userObj.blocking;
                         res.locals.blockedBy = userObj.blockedBy;
                         req.session.blockedBy = userObj.blockedBy;
+
+                        // doesn't work
+                        let overallFluencyTotal = 0;
+                        for(let i = 0; i < userObj.overallFluency.length; ++i){
+                            overallFluencyTotal += userObj.overallFluency[i];
+                        }
+                        let overallFluencyAverage = overallFluencyTotal / userObj.overallFluency.length;
+                        res.locals.overallFluency = overallFluencyAverage;
+                        req.session.overallFluency = overallFluencyAverage;
+                        console.log(overallFluencyAverage);
+
+                        let pronunciationTotal = 0;
+                        for(let i = 0; i < userObj.pronunciation.length; ++i){
+                            pronunciationTotal += userObj.pronunciation[i];
+                        }
+                        let pronunciationAverage = pronunciationTotal / userObj.pronunciation.length;
+                        res.locals.pronunciation = pronunciationAverage;
+                        req.session.pronunciation = pronunciationAverage;
+                        console.log(pronunciationAverage);
+
+                        let conversationalAbilityTotal = 0;
+                        for(let i = 0; i < userObj.conversationalAbility.length; ++i){
+                            conversationalAbilityTotal += userObj.conversationalAbility[i];
+                        }
+                        let conversationalAbilityAverage = conversationalAbilityTotal / userObj.conversationalAbility.length;
+                        res.locals.conversationalAbility = conversationalAbilityAverage;
+                        req.session.conversationalAbility = conversationalAbilityAverage;
+                        console.log(conversationalAbilityAverage);
+
+                        let listeningTotal = 0;
+                        for(let i = 0; i < userObj.listening.length; ++i){
+                            listeningTotal += userObj.listening[i];
+                        }
+                        let listeningAverage = listeningTotal / userObj.listening.length;
+                        res.locals.listening = listeningAverage;
+                        req.session.listening = listeningAverage;
+                        console.log(listeningAverage);
+
+                        let speakingTotal = 0;
+                        for(let i = 0; i < userObj.speaking.length; ++i){
+                            speakingTotal += userObj.speaking[i];
+                        }
+                        let speakingAverage = speakingTotal / userObj.speaking.length;
+                        res.locals.speaking = speakingAverage;
+                        req.session.speaking = speakingAverage;
+                        console.log(speakingAverage);
+                        //doesn't work
+
                         console.log(req.session.bio);
                         // console.log(username);
                         req.session.loggedIn = true;

@@ -15,7 +15,12 @@ let UserSchema = new Schema({
     following: [String],
     blocked: [String],
     blocking: [String],
-    blockedBy: [String]
+    blockedBy: [String],
+    overallFluency: [Number],
+    pronunciation: [Number],
+    conversationalAbility: [Number],
+    listening: [Number],
+    speaking: [Number]
 });
 
 module.exports = mongoose.model('User', UserSchema);
