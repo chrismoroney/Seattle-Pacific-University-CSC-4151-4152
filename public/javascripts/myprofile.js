@@ -1,9 +1,9 @@
 var url = 'https://lingojiveapi.herokuapp.com/chats';
 var xhttp = new XMLHttpRequest();
-var numUnreadMessages = 0;
+let numUnreadMessages = 0;
 
 xhttp.onreadystatechange = function(){
-    numUnreadMessages = 0;
+    // numUnreadMessages = 0;
     console.log("called");
     if(this.readyState == 4 && this.status == 200){
         console.log(this.responseText);
