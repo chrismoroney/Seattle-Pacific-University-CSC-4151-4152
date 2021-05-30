@@ -29,7 +29,6 @@
   <component name="ChangeListManager">
     <list default="true" id="2726855a-8d0c-4935-b356-a096318447cb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/myprofile.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/myprofile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/room.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/room.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -139,7 +138,7 @@
       <workItem from="1622046513401" duration="6251000" />
       <workItem from="1622369583963" duration="634000" />
       <workItem from="1622370348247" duration="994000" />
-      <workItem from="1622406280269" duration="131000" />
+      <workItem from="1622406280269" duration="808000" />
     </task>
     <task id="LOCAL-00001" summary="minor fixes to chats.js">
       <created>1617501873889</created>
