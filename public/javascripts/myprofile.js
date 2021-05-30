@@ -1,6 +1,6 @@
 var url = 'https://lingojiveapi.herokuapp.com/chats';
 var xhttp = new XMLHttpRequest();
-let numUnreadMessages = 0;
+var numUnreadMessages = 0;
 
 xhttp.onreadystatechange = function(){
     // numUnreadMessages = 0;
