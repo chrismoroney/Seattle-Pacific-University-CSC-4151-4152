@@ -9,6 +9,11 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script>
         var username = '<%= username %>';
+        var overallFluency = '<%= overallFluency %>';
+        var pronunciation = '<%= pronunciation %>';
+        var conversationalAbility = '<%= conversationalAbility %>';
+        var listening = '<%= listening %>';
+        var speaking = '<%= speaking %>';
     </script>
     <link rel="stylesheet" href="../stylesheets/profile.css">
 </head>
@@ -108,11 +113,11 @@
         <div class="col-sm-12">
             <div class = "userRating" >
                 <h4>User Rating</h4>
-                <h6 style="text-align: center">Overall Fluency: </h6>
-                <h6 style="text-align: center">Pronunciation: </h6>
-                <h6 style="text-align: center">Conversational Ability: </h6>
-                <h6 style="text-align: center">Listening: </h6>
-                <h6 style="text-align: center">Speaking: </h6>
+                <h6 style="text-align: center">Overall Fluency: <%= overallFluency %></h6>
+                <h6 style="text-align: center">Pronunciation: <%= pronunciation %></h6>
+                <h6 style="text-align: center">Conversational Ability: <%= conversationalAbility %></h6>
+                <h6 style="text-align: center">Listening: <%= listening %></h6>
+                <h6 style="text-align: center">Speaking: <%= speaking %></h6>
             </div>
         </div>
     </div>

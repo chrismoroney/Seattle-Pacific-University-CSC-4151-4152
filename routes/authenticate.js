@@ -28,6 +28,8 @@ router.post('/'
                         // console.log(userObj);
                         // console.log("hi");
                         console.log("hello" + userObj);
+                        console.log(typeof(userObj.langLearn));
+                        console.log(typeof(userObj.conversationalAbility));
                     if(userObj.username == username && userObj.password == password){
                         res.locals.username = username;
                         req.session.username = username;
@@ -47,6 +49,24 @@ router.post('/'
                         req.session.blocking = userObj.blocking;
                         res.locals.blockedBy = userObj.blockedBy;
                         req.session.blockedBy = userObj.blockedBy;
+
+                        // doesn't work
+                        res.locals.overallFluency = userObj.overallFluency;
+                        req.session.overallFluency = userObj.overallFluency;
+
+                        res.locals.pronunciation = userObj.pronunciation;
+                        req.session.pronunciation = userObj.pronunciation;
+
+                        res.locals.conversationalAbility = userObj.conversationalAbility;
+                        req.session.conversationalAbility = userObj.conversationalAbility;
+
+                        res.locals.listening = userObj.listening;
+                        req.session.listening = userObj.listening;
+
+                        res.locals.speaking = userObj.speaking;
+                        req.session.speaking = userObj.speaking;
+                        //doesn't work
+
                         console.log(req.session.bio);
                         // console.log(username);
                         req.session.loggedIn = true;
