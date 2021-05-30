@@ -9,6 +9,9 @@ var url = 'https://lingojiveapi.herokuapp.com/posts';
 
 var xhttp = new XMLHttpRequest();
 
+// var replyFunction = function(){
+//     location.href = 'https://lingojiveapi.herokuapp.com/replyBox.html';
+// }
 xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
         console.log(this.responseText);
@@ -22,10 +25,19 @@ xhttp.onreadystatechange = function() {
             var user = document.createElement('div');
             user.textContent = response[i].Name;
             item.prepend(user);
-            const button = document.createElement('button')
+            var button = document.createElement('button')
             button.style="float: right";
             button.textContent= 'Reply';
             item.prepend(button);
+            button.id = "myReply" + i;
+            item.prepend(button);
+//             document.getElementById("myReply" + i).onclick = "replyFunction"
+//             {
+//                 location.href = 'https://lingojiveapi.herokuapp.com/replyBox';
+//             };
+            document.getElementById("myReply" + i).addEventListener("click", function(){
+                window.location.href = 'https://lingojive.herokuapp.com/replyBox.html';
+            })            
         }
     }
 };
