@@ -11,6 +11,12 @@
         const username = '<%= username %>';
         const otherUsername = '<%= otherUsername %>';
         const roomId = '<%= roomId %>';
+
+        var overallFluency = '<%= overallFluency %>';
+        var pronunciation = '<%= pronunciation %>';
+        var conversationalAbility = '<%= conversationalAbility %>';
+        var listening = '<%= listening %>';
+        var speaking = '<%= speaking %>';
     </script>
     <link rel="stylesheet" href="../stylesheets/profile.css">
 </head>
@@ -104,6 +110,18 @@
                 <div class = "boxTwo">
                     <h4>Languages to be Learned</h4>
                     <p id="langLearn" style="text-align: center"><%= langLearn %></p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class = "userRating" >
+                    <h4>User Rating</h4>
+                    <h6 style="text-align: center">Overall Fluency: <%= overallFluency %></h6>
+                    <h6 style="text-align: center">Pronunciation: <%= pronunciation %></h6>
+                    <h6 style="text-align: center">Conversational Ability: <%= conversationalAbility %></h6>
+                    <h6 style="text-align: center">Listening: <%= listening %></h6>
+                    <h6 style="text-align: center">Speaking: <%= speaking %></h6>
                 </div>
             </div>
         </div>
