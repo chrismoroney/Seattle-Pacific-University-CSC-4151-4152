@@ -51,20 +51,50 @@ router.post('/'
                         req.session.blockedBy = userObj.blockedBy;
 
                         // doesn't work
-                        res.locals.overallFluency = userObj.overallFluency;
-                        req.session.overallFluency = userObj.overallFluency;
+                        let overallFluencyTotal = 0;
+                        for(let i = 0; i < userObj.overallFluency.length; ++i){
+                            overallFluencyTotal += userObj.overallFluency[i];
+                        }
+                        let overallFluencyAverage = overallFluencyTotal / userObj.overallFluency.length;
+                        res.locals.overallFluency = overallFluencyAverage;
+                        req.session.overallFluency = overallFluencyAverage;
+                        console.log(overallFluencyAverage);
 
-                        res.locals.pronunciation = userObj.pronunciation;
-                        req.session.pronunciation = userObj.pronunciation;
+                        let pronunciationTotal = 0;
+                        for(let i = 0; i < userObj.pronunciation.length; ++i){
+                            pronunciationTotal += userObj.pronunciation[i];
+                        }
+                        let pronunciationAverage = pronunciationTotal / userObj.pronunciation.length;
+                        res.locals.pronunciation = pronunciationAverage;
+                        req.session.pronunciation = pronunciationAverage;
+                        console.log(pronunciationAverage);
 
-                        res.locals.conversationalAbility = userObj.conversationalAbility;
-                        req.session.conversationalAbility = userObj.conversationalAbility;
+                        let conversationalAbilityTotal = 0;
+                        for(let i = 0; i < userObj.conversationalAbility.length; ++i){
+                            conversationalAbilityTotal += userObj.conversationalAbility[i];
+                        }
+                        let conversationalAbilityAverage = conversationalAbilityTotal / userObj.conversationalAbility.length;
+                        res.locals.conversationalAbility = conversationalAbilityAverage;
+                        req.session.conversationalAbility = conversationalAbilityAverage;
+                        console.log(conversationalAbilityAverage);
 
-                        res.locals.listening = userObj.listening;
-                        req.session.listening = userObj.listening;
+                        let listeningTotal = 0;
+                        for(let i = 0; i < userObj.listening.length; ++i){
+                            listeningTotal += userObj.listening[i];
+                        }
+                        let listeningAverage = listeningTotal / userObj.listening.length;
+                        res.locals.listening = listeningAverage;
+                        req.session.listening = listeningAverage;
+                        console.log(listeningAverage);
 
-                        res.locals.speaking = userObj.speaking;
-                        req.session.speaking = userObj.speaking;
+                        let speakingTotal = 0;
+                        for(let i = 0; i < userObj.speaking.length; ++i){
+                            speakingTotal += userObj.speaking[i];
+                        }
+                        let speakingAverage = speakingTotal / userObj.speaking.length;
+                        res.locals.speaking = speakingAverage;
+                        req.session.speaking = speakingAverage;
+                        console.log(speakingAverage);
                         //doesn't work
 
                         console.log(req.session.bio);
