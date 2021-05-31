@@ -93,9 +93,11 @@ router.get('/:username', function(req, res){
                     root: 'views', username: req.session.username, firstName: "",
                     lastName: "", bio: "", langExp: "",
                     langLearn: "", otherUsername: username, roomId: roomId,
-                    overallFluency: overallFluencyAverage, pronunciation: pronunciationAverage,
-                    conversationalAbility: conversationalAbilityAverage, listening: listeningAverage,
-                    speaking: speakingAverage},
+                    overallFluency: overallFluencyAverage.toPrecision(2),
+                    pronunciation: pronunciationAverage.toPrecision(2),
+                    conversationalAbility: conversationalAbilityAverage.toPrecision(2),
+                    listening: listeningAverage.toPrecision(2),
+                    speaking: speakingAverage.toPrecision(2)},
                 );
             }
         });
