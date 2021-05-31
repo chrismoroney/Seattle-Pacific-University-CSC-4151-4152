@@ -21,11 +21,11 @@ video {
     display: none;
     z-index: 1;
     position: fixed;
-    top: 50%;
+    top: 35%;
     left: 50%;
     border: 2px solid black;
     width: 400px;
-    height: 200px;
+    height: 375px;
     margin-top: -100px;
     margin-left: -200px;
     align-content: center;
@@ -53,4 +53,20 @@ video {
     border: 2px solid #343a40;
     left: -11px;
     position: relative;
+}
+
+#rateUserTop{
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 25px;
+}
+
+.inputMargin{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.btn-search{
+    background-color: #EE973A !important;
+    color: #4B4B69 !important;
 }

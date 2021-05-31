@@ -80,6 +80,8 @@ socket.on('user-disconnected', userId => {
     // alert('user disconnected')
     let rateUserBox = document.getElementsByClassName("rateUser")[0]
     rateUserBox.style.display = "block"
+    let rateUserTop = document.getElementById('rateUserTop');
+    rateUserTop.innerText = "Rate " + peerUserName + "!";
     if (peers[userId]) peers[userId].close()
 })
 
@@ -111,6 +113,8 @@ function addVideoStream(video, stream) {
 
 document.getElementById("hangUpButton").addEventListener("click", function(){
     let rateUserBox = document.getElementsByClassName("rateUser")[0]
+    let rateUserTop = document.getElementById('rateUserTop');
+    rateUserTop.innerText = "Rate " + peerUserName + "!";
     rateUserBox.style.display = "block"
     // window.location.href = "/"
 })
