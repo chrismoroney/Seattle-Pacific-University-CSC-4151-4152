@@ -1,8 +1,3 @@
-.btn-send{
-    background-color: #4B4B69 !important;
-    color: white;
-}
-
 #button_badge {
     background-color: #fa3e3e;
     border-radius: 2px;
@@ -59,4 +54,9 @@
 .btn-decline{
     background-color: #EE973A !important;
     color: #4B4B69 !important;
+}
+
+.btn-send{
+    background-color: #4B4B69 !important;
+    color: white;
 }
