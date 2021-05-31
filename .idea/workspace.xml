@@ -148,7 +148,8 @@
       <workItem from="1622046513401" duration="6251000" />
       <workItem from="1622369583963" duration="634000" />
       <workItem from="1622370348247" duration="994000" />
-      <workItem from="1622406280269" duration="8222000" />
+      <workItem from="1622406280269" duration="8817000" />
+      <workItem from="1622488969627" duration="803000" />
     </task>
     <task id="LOCAL-00001" summary="minor fixes to chats.js">
       <created>1617501873889</created>
@@ -214,5 +215,9 @@
     <state width="1398" height="207" key="GridCell.Tab.0.right/0.23.1440.812@0.23.1440.812" timestamp="1621513169379" />
     <state width="1554" height="256" key="GridCell.Tab.0.right/0.23.1680.984@0.23.1680.984" timestamp="1622494279796" />
     <state width="1877" height="283" key="GridCell.Tab.0.right/1920.-87.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1622372035329" />
+    <state x="339" y="165" key="com.intellij.ide.util.TipDialog" timestamp="1622489100068">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="339" y="165" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1622489100068" />
   </component>
 </project>

@@ -10,6 +10,9 @@ function HandleError(response, reason, message, code){
 }
 
 router.get('/', (req, res) => {
+    if(!req.session.username){
+        res.redirect('/');
+    }
     // Post.find({},(err, posts)=> {
         res.render('posts.html', {root: 'views', username: req.session.username});
     // res.render('posts.html', {root: 'views' /* name: req.oidc.user.name*/});

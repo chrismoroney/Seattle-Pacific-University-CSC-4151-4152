@@ -8,12 +8,18 @@ function HandleError(response, reason, message, code){
 }
 
 router.get('/', function(req, res, next) {
+    if(!req.session.username){
+        res.redirect('/');
+    }
     console.log('called');
     let roomId = uuidV4();
     res.render('chats.html', {root: 'views', username: req.session.username, roomId: roomId, targetName: "", blocking: JSON.stringify(req.session.blocking), blockedBy: JSON.stringify(req.session.blockedBy)})
 });
 
 router.get('/:targetName', function(req, res, next) {
+    if(!req.session.username){
+        res.redirect('/');
+    }
     var targetName = req.params.targetName;
     console.log(targetName);
 
