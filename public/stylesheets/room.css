@@ -33,7 +33,24 @@ video {
 }
 
 #hangUpButton{
+    /*left: 48%;*/
+    /*margin-top: 20px;*/
+    /*position: absolute;*/
+    left: -11px;
+    position: relative;
+}
+
+#buttonAndClock{
     left: 48%;
     margin-top: 20px;
     position: absolute;
+}
+
+#timer{
+    width: 82px;
+    padding-left: 10px;
+    font-size: 18px;
+    border: 2px solid #343a40;
+    left: -11px;
+    position: relative;
 }

@@ -1,3 +1,4 @@
+let seconds = 300;
 const socket = io('');
 let peerUserName = ''
 let peerId = ''
@@ -7,6 +8,27 @@ socket.on('here-is-their-username', theirusername => {
     peerUserName = theirusername
     socket.emit('here-is-my-username', myusername)
 })
+
+function intervalFunc() {
+    if(seconds > 0){
+        console.log(seconds);
+        if(seconds % 60 >= 10){
+            console.log(seconds / 60);
+            document.getElementById("timer").innerText =
+                '0' + (Math.floor(seconds / 60)).toFixed(0) + ' : ' + seconds % 60;
+        }else{
+            document.getElementById("timer").innerText =
+                '0' + (Math.floor(seconds / 60)).toFixed(0) + ' : 0' + seconds % 60;
+        }
+        seconds--;
+    }else{
+        seconds = 300;
+        alert("Time to Switch Languages!");
+    }
+    // console.log('Hello interval func');
+}
+
+setInterval(intervalFunc, 1000);
 
 //test
 // socket.emit('join-room', ROOM_ID, 10);
@@ -41,6 +63,7 @@ navigator.mediaDevices.getUserMedia({
     })
 
     socket.on('user-connected', userId => {
+        seconds = 300;
         // alert('user connected')
         peerId = userId
         connectToNewUser(userId, stream)
@@ -87,7 +110,9 @@ function addVideoStream(video, stream) {
 }
 
 document.getElementById("hangUpButton").addEventListener("click", function(){
-    window.location.href = "/"
+    let rateUserBox = document.getElementsByClassName("rateUser")[0]
+    rateUserBox.style.display = "block"
+    // window.location.href = "/"
 })
 
 document.getElementById("submitRating").addEventListener("click", function(){
