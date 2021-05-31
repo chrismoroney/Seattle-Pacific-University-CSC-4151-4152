@@ -8,10 +8,16 @@ function HandleError(response, reason, message, code){
 }
 
 router.get('/', (req, res) => {
+    if(!req.session.username){
+        res.redirect('/');
+    }
     res.redirect('/videochat' +`/${uuidV4()}`)
 })
 
 router.get('/:room', (req, res) => {
+    if(!req.session.username){
+        res.redirect('/');
+    }
     res.render('room.html', { root: 'views', roomId: req.params.room, myusername: req.session.username })
     // res.sendFile('room.html', {root: 'views'})
 })

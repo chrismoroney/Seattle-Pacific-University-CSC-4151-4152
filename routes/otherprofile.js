@@ -5,6 +5,9 @@ const {v4 : uuidV4 } = require('uuid');
 /* GET home page. */
 router.get('/', function(req, res, next) {
     // res.render('index', { title: 'Express' });
+    if(!req.session.username){
+        res.redirect('/');
+    }
     res.render('otherprofile.html', {
         root: 'views', username: "", firstName: "",
         lastName: "", bio: "", langExp: "",
@@ -12,6 +15,9 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/:username', function(req, res){
+    if(!req.session.username){
+        res.redirect('/');
+    }
     var overallFluencyAverage = 0;
     var pronunciationAverage = 0;
     var conversationalAbilityAverage = 0;
