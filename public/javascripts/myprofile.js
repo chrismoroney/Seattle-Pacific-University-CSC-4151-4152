@@ -1,3 +1,27 @@
+const socket = io();
+// alert('asd;flkja');
+
+socket.on('call-invite', (data) => {
+    if(data.invitee == username){
+        console.log(data.invitee, data.inviter, data.roomId)
+        let url = "http://lingojive.herokuapp.com/videochat/" + data.roomId;
+        // let url = "http://localhost:3000/videochat/" + data.roomId;
+        let alertBoxReceive = document.getElementsByClassName("alertBoxReceive")[0];
+        alertBoxReceive.style.display = "block";
+        let alertBoxReceiveInner = document.getElementsByClassName("alertBoxReceiveInner")[0];
+        alertBoxReceiveInner.innerHTML = data.inviter + ' wants to chat with you! '
+        // '<a href="' + url + '">' + 'Accept' + '<\a>';
+        let alertBoxReceiveDecline = document.getElementsByClassName("alertBoxReceiveDecline")[0];
+        alertBoxReceiveDecline.addEventListener('click', function(){
+            alertBoxReceive.style.display = "none";
+        })
+        let alertBoxReceiveAccept = document.getElementsByClassName("alertBoxReceiveAccept")[0];
+        alertBoxReceiveAccept.addEventListener('click', function(){
+            window.location.href = url;
+        })
+    }
+})
+
 var url = 'https://lingojiveapi.herokuapp.com/chats';
 var xhttp = new XMLHttpRequest();
 var numUnreadMessages = 0;
@@ -50,3 +74,4 @@ function checkImage(users){
     }
 }
 window.onload=checkProfilePic;
+
