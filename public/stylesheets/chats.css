@@ -150,3 +150,13 @@ ul{
     bottom: 20px;
     left: 0;
 }
+
+.btn-search{
+     background-color: #EE973A !important;
+     color: #4B4B69 !important;
+ }
+
+.btn-decline{
+    background-color: #EE973A !important;
+    color: #4B4B69 !important;
+}
