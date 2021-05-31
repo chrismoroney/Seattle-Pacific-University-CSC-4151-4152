@@ -28,9 +28,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2726855a-8d0c-4935-b356-a096318447cb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/stylesheets/createprofile.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/createprofile.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/createprofile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/myprofile.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/myprofile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/javascripts/editprofile.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/editprofile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/javascripts/searchprofile.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/searchprofile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/stylesheets/editprofile.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/editprofile.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/stylesheets/searchprofile.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/searchprofile.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/editprofile.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/editprofile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/searchprofile.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/searchprofile.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,7 +153,7 @@
       <workItem from="1622369583963" duration="634000" />
       <workItem from="1622370348247" duration="994000" />
       <workItem from="1622406280269" duration="8817000" />
-      <workItem from="1622488969627" duration="803000" />
+      <workItem from="1622488969627" duration="5572000" />
     </task>
     <task id="LOCAL-00001" summary="minor fixes to chats.js">
       <created>1617501873889</created>
