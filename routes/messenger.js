@@ -10,6 +10,9 @@ function HandleError(response, reason, message, code){
 }
 
 router.get('/', (req, res) => {
+    if(!req.session.username){
+        res.redirect('/');
+    }
     // Message.find({},(err, messages)=> {
         // res.send(messages);
         // res.sendFile('messenger.html', {root: 'views'});
