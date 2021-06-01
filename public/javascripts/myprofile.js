@@ -1,4 +1,4 @@
-var socket = io();
+const socket = io();
 
 socket.on('call-invite', (data) => {
     if(data.invitee == username){

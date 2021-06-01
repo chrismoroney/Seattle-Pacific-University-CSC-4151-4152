@@ -22,7 +22,6 @@ app.use(session({
 var db = require('./database');
 
 var loginRouter = require('./routes/login');
-var socketRouter = require('./routes/socket');
 var messengerRouter = require('./routes/messenger');
 var postsRouter = require('./routes/posts');
 var homepageRouter = require('./routes/homepage');
@@ -71,7 +70,6 @@ app.use('/profileImages', express.static('profileImages'));
 app.use(bodyParser.json());
 
 app.use('/', loginRouter);
-app.use('/socket', socketRouter);
 app.use('/messenger', messengerRouter);
 app.use('/posts', postsRouter);
 app.use('/homepage', homepageRouter);
