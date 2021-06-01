@@ -4,11 +4,9 @@ let url = "http://lingojiveapi.herokuapp.com/users/" + otherUsername;
 let xhttp = new XMLHttpRequest();
 
 let blockurl = "http://lingojiveapi.herokuapp.com/blockuser/" + otherUsername;
-//let blockurl = "http://localhost:5000/blockuser/" + otherUsername;
 let xhttp2 = new XMLHttpRequest();
 let xhttp3 = new XMLHttpRequest();
 let unblockurl = "http://lingojiveapi.herokuapp.com/unblockuser/" + otherUsername;
-//let unblockurl = "http://localhost:5000/unblockuser/" + otherUsername;
 xhttp.onreadystatechange = function(){
     if (this.readyState == 4 && this.status == 200){
         let users = JSON.parse(this.responseText);
@@ -300,7 +298,6 @@ document.getElementById("messageButton").addEventListener("click", function() {
     xhttp.send(params);
 
     window.location.href = "/chats"
-    // window.location.href = "/chats/" + otherUsername;
 })
 
 function checkProfilePic(){
@@ -357,6 +354,3 @@ window.onload = function(){
     checkProfilePic();
     check();
 }
-//window.onload=checkProfilePic;
-
-//window.onload=check;

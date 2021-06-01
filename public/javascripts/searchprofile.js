@@ -1,16 +1,12 @@
 const socket = io();
-
-// alert('asdf;ljkasf');
 socket.on('call-invite', (data) => {
     if(data.invitee == username){
         console.log(data.invitee, data.inviter, data.roomId)
         let url = "http://lingojive.herokuapp.com/videochat/" + data.roomId;
-        // let url = "http://localhost:3000/videochat/" + data.roomId;
         let alertBoxReceive = document.getElementsByClassName("alertBoxReceive")[0];
         alertBoxReceive.style.display = "block";
         let alertBoxReceiveInner = document.getElementsByClassName("alertBoxReceiveInner")[0];
         alertBoxReceiveInner.innerHTML = data.inviter + ' wants to chat with you! '
-        // '<a href="' + url + '">' + 'Accept' + '<\a>';
         let alertBoxReceiveDecline = document.getElementsByClassName("alertBoxReceiveDecline")[0];
         alertBoxReceiveDecline.addEventListener('click', function(){
             alertBoxReceive.style.display = "none";
@@ -86,9 +82,7 @@ function CreateTable(users){
 // Need to figure something out for username or name CONTAINING input
 document.getElementById("btnLoadUsersByName").addEventListener("click", (event) =>{
     document.getElementById("output").innerHTML = "";
-        let url = "http://lingojiveapi.herokuapp.com/users/?firstname=" + document.getElementById("firstname").value;
-    //figure something out for last name
-    //let url2 = "http://lingojiveapi.herokuapp.com/users/?lastname=" + document.getElementById("lastname").value;
+    let url = "http://lingojiveapi.herokuapp.com/users/?firstname=" + document.getElementById("firstname").value;
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function(){
         if (this.readyState == 4 && this.status == 200){
@@ -102,8 +96,6 @@ document.getElementById("btnLoadUsersByName").addEventListener("click", (event) 
 document.getElementById("btnLoadUsersByLastName").addEventListener("click", (event) =>{
     document.getElementById("output").innerHTML = "";
     let url = "http://lingojiveapi.herokuapp.com/users/?lastname=" + document.getElementById("lastname").value;
-    //figure something out for last name
-    //let url2 = "http://lingojiveapi.herokuapp.com/users/?lastname=" + document.getElementById("lastname").value;
     console.log(url);
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function(){
@@ -135,11 +127,6 @@ document.getElementById("btnLoadUsersByUsername").addEventListener("click", (eve
 
 xhttp.open("GET", url, true);
 xhttp.send();
-/*
-document.getElementById("gotoprofile").addEventListener("click", (event) =>{
-    let url = "lingojiveapi.herokuapp.com/users/" + users[user]["username"]
-});
-*/
 
 document.getElementById("btnLoadUsersByLanguage").addEventListener("click", (event) =>{
     let languageSpoken = document.getElementById("languageSpoken").value;

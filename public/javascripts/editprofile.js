@@ -1,16 +1,13 @@
 const socket = io();
 
-// alert('asdf;ljkasf');
 socket.on('call-invite', (data) => {
     if(data.invitee == username){
         console.log(data.invitee, data.inviter, data.roomId)
         let url = "http://lingojive.herokuapp.com/videochat/" + data.roomId;
-        // let url = "http://localhost:3000/videochat/" + data.roomId;
         let alertBoxReceive = document.getElementsByClassName("alertBoxReceive")[0];
         alertBoxReceive.style.display = "block";
         let alertBoxReceiveInner = document.getElementsByClassName("alertBoxReceiveInner")[0];
         alertBoxReceiveInner.innerHTML = data.inviter + ' wants to chat with you! '
-        // '<a href="' + url + '">' + 'Accept' + '<\a>';
         let alertBoxReceiveDecline = document.getElementsByClassName("alertBoxReceiveDecline")[0];
         alertBoxReceiveDecline.addEventListener('click', function(){
             alertBoxReceive.style.display = "none";
@@ -25,11 +22,6 @@ socket.on('call-invite', (data) => {
 let url = 'https://lingojiveapi.herokuapp.com/chats';
 let xhttp = new XMLHttpRequest();
 let numUnreadMessages = 0;
-
-//var FormData = require('form-data');
-//var fs = require('fs');
-
-
 
 xhttp.onreadystatechange = function(){
     console.log("called");
@@ -130,7 +122,6 @@ document.getElementById("btnUpdateUser").addEventListener("click", (event) =>{
             } else {
                 let apiResponse = "[" + this.responseText + "]";
                 document.getElementById("output2").innerHTML =
-                    //CreateTable(JSON.parse(apiResponse)) + "<p></p>" +
                     "<pre>" + "Successfully saved new user info. " + "</pre>";
             }
         }
@@ -195,7 +186,6 @@ document.getElementById("btnUpdateUser").addEventListener("click", (event) =>{
         }
         userData = firstname + lastname + password + confirmpassword + bio + langExpSend + langLearnSend;
         xhttp.open('PATCH', url, true);
-        // Just needed to place this line AFTER opening the object
         xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         xhttp.send(userData);
     } else {

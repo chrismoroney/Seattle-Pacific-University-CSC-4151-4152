@@ -6,7 +6,6 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
-    "@okta/oidc-middleware": "^4.0.3",
     "body-parser": "^1.18.3",
     "bootstrap": "^4.6.0",
     "bootstrap-icons": "^1.4.1",

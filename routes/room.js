@@ -19,7 +19,6 @@ router.get('/:room', (req, res) => {
         res.redirect('/');
     }
     res.render('room.html', { root: 'views', roomId: req.params.room, myusername: req.session.username })
-    // res.sendFile('room.html', {root: 'views'})
 })
 
 module.exports = router;

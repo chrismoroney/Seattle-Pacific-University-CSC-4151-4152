@@ -29,16 +29,6 @@
     display: none;
 }
 
-.boxOne{
-    /*
-    border:5px solid black;
-    align: 'center';
-    float: left;
-    height: 150px;
-    width: 500px;
-    margin: 20px 100px;
-    */
-}
 .boxOne, .bio, .boxTwo{
     border:3px solid orange;
     align: 'center';
@@ -56,14 +46,6 @@
     top: 50%;
     left: 50%;
     margin: 15px 0px 0px -200px;
-}
-.boxTwo{
-    /*border:5px solid black;
-    align: 'center';
-    float: right;
-    height: 150px;
-    width: 500px;
-    margin: 20px 100px;*/
 }
 
 .alertBoxReceive{

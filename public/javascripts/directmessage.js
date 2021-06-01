@@ -1,7 +1,6 @@
 var messages = document.getElementById('messages');
 var chatID = document.getElementById('chatID').innerText;
 var url = 'https://lingojiveapi.herokuapp.com/directmessages';
-// var url = 'https://localhost:5000/directmessages';
 
 url += "/" + chatID;
 console.log("URL: " + url);

@@ -18,22 +18,6 @@ app.use(session({
   cookie: { secure: false }
 }))
 
-//Auth0
-// const { auth } = require('express-openid-connect');
-
-// app.use(
-//     auth({
-//       authRequired: true,
-//       auth0Logout: true,
-//       issuerBaseURL: process.env.ISSUER_BASE_URL,
-//       baseURL: process.env.BASE_URL,
-//       clientID: process.env.CLIENT_ID,
-//       secret: process.env.SECRET,
-//       idpLogout: true,
-//     })
-// );
-//Auth0
-
 //connect to db
 var db = require('./database');
 
@@ -74,10 +58,6 @@ app.set('view engine', 'html');
 
 //commented out for video chat
 app.set('views', path.join(__dirname, 'views'));
-
-// app.set('view engine', 'pug');
-
-
 
 app.use(cors());
 app.use(logger('dev'));

@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 /**
  * Module dependencies.
  */
@@ -7,24 +5,6 @@
 var app = require('../app');
 var debug = require('debug')('seattle-pacific-university-csc-4151-4152:server');
 var http = require('http');
-
-
-
-// const app = require('express')();
-// const http = require('http').Server(app);
-// const io = require('socket.io')(http);
-
-// app.get('/', (req, res) => {
-//   res.sendFile(__dirname + '/socket.html');
-// });
-
-// io.on('connection', (socket) => {
-//   console.log('a user connected');
-// });
-//
-// http.listen(3000, () => {
-//   console.log('listening on *:3000');
-// });
 
 /**
  * Get port from environment and store in Express.
@@ -46,11 +26,6 @@ var server = http.createServer(app);
 server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
-
-// const io = require('socket.io')(http);
-// io.on('connection', (socket) => {
-//   console.log('a user connected');
-// });
 
 /**
  * Normalize a port into a number, string, or false.
@@ -112,8 +87,6 @@ function onListening() {
   debug('Listening on ' + bind);
 }
 
-
-
 const io = require("socket.io")(server, {
   cors: {
     origin: "http://localhost:3000/",
@@ -126,17 +99,12 @@ io.on('connection', (socket) => {
   socket.on('disconnect', () => {
     console.log('user disconnected');
   });
-  // socket.on('chat message', msg => {
-  //   io.emit('chat message', msg);
-  // });
   socket.on('post', postContent => {
     io.emit('post', postContent);
   });
 
   socket.on("typing", data => {
     socket.broadcast.emit("notifyTyping", {
-      // user: data.user,
-      // message: data.message
       username: data.username,
       message: data.message
     });
@@ -148,19 +116,7 @@ io.on('connection', (socket) => {
 
   socket.on("chat message", function(data) {
     console.log("message: " + /* msg */ data.msg);
-
-    //broadcast message to everyone in port:3000 except yourself.
-    // socket.broadcast.emit("received", { message: msg });
     socket.broadcast.emit("received", { message: data.msg, username: data.username });
-
-
-    // connect.then(db => {
-    //   console.log("connected correctly to the server");
-    //   let chatMessage = new Chat({ message: msg, sender: "Anonymous" });
-    //
-    //   chatMessage.save();
-    // });
-
   });
 
   socket.on("direct message", function(data){
@@ -174,7 +130,6 @@ io.on('connection', (socket) => {
     //test end
 
     socket.join(roomId)
-    // socket.to(roomId).broadcast.emit('user-connected', userId)
     socket.broadcast.to(roomId).emit('user-connected', userId)
 
     //test start

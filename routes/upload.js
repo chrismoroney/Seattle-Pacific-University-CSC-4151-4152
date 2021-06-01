@@ -28,8 +28,7 @@ let upload = multer({
 
 var img;
 router.post('/', upload.single('profileImage'), function(req, res, next){
-    //console.log(req.file.originalname);
-    res.render('upload.html', {root: 'views', username: req.session.username, message: req.file.originalname});
+    res.render('upload.html', {root: 'views', username: req.session.username, message: "Successfully uploaded image!"});
 });
 
 module.exports = router;

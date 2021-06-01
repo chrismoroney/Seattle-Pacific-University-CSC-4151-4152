@@ -4,7 +4,6 @@ var chats = document.getElementById('chatList');
 var messages = document.getElementById('messages');
 var username = document.getElementById('username').innerText;
 var url = 'https://lingojiveapi.herokuapp.com/chats';
-// var url = 'http://localhost:3000/chats';
 var chatID = 0;
 var messageScroll = document.getElementById('messageScroll');
 
@@ -22,9 +21,6 @@ var xhttp = new XMLHttpRequest();
 function readMessage(id){
     let xhttp = new XMLHttpRequest();
     let url = 'https://lingojiveapi.herokuapp.com/chats/'
-    // let url = 'http://localhost:5000/chats/';
-
-    // e.preventDefault();
     recipient = "";
     let params = 'ChatID='+chatID+'&Recipient='+recipient;
     xhttp.open("PATCH", url, true);
@@ -35,7 +31,6 @@ function readMessage(id){
 function showMessages(id){
     var xhttp2 = new XMLHttpRequest();
     var url2 = 'https://lingojiveapi.herokuapp.com/directmessages/';
-    // var url2 = 'http://localhost:3000/directmessages/';
 
     var lastSender = "";
     xhttp2.onreadystatechange = function() {
@@ -137,33 +132,20 @@ xhttp.onreadystatechange = function() {
                 videoLink.addEventListener("click", function(){
                     socket.emit("send-call-invite", {invitee: text.nodeValue, inviter: username, roomId: roomId});
                     let url = "http://lingojive.herokuapp.com/videochat/" + roomId;
-                     // let url = "http://localhost:3000/videochat/" + roomId;
                     let alertBox = document.getElementsByClassName("alertBoxSend")[0];
                     alertBox.style.display = "block";
-                    // alertBox.innerHTML = 'Calling ' + text.nodeValue +
-                    //     '<a href="' + url + '">' + ' Join Room ' + '<\a>';
                     let alertBoxSendInner = document.getElementsByClassName("alertBoxSendInner")[0];
                     alertBoxSendInner.innerHTML = 'Calling ' + text.nodeValue + '...'
-                        // '<a href="' + url + '">' + ' Join Room ' + '<\a>';
-                    // let alertBoxSendBottom = document.getElementsByClassName("alertBoxSendBottom")[0];
-                    // alertBoxSendBottom.innerHTML = '<a href="' + url + '">' + ' Join Room ' + '<\a>';
-
                     let alertBoxSendButton = document.getElementsByClassName("alertBoxSendButton")[0];
                     alertBoxSendButton.addEventListener('click', function(){
                         window.location.href = url;
                     })
-                    // alertBoxSendButton.innerHTML = '<a href="' + url + '">' + ' Join Room ' + '<\a>';
                 })
                 menu.appendChild(videoLink);
-                // if(text.nodeValue == targetName){
-                //     displayedMessageId = li.id;
-                // }
-                // li.appendChild(text);
                 li.appendChild(span);
                 dropdown.appendChild(menu);
                 li.appendChild(dropdown);
                 let videoCall = document.createElement("button");
-                // videoCall.innerText = "call";
                 videoCall.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-camera-video-fill" viewBox="0 0 16 16">' +
                             '<path fill-rule="evenodd" d="M0 5a2 2 0 0 1 2-2h7.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 4.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 13H2a2 2 0 0 1-2-2V5z"/>' +
                     '</svg>'
@@ -172,13 +154,11 @@ xhttp.onreadystatechange = function() {
                 videoCall.addEventListener("click", function(){
                     socket.emit("send-call-invite", {invitee: text.nodeValue, inviter: username, roomId: roomId});
                     let url = "http://lingojive.herokuapp.com/videochat/" + roomId;
-                    // let url = "http://localhost:3000/videochat/" + roomId;
                     let alertBox = document.getElementsByClassName("alertBox")[0];
                     alertBox.style.display = "block";
                     alertBox.innerHTML = 'Calling ' + text.nodeValue + '<a href="' + url + '">' + ' Join Room ' + '<\a>';
                     ;
                 })
-                //li.appendChild(videoCall);
                 li.addEventListener("click", function(){
                     showMessages(li.id);
                 });
@@ -187,9 +167,6 @@ xhttp.onreadystatechange = function() {
                 displayedMessageId = response[i-1]._id;
             }
         }
-        // if(targetName != ""){
-        //     showMessages(displayedMessageId);
-        // }
         showMessages(displayedMessageId);
         window.scrollTo(0,document.querySelector(".chatcol3").scrollHeight);
     }
@@ -202,10 +179,8 @@ xhttp.send();
 form.addEventListener('submit', function(e) {
     var xhttp3 = new XMLHttpRequest();
     var url3 = 'https://lingojiveapi.herokuapp.com/directmessages/';
-    // var url3 = 'http://localhost:3000/directmessages/';
     var xhttp4 = new XMLHttpRequest();
     var url4 = 'https://lingojiveapi.herokuapp.com/chats/'
-    // var url4 = 'http://localhost:5000/chats/';
 
     e.preventDefault();
     if (input.value) {
@@ -234,27 +209,6 @@ form.addEventListener('submit', function(e) {
         xhttp4.send(params2);
     }
 });
-
-// form2.addEventListener('submit', function(e) {
-//     var xhttp4 = new XMLHttpRequest();
-//     var url4 = 'https://lingojiveapi.herokuapp.com/chats/';
-//     // var url4 = 'http://localhost:3000/chats/';
-//
-//     e.preventDefault();
-//     if (recipient.value) {
-//         var member1 = document.getElementById('username').innerText;
-//         var member2 = recipient.value;
-//
-//         var name = "uniformchatname";
-//         var params = 'Name='+name+'&Member1='+member1+'&Member2='+member2;
-//         recipient.value = '';
-//
-//         xhttp4.open("POST", url4,
-//             true);
-//         xhttp4.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-//         xhttp4.send(params);
-//     }
-// });
 
 socket.on("direct message sent", data => {
     if(data.ChatID == chatID){

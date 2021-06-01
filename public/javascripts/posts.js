@@ -5,13 +5,9 @@ var form = document.getElementById('form');
 var input = document.getElementById('input');
 
 var url = 'https://lingojiveapi.herokuapp.com/posts';
-// var url = 'http://localhost:5000/posts';
 
 var xhttp = new XMLHttpRequest();
 
-// var replyFunction = function(){
-//     location.href = 'https://lingojiveapi.herokuapp.com/replyBox.html';
-// }
 xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
         console.log(this.responseText);
@@ -20,7 +16,6 @@ xhttp.onreadystatechange = function() {
         for(let i = 0; i < response.length; ++i){
             var item = document.createElement('li');
             item.textContent = response[i].Body;
-            // messages.appendChild(item);
             messages.prepend(item);
             var user = document.createElement('div');
             user.textContent = response[i].Name;
@@ -31,10 +26,6 @@ xhttp.onreadystatechange = function() {
             item.prepend(button);
             button.id = "myReply" + i;
             item.prepend(button);
-//             document.getElementById("myReply" + i).onclick = "replyFunction"
-//             {
-//                 location.href = 'https://lingojiveapi.herokuapp.com/replyBox';
-//             };
             document.getElementById("myReply" + i).addEventListener("click", function(){
                 window.location.href = '/reply';
             })            
@@ -45,8 +36,6 @@ xhttp.onreadystatechange = function() {
 xhttp.open("GET", url,
     true);
 xhttp.send();
-
-
 
 socket.on('post', function(postContent) {
     xhttp.open("GET", url,
@@ -71,7 +60,6 @@ form.addEventListener('submit', function(e) {
 });
 
 var url2 = 'https://lingojiveapi.herokuapp.com/chats';
-// var url2 = 'http://localhost:5000/chats';
 var xhttp2 = new XMLHttpRequest();
 var numUnreadMessages = 0;
 
@@ -103,12 +91,10 @@ socket.on('call-invite', (data) => {
     if(data.invitee == username){
         console.log(data.invitee, data.inviter, data.roomId)
         let url = "http://lingojive.herokuapp.com/videochat/" + data.roomId;
-        // let url = "http://localhost:3000/videochat/" + data.roomId;
         let alertBoxReceive = document.getElementsByClassName("alertBoxReceive")[0];
         alertBoxReceive.style.display = "block";
         let alertBoxReceiveInner = document.getElementsByClassName("alertBoxReceiveInner")[0];
         alertBoxReceiveInner.innerHTML = data.inviter + ' wants to chat with you! '
-        // '<a href="' + url + '">' + 'Accept' + '<\a>';
         let alertBoxReceiveDecline = document.getElementsByClassName("alertBoxReceiveDecline")[0];
         alertBoxReceiveDecline.addEventListener('click', function(){
             alertBoxReceive.style.display = "none";

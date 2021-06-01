@@ -29,8 +29,6 @@ function CreateTable(users){
         '</table>\n'
     return table;
 }
-// Still need to figure out
-
 function loadFriends(){
     let url = "http://lingojiveapi.herokuapp.com/users/" + username;
     let xhttp = new XMLHttpRequest();

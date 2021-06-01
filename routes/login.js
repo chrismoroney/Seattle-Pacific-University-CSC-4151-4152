@@ -1,17 +1,11 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
 router.get('/',function(req, res, next) {
-    // res.render('index', { title: 'Express' });
-    //res.sendFile('login.html', {root: 'views'})
-    // console.log(req.userContext);
-    // if (req.userContext) {
     if(req.session.loggedIn){
-        // res.sendFile('homepage.html', {root: 'views'});
         res.render('homepage.html', {root: 'views', username: req.session.username});
     } else {
-        res.sendFile('login.html', {root: 'views'});
+        res.render('login.html', {root: 'views', message: "Page will reload with incorrect sign-in."});
     }
 });
 

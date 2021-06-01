@@ -4,7 +4,6 @@ const {v4 : uuidV4 } = require('uuid');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    // res.render('index', { title: 'Express' });
     if(!req.session.username){
         res.redirect('/');
     }
@@ -30,15 +29,9 @@ router.get('/:username', function(req, res){
         .find({"username": req.params.username})
         .exec( (error, User) => {
             if (error || User.length == 0){
-                // res.send({"error": error});
                 res.redirect("/");
             } else {
                 let userObj = User[0];
-                // console.log(userObj);
-                // console.log("hi");
-                // console.log("hello" + userObj);
-                // console.log(typeof(userObj.langLearn));
-                // console.log(typeof(userObj.conversationalAbility));
 
                 var bio = userObj.bio;
                 var firstname = userObj.firstname;
@@ -84,14 +77,6 @@ router.get('/:username', function(req, res){
                 }
                 speakingAverage = speakingTotal / userObj.speaking.length;
                 console.log(speakingAverage);
-                //doesn't work
-
-                // console.log(req.session.bio);
-                // console.log(username);
-                // req.session.loggedIn = true;
-                // console.log(req.session);
-                // res.redirect('/homepage')
-                // res.render('homepage.html', {root: 'views' , username: username});
                 var username = req.params.username;
                 let roomId = uuidV4();
                 console.log(overallFluencyAverage, "!!!");
@@ -107,18 +92,6 @@ router.get('/:username', function(req, res){
                 );
             }
         });
-
-    // var username = req.params.username;
-    // let roomId = uuidV4();
-    // console.log(overallFluencyAverage, "!!!");
-    // res.render('otherprofile.html', {
-    //     root: 'views', username: req.session.username, firstName: "",
-    //     lastName: "", bio: "", langExp: "",
-    //     langLearn: "", otherUsername: username, roomId: roomId,
-    //     overallFluency: overallFluencyAverage, pronunciation: pronunciationAverage,
-    //     conversationalAbility: conversationalAbilityAverage, listening: listeningAverage,
-    //     speaking: speakingAverage},
-    // );
 });
 
 module.exports = router;

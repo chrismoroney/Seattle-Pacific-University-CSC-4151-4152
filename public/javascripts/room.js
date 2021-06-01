@@ -2,9 +2,7 @@ let seconds = 300;
 const socket = io('');
 let peerUserName = ''
 let peerId = ''
-// socket.emit('here-is-my-username', myusername)
 socket.on('here-is-their-username', theirusername => {
-    // alert(theirusername)
     peerUserName = theirusername
     socket.emit('here-is-my-username', myusername)
 })
@@ -25,23 +23,11 @@ function intervalFunc() {
         seconds = 300;
         alert("Time to Switch Languages!");
     }
-    // console.log('Hello interval func');
 }
 
 setInterval(intervalFunc, 1000);
 
-//test
-// socket.emit('join-room', ROOM_ID, 10);
-// socket.on('user-connected', userId => {
-//     console.log('user connected' + userId + "????");
-// });
-//test end
-
 const videoGrid = document.getElementById('video-grid')
-// const myPeer = new Peer(undefined, {
-//     host: '/',
-//     port: '3001'
-// })
 
 const myPeer = new Peer();
 
@@ -64,20 +50,13 @@ navigator.mediaDevices.getUserMedia({
 
     socket.on('user-connected', userId => {
         seconds = 300;
-        // alert('user connected')
         peerId = userId
         connectToNewUser(userId, stream)
-        // setTimeout(function(){console.log("wait")},500)
         socket.emit('here-is-my-username', myusername)
-        // socket.on('here-is-their-username', theirusername => {
-        //     alert(theirusername)
-        //     peerUserName = theirusername
-        // })
     })
 })
 
 socket.on('user-disconnected', userId => {
-    // alert('user disconnected')
     let rateUserBox = document.getElementsByClassName("rateUser")[0]
     rateUserBox.style.display = "block"
     let rateUserTop = document.getElementById('rateUserTop');
@@ -116,7 +95,6 @@ document.getElementById("hangUpButton").addEventListener("click", function(){
     let rateUserTop = document.getElementById('rateUserTop');
     rateUserTop.innerText = "Rate " + peerUserName + "!";
     rateUserBox.style.display = "block"
-    // window.location.href = "/"
 })
 
 document.getElementById("submitRating").addEventListener("click", function(){
@@ -126,38 +104,7 @@ document.getElementById("submitRating").addEventListener("click", function(){
     userData += "&listening=" + document.getElementById("listening").value
     userData += "&speaking=" + document.getElementById("speaking").value
 
-    // overallFluency: [Number],
-    //     pronunciation: [Number],
-    //     conversationalAbility: [Number],
-    //     listening: [Number],
-    //     speaking: [Number]
-
-    // let xhttpGetUrl = 'http://localhost:5000/users/'
-    // let xhttpGet = new XMLHttpRequest()
-    // xhttpGet.onreadystatechange = function(){
-    //     // let userGetResults
-    //     if(this.readyState == 4 && this.status == 200){
-    //         // alert(peerId)
-    //         // userGetResults = this.response
-    //         let response = JSON.parse(this.responseText)
-    //         for(let i = 0; i < response.length; ++i){
-    //             // alert(response[i]._id)
-    //             if(response[i]._id == peerId){
-    //                 peerUserName = response[i].username
-    //                 alert("user found! " + peerUserName)
-    //                 break;
-    //             }
-    //         }
-    //     }
-    // }
-    // xhttpGet.open("GET", xhttpGetUrl, true)
-    // xhttpGet.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    // xhttpGet.send();
-    // alert(peerUserName)
-    // alert(userData)
-    // let rateUserUrl = 'http://localhost:5000/users/' + peerUserName
     let rateUserUrl = 'http://lingojiveapi.herokuapp.com/users/' + peerUserName
-    // alert(document.getElementById("overallFluency").value)
     let xhttpRate = new XMLHttpRequest();
     xhttpRate.onreadystatechange = function(){
         if(this.readyState == 4 && this.status == 200){
