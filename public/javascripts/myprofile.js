@@ -1,4 +1,5 @@
-const socket = io();
+var socket = io();
+
 socket.on('call-invite', (data) => {
     if(data.invitee == username){
         console.log(data.invitee, data.inviter, data.roomId)

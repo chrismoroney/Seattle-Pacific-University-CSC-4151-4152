@@ -29,58 +29,11 @@
   <component name="ChangeListManager">
     <list default="true" id="2726855a-8d0c-4935-b356-a096318447cb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/www" beforeDir="false" afterPath="$PROJECT_DIR$/bin/www" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/env" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/Chat.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/Chat.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/Message.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/Post.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/Post.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/chats.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/chats.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/directmessage.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/directmessage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/editprofile.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/editprofile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/login.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/messenger.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/messenger.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/javascripts/myprofile.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/myprofile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/otherprofile.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/otherprofile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/posts.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/posts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/room.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/room.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/searchprofile.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/searchprofile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/users.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/viewfollowing.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/viewfollowing.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/stylesheets/chats.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/chats.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/stylesheets/messenger.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/messenger.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/stylesheets/posts.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/posts.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/stylesheets/profile.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/profile.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/stylesheets/room.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/room.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/authenticate.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/authenticate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/createprofile.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/createprofile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/editprofile.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/editprofile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/homepage.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/homepage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/logout.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/logout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/messenger.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/messenger.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/myprofile.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/myprofile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/otherprofile.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/otherprofile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/posts.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/posts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/room.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/room.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/searchprofile.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/searchprofile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/socket.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/socket.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/upload.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/upload.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/viewblocked.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/viewblocked.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/viewfollowing.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/viewfollowing.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/chats.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/chats.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/error.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/error.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/homepage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/messenger.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/messenger.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/myprofile.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/myprofile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/posts.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/posts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/room.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/room.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/searchprofile.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/searchprofile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/viewblocked.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/viewblocked.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/viewfollowing.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/viewfollowing.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,7 +93,14 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="false" />
+  <component name="RunManager">
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -193,6 +153,8 @@
       <workItem from="1622370348247" duration="994000" />
       <workItem from="1622406280269" duration="8817000" />
       <workItem from="1622488969627" duration="5572000" />
+      <workItem from="1622526935368" duration="172000" />
+      <workItem from="1622527252789" duration="626000" />
     </task>
     <task id="LOCAL-00001" summary="minor fixes to chats.js">
       <created>1617501873889</created>
@@ -215,7 +177,7 @@
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -230,34 +192,34 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1554" height="256" key="GridCell.Tab.0.bottom" timestamp="1622514044591">
-      <screen x="0" y="23" width="1680" height="984" />
+    <state width="1877" height="280" key="GridCell.Tab.0.bottom" timestamp="1622527879177">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1398" height="205" key="GridCell.Tab.0.bottom/0.23.1440.808@0.23.1440.808" timestamp="1622133513232" />
     <state width="1398" height="207" key="GridCell.Tab.0.bottom/0.23.1440.812@0.23.1440.812" timestamp="1621513169380" />
     <state width="1554" height="256" key="GridCell.Tab.0.bottom/0.23.1680.984@0.23.1680.984" timestamp="1622514044591" />
-    <state width="1877" height="283" key="GridCell.Tab.0.bottom/1920.-87.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1622372035329" />
-    <state width="1554" height="256" key="GridCell.Tab.0.center" timestamp="1622514044590">
-      <screen x="0" y="23" width="1680" height="984" />
+    <state width="1877" height="280" key="GridCell.Tab.0.bottom/1920.-87.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1622527879177" />
+    <state width="1877" height="280" key="GridCell.Tab.0.center" timestamp="1622527879177">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1398" height="205" key="GridCell.Tab.0.center/0.23.1440.808@0.23.1440.808" timestamp="1622133513231" />
     <state width="1398" height="207" key="GridCell.Tab.0.center/0.23.1440.812@0.23.1440.812" timestamp="1621513169379" />
     <state width="1554" height="256" key="GridCell.Tab.0.center/0.23.1680.984@0.23.1680.984" timestamp="1622514044590" />
-    <state width="1877" height="283" key="GridCell.Tab.0.center/1920.-87.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1622372035329" />
-    <state width="1554" height="256" key="GridCell.Tab.0.left" timestamp="1622514044590">
-      <screen x="0" y="23" width="1680" height="984" />
+    <state width="1877" height="280" key="GridCell.Tab.0.center/1920.-87.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1622527879177" />
+    <state width="1877" height="280" key="GridCell.Tab.0.left" timestamp="1622527879176">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1398" height="205" key="GridCell.Tab.0.left/0.23.1440.808@0.23.1440.808" timestamp="1622133513230" />
     <state width="1398" height="207" key="GridCell.Tab.0.left/0.23.1440.812@0.23.1440.812" timestamp="1621513169378" />
     <state width="1554" height="256" key="GridCell.Tab.0.left/0.23.1680.984@0.23.1680.984" timestamp="1622514044590" />
-    <state width="1877" height="283" key="GridCell.Tab.0.left/1920.-87.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1622372035329" />
-    <state width="1554" height="256" key="GridCell.Tab.0.right" timestamp="1622514044591">
-      <screen x="0" y="23" width="1680" height="984" />
+    <state width="1877" height="280" key="GridCell.Tab.0.left/1920.-87.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1622527879176" />
+    <state width="1877" height="280" key="GridCell.Tab.0.right" timestamp="1622527879177">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1398" height="205" key="GridCell.Tab.0.right/0.23.1440.808@0.23.1440.808" timestamp="1622133513231" />
     <state width="1398" height="207" key="GridCell.Tab.0.right/0.23.1440.812@0.23.1440.812" timestamp="1621513169379" />
     <state width="1554" height="256" key="GridCell.Tab.0.right/0.23.1680.984@0.23.1680.984" timestamp="1622514044591" />
-    <state width="1877" height="283" key="GridCell.Tab.0.right/1920.-87.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1622372035329" />
+    <state width="1877" height="280" key="GridCell.Tab.0.right/1920.-87.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1622527879177" />
     <state x="339" y="165" key="com.intellij.ide.util.TipDialog" timestamp="1622489100068">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
